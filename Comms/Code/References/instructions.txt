@@ -1,0 +1,50 @@
+pip3 install RPi.GPIO
+pip3 install spidev
+pip3 install pyLoRa
+sudo apt-get install python-rpi.gpio python3-rpi.gpio
+sudo apt-get install python-spidev python3-spidev
+sudo apt-get install git
+sudo git clone https://github.com/rpsreal/pySX127x
+sudo apt autoremove
+
+**** IN THE PINOUT!!!! EN is actually the CS AND for board1 CS = GPIO7!!!!!!!**********
+
+Pinout
+********************************
+MOSI	GPIO 10
+MISO	GPIO 9
+SCLK	GPIO 11 
+CS	GPIO 7
+DIO0	GPIO 4
+DIO1	GPIO 17
+DIO2	GPIO 18
+DIO3	GPIO 27
+RST	GPIO 22
+*LED	GPIO 13	(not actually being used)
+********************************
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+To find IP address for SSH:
+open command line (Ctrl+Alt+t)
+type in ifconfig
+
+for WIFI:
+	look at wlan0:
+			inet 192.168.xx.xxx	<-- this is the ip for ssh
+for Ethernet:
+	look at eth0:
+			inet 192.168.xx.xxx	<-- this is the ip for ssh
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+----------------------------------------------------------------------------
+To run a single easy command to SM sensor:
+	-open command line (Ctrl+Alt+t)
+	-cd to:
+		Desktop/AirSciences/SMsensor/
+	 or
+		home/pi/
+		(by default should be here when you open command line)
+	-type command: make bang
+To run a specific command to specific device:
+	-open command line (Ctrl+Alt+t)
+	-type command: python3 /home/pi/Desktop/AirSciences/SMsensor/LORA_PI_TX.py [SensorName]
+		e.g.   python3 /home/pi/Desktop/AirSciences/SMsensor/LORA_PI_TX.py SM01
+	
