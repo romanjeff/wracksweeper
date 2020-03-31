@@ -1,6 +1,9 @@
-// This sketch is a proof of concept to verify packet transmission of UART data from one LoRa radio to another.
-// It pings out serial input to a radio to a pingback program and reports the packet that it receives in response.
-// Currently under construction to add the ability to send command to change transmit settings for datarate
+
+// This sketch is a proof of concept to verify packet transmission of UART data 
+// from one LoRa radio to another. It pings out serial input to a radio to a pingback
+// program and reports the packet that it receives in response.
+// Currently under construction to add the ability to send command to change transmit
+// settings for datarate
  
 #include <SPI.h>
 #include <RH_RF95.h>
@@ -46,7 +49,8 @@ void setup()
   pinMode(RFM95_RST, OUTPUT);
   digitalWrite(RFM95_RST, HIGH);
  
-  Serial1.begin(9600);  // Feather M0 hardware UART tx/rx are tied to "Serial1" and not Serial, use as with Serial library.
+  Serial1.begin(115200);  // Feather M0 hardware UART tx/rx are tied to "Serial1" 
+                        // and not Serial, use as with Serial library.
 //  while (!Serial1) {
 //    delay(1);
 //  }
@@ -89,6 +93,60 @@ int16_t packetnum = 0;  // packet counter, we increment per xmission
 String payLoad;
 int timeSent = 0;
 
+
+// set vars for serial input function
+const byte numChars = 255; //limits read to 255 bytes (full size of serial buffer
+                           // and max length of a lora payload)
+char receivedChars[numChars];
+boolean newData = false;
+
+void receiveWithStartAndEndMarkers(){
+  static boolean receiveInprogress = false;
+  static byte ndx = 0;
+  char startMarker = '<';
+  char endMarker = '>';
+  char rc;
+
+  while (Serial1.available() > 0 && newData == false) {
+    rc = Serial.read();
+    if(receiveInProgress == true){
+      if (rc != endMarker){
+        receivedChars[ndx] = rc;
+        ndx++;
+        if (ndx >= numChars) {
+          ndx = numChars -1;
+        }
+      }
+      else {
+        receivedChars[ndx] = '\0';
+        receiveInProgress = false;
+        ndx = 0;
+        newData = true;
+      }
+    }
+    else if(rc == startMarker){
+      receiveInProgress = true;
+    }
+  }
+}
+
+
+void showNewData(){
+  if(newData == true) {
+    Serial1.print(receivedChars);
+    newData = false;
+  }
+}
+
+        }
+      }
+    }
+  }
+}
+
+
+
+
 void loop()
 {
   if(Serial1.available() == 0){
@@ -114,7 +172,9 @@ void loop()
   }
   
   if(Serial1.available() > 0) {
-    payLoad = Serial1.readStringUntil(/r);
+    receiveWithStartAndEndMarkers();
+    payLoad = receivedChars;
+    // payLoad = Serial1.readStringUntil(/r);
 
     Serial1.print("Received ");
     Serial1.print(payLoad);
