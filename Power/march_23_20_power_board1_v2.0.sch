@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -5986,7 +5986,7 @@ on the AUV's existing Power Controller Board</text>
 <text x="195.58" y="175.26" size="1.778" layer="96">10u</text>
 <text x="195.58" y="231.14" size="1.778" layer="96">10u</text>
 <text x="196.85" y="284.48" size="1.778" layer="96">10u</text>
-<text x="236.22" y="227.33" size="1.778" layer="96">470n</text>
+<text x="243.84" y="227.33" size="1.778" layer="96">470n</text>
 <text x="283.21" y="273.05" size="1.778" layer="96">50.8u</text>
 <text x="281.94" y="219.71" size="1.778" layer="96">50.8u</text>
 <text x="281.94" y="163.83" size="1.778" layer="96">50.8u</text>
@@ -6287,16 +6287,16 @@ on the AUV's existing Power Controller Board</text>
 <instance part="GND1" gate="1" x="281.94" y="267.97" smashed="yes">
 <attribute name="VALUE" x="279.4" y="265.43" size="1.778" layer="96"/>
 </instance>
-<instance part="C2" gate="G$1" x="237.49" y="278.13" smashed="yes">
-<attribute name="NAME" x="246.38" y="276.86" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="247.65" y="281.94" size="1.778" layer="96" align="center-left"/>
+<instance part="C2" gate="G$1" x="234.95" y="278.13" smashed="yes">
+<attribute name="NAME" x="242.57" y="276.86" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="242.57" y="281.94" size="1.778" layer="96" align="center-left"/>
 </instance>
 <instance part="C3" gate="G$1" x="236.22" y="224.79" smashed="yes">
-<attribute name="NAME" x="243.84" y="227.33" size="1.778" layer="95" align="center-left"/>
+<attribute name="NAME" x="243.84" y="223.52" size="1.778" layer="95" align="center-left"/>
 </instance>
 <instance part="C4" gate="G$1" x="236.22" y="168.91" smashed="yes">
-<attribute name="NAME" x="240.03" y="172.72" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="245.11" y="171.45" size="1.778" layer="96" align="center-left"/>
+<attribute name="NAME" x="245.11" y="167.64" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="243.84" y="172.72" size="1.778" layer="96" align="center-left"/>
 </instance>
 <instance part="C1" gate="G$1" x="292.1" y="283.21" smashed="yes" rot="R270">
 <attribute name="NAME" x="292.1" y="279.4" size="1.778" layer="95" align="center-left"/>
@@ -6538,7 +6538,6 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="SPOT_VOLT_REG" gate="G$1" pin="FB"/>
 <wire x1="232.41" y1="143.51" x2="234.95" y2="143.51" width="0.1524" layer="91"/>
 <junction x="234.95" y="143.51"/>
-<label x="231.14" y="146.05" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="V_SPOT" class="0">
@@ -6573,7 +6572,6 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="R6" gate="G$1" pin="2"/>
 <pinref part="B3_VOLT_REG" gate="G$1" pin="RT"/>
 <wire x1="196.85" y1="265.43" x2="201.93" y2="265.43" width="0.1524" layer="91"/>
-<label x="193.04" y="264.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RUN/SS_B3" class="0">
@@ -6585,7 +6583,6 @@ on the AUV's existing Power Controller Board</text>
 <wire x1="201.93" y1="275.59" x2="201.93" y2="271.78" width="0.1524" layer="91"/>
 <wire x1="201.93" y1="271.78" x2="176.53" y2="271.78" width="0.1524" layer="91"/>
 <junction x="176.53" y="271.78"/>
-<label x="177.8" y="271.78" size="1.778" layer="95"/>
 <pinref part="C30" gate="G$1" pin="1"/>
 </segment>
 </net>
@@ -6594,14 +6591,12 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="R7" gate="G$1" pin="2"/>
 <pinref part="B3_VOLT_REG" gate="G$1" pin="VC"/>
 <wire x1="189.23" y1="270.51" x2="201.93" y2="270.51" width="0.1524" layer="91"/>
-<label x="190.5" y="267.97" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CBOOST_B3" class="0">
 <segment>
 <pinref part="B3_VOLT_REG" gate="G$1" pin="BOOST"/>
-<wire x1="232.41" y1="278.13" x2="237.49" y2="278.13" width="0.1524" layer="91"/>
-<label x="231.14" y="280.67" size="1.778" layer="95"/>
+<wire x1="232.41" y1="278.13" x2="234.95" y2="278.13" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="1"/>
 </segment>
 </net>
@@ -6614,7 +6609,6 @@ on the AUV's existing Power Controller Board</text>
 <wire x1="234.95" y1="252.73" x2="237.49" y2="252.73" width="0.1524" layer="91"/>
 <wire x1="234.95" y1="251.46" x2="234.95" y2="252.73" width="0.1524" layer="91"/>
 <junction x="234.95" y="252.73"/>
-<label x="232.41" y="254" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="V_B3" class="0">
@@ -6649,7 +6643,6 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="R10" gate="G$1" pin="2"/>
 <pinref part="SPOT_VOLT_REG" gate="G$1" pin="RT"/>
 <wire x1="196.85" y1="156.21" x2="201.93" y2="156.21" width="0.1524" layer="91"/>
-<label x="193.04" y="153.67" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VC_SPOT" class="0">
@@ -6657,7 +6650,6 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="R11" gate="G$1" pin="2"/>
 <pinref part="SPOT_VOLT_REG" gate="G$1" pin="VC"/>
 <wire x1="189.23" y1="161.29" x2="201.93" y2="161.29" width="0.1524" layer="91"/>
-<label x="191.77" y="158.75" size="1.778" layer="96"/>
 </segment>
 </net>
 <net name="RUN/SS_SPOT" class="0">
@@ -6665,7 +6657,6 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="SPOT_VOLT_REG" gate="G$1" pin="RUN/SS"/>
 <pinref part="R19" gate="G$1" pin="1"/>
 <wire x1="177.8" y1="175.26" x2="177.8" y2="166.37" width="0.1524" layer="91"/>
-<label x="180.34" y="163.83" size="1.778" layer="95"/>
 <pinref part="C32" gate="G$1" pin="1"/>
 <junction x="177.8" y="166.37"/>
 <wire x1="177.8" y1="166.37" x2="177.8" y2="162.56" width="0.1524" layer="91"/>
@@ -6680,7 +6671,6 @@ on the AUV's existing Power Controller Board</text>
 <wire x1="201.93" y1="222.25" x2="199.39" y2="222.25" width="0.1524" layer="91"/>
 <wire x1="199.39" y1="222.25" x2="199.39" y2="218.44" width="0.1524" layer="91"/>
 <wire x1="199.39" y1="218.44" x2="176.53" y2="218.44" width="0.1524" layer="91"/>
-<label x="177.8" y="219.71" size="1.778" layer="95"/>
 <pinref part="C31" gate="G$1" pin="1"/>
 <junction x="176.53" y="218.44"/>
 </segment>
@@ -6690,7 +6680,6 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="R3" gate="G$1" pin="2"/>
 <pinref part="LORA_VOLT_REG" gate="G$1" pin="VC"/>
 <wire x1="189.23" y1="217.17" x2="201.93" y2="217.17" width="0.1524" layer="91"/>
-<label x="191.77" y="214.63" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RT_LORA" class="0">
@@ -6698,7 +6687,6 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="R2" gate="G$1" pin="2"/>
 <pinref part="LORA_VOLT_REG" gate="G$1" pin="RT"/>
 <wire x1="196.85" y1="212.09" x2="201.93" y2="212.09" width="0.1524" layer="91"/>
-<label x="191.77" y="212.09" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="FB_LORA" class="0">
@@ -6709,14 +6697,12 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="R5" gate="G$1" pin="2"/>
 <wire x1="234.95" y1="199.39" x2="237.49" y2="199.39" width="0.1524" layer="91"/>
 <junction x="234.95" y="199.39"/>
-<label x="231.14" y="200.66" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CBOOST_LORA" class="0">
 <segment>
 <pinref part="LORA_VOLT_REG" gate="G$1" pin="BOOST"/>
 <wire x1="232.41" y1="224.79" x2="236.22" y2="224.79" width="0.1524" layer="91"/>
-<label x="231.14" y="222.25" size="1.778" layer="95"/>
 <pinref part="C3" gate="G$1" pin="1"/>
 </segment>
 </net>
@@ -6812,7 +6798,6 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="L4" gate="G$1" pin="1"/>
 <wire x1="232.41" y1="163.83" x2="248.92" y2="163.83" width="0.1524" layer="91"/>
 <junction x="232.41" y="163.83"/>
-<label x="234.95" y="161.29" size="1.778" layer="95"/>
 <wire x1="248.92" y1="163.83" x2="248.92" y2="168.91" width="0.1524" layer="91"/>
 <junction x="248.92" y="163.83"/>
 <pinref part="C4" gate="G$1" pin="2"/>
@@ -6829,7 +6814,6 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="L5" gate="G$1" pin="1"/>
 <wire x1="232.41" y1="219.71" x2="248.92" y2="219.71" width="0.1524" layer="91"/>
 <junction x="232.41" y="219.71"/>
-<label x="233.68" y="217.17" size="1.778" layer="95"/>
 <wire x1="248.92" y1="219.71" x2="248.92" y2="224.79" width="0.1524" layer="91"/>
 <junction x="248.92" y="219.71"/>
 <pinref part="C3" gate="G$1" pin="2"/>
@@ -6844,22 +6828,19 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="B3_VOLT_REG" gate="G$1" pin="DC@1"/>
 <wire x1="232.41" y1="267.97" x2="232.41" y2="270.51" width="0.1524" layer="91"/>
 <pinref part="INDUCTOR_3" gate="G$1" pin="1"/>
-<wire x1="232.41" y1="273.05" x2="250.19" y2="273.05" width="0.1524" layer="91"/>
+<wire x1="232.41" y1="273.05" x2="251.46" y2="273.05" width="0.1524" layer="91"/>
 <junction x="232.41" y="273.05"/>
-<label x="236.22" y="270.51" size="1.778" layer="95"/>
-<wire x1="250.19" y1="273.05" x2="254" y2="273.05" width="0.1524" layer="91"/>
-<wire x1="250.19" y1="278.13" x2="250.19" y2="273.05" width="0.1524" layer="91"/>
-<junction x="250.19" y="273.05"/>
-<wire x1="247.65" y1="278.13" x2="250.19" y2="278.13" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="2"/>
-<junction x="250.19" y="278.13"/>
+<wire x1="251.46" y1="273.05" x2="254" y2="273.05" width="0.1524" layer="91"/>
+<wire x1="247.65" y1="278.13" x2="251.46" y2="278.13" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="278.13" x2="251.46" y2="273.05" width="0.1524" layer="91"/>
+<junction x="251.46" y="273.05"/>
 </segment>
 </net>
 <net name="V_PLOAD0" class="0">
 <segment>
 <pinref part="R26" gate="G$1" pin="1"/>
 <wire x1="132.08" y1="283.21" x2="133.35" y2="283.21" width="0.1524" layer="91"/>
-<label x="133.35" y="284.48" size="1.778" layer="95"/>
 <pinref part="Q1" gate="G$1" pin="D"/>
 </segment>
 </net>
@@ -6868,7 +6849,6 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="J1_B3_CONN" gate="G$1" pin="1"/>
 <wire x1="308.61" y1="283.21" x2="314.96" y2="283.21" width="0.1524" layer="91"/>
 <pinref part="R16" gate="G$1" pin="1"/>
-<label x="312.42" y="280.67" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="V_LORA1" class="0">
@@ -6876,7 +6856,6 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="J2_LORA_CONN" gate="G$1" pin="1"/>
 <wire x1="307.34" y1="229.87" x2="314.96" y2="229.87" width="0.1524" layer="91"/>
 <pinref part="R20" gate="G$1" pin="1"/>
-<label x="308.61" y="232.41" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="V_SPOT1" class="0">
@@ -6884,7 +6863,6 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="J3_SPOT_CONN" gate="G$1" pin="1"/>
 <wire x1="309.88" y1="173.99" x2="316.23" y2="173.99" width="0.1524" layer="91"/>
 <pinref part="R21" gate="G$1" pin="1"/>
-<label x="311.15" y="176.53" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -6945,7 +6923,6 @@ on the AUV's existing Power Controller Board</text>
 <segment>
 <pinref part="SPOT_VOLT_REG" gate="G$1" pin="BOOST"/>
 <wire x1="232.41" y1="168.91" x2="236.22" y2="168.91" width="0.1524" layer="91"/>
-<label x="231.14" y="166.37" size="1.778" layer="96"/>
 <pinref part="C4" gate="G$1" pin="1"/>
 </segment>
 </net>
@@ -6954,7 +6931,6 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="J0_PLOAD_CONN" gate="G$1" pin="2"/>
 <pinref part="R26" gate="G$1" pin="2"/>
 <wire x1="116.84" y1="283.21" x2="121.92" y2="283.21" width="0.1524" layer="91"/>
-<label x="118.11" y="279.4" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="V_SSS1" class="0">
@@ -6962,7 +6938,6 @@ on the AUV's existing Power Controller Board</text>
 <pinref part="R22" gate="G$1" pin="1"/>
 <pinref part="J4_SSSBOARD_CONN" gate="G$1" pin="1"/>
 <wire x1="246.38" y1="114.3" x2="245.11" y2="114.3" width="0.1524" layer="91"/>
-<label x="245.11" y="110.49" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
