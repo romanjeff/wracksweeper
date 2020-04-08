@@ -49,15 +49,20 @@ void setup()
   pinMode(RFM95_RST, OUTPUT);
   digitalWrite(RFM95_RST, HIGH);
  
-  Serial1.begin(115200);  // Feather M0 hardware UART tx/rx are tied to "Serial1" 
+  Serial1.begin(9600);  // Feather M0 hardware UART tx/rx are tied to "Serial1" 
                         // and not Serial, use as with Serial library.
-//  while (!Serial1) {
-//    delay(1);
-//  }
+                      
+ /*     
+  while (!Serial) {
+    delay(1);
+  }
+ */
  
   delay(100);
  
-  Serial.println("Feather LoRa TX Test!");
+  //Serial.println("Feather LoRa TX Test!");
+  
+  Serial1.println("Feather LoRa TX Test!");
  
   // manual reset
   digitalWrite(RFM95_RST, LOW);
@@ -81,7 +86,22 @@ void setup()
   
   // Defaults after init are 434.0MHz, 13dBm, Bw = 125 kHz, Cr = 4/5, Sf = 128chips/symbol, CRC on
 
-  //rf95.setModemConfig(RH_RF95::Bw125Cr48Sf4096);
+
+
+  RH_RF95::ModemConfig modem_config = {
+  0x78, // Reg 0x1D: BW=125kHz, Coding=4/8, Header=explicit... bits 7-4 govern BW, 3-1 governs C.R.
+        // LSB is header mode, leave as zero. 0x_2, 0x_4, 0x_6, 0x_8 represent C.R from 4/5->4/8. 
+        // All other values of bits 3-0 reserved. Useable BW ranges from 0x5_ (31.25kHz) to 0x9_ (500kHz).
+  0x94, // Reg 0x1E: Spread=512chips/symbol, CRC=enable...each bit increase in first nibble
+        // of the byte corresponds to doubling of spreading factor (change 0x94 to 0xC4 for max)
+        // Don't change bits 3-0. 
+  0x0C  // Reg 0x26: LowDataRate=On, Agc=On... only bits 3 and 2 have meaning. bit 3 = mobile node?
+        // bit 2 = automatic AGC?
+  };
+  
+  rf95.setModemRegisters(&modem_config);
+
+
 
   // The default transmitter power is 13dBm, using PA_BOOST.
   // If you are using RFM95/96/97/98 modules which uses the PA_BOOST transmitter pin, then 
@@ -89,9 +109,7 @@ void setup()
   rf95.setTxPower(23, false);
 }
  
-int16_t packetnum = 0;  // packet counter, we increment per xmission
-String payLoad;
-int timeSent = 0;
+
 
 
 // set vars for serial input function
@@ -101,14 +119,14 @@ char receivedChars[numChars];
 boolean newData = false;
 
 void receiveWithStartAndEndMarkers(){
-  static boolean receiveInprogress = false;
+  static boolean receiveInProgress = false;
   static byte ndx = 0;
   char startMarker = '<';
   char endMarker = '>';
   char rc;
 
   while (Serial1.available() > 0 && newData == false) {
-    rc = Serial.read();
+    rc = Serial1.read();
     if(receiveInProgress == true){
       if (rc != endMarker){
         receivedChars[ndx] = rc;
@@ -138,14 +156,10 @@ void showNewData(){
   }
 }
 
-        }
-      }
-    }
-  }
-}
 
-
-
+int16_t packetnum = 0;  // packet counter, we increment per xmission
+String payLoad;
+int timeSent = 0;
 
 void loop()
 {
@@ -172,17 +186,18 @@ void loop()
   }
   
   if(Serial1.available() > 0) {
-    receiveWithStartAndEndMarkers();
-    payLoad = receivedChars;
-    // payLoad = Serial1.readStringUntil(/r);
+    //receiveWithStartAndEndMarkers();
+    //showNewData();
+    //payLoad = receivedChars;
+    payLoad = Serial1.readString();
 
     Serial1.print("Received ");
     Serial1.print(payLoad);
-    if (payLoad == "setSlow"){
+/*    if (payLoad == "setSlow"){
       rf95.setModemConfig(RH_RF95::Bw125Cr48Sf4096);
       Serial1.println("Spreading factor 12, CRC 4/8");
     }
- 
+ */
     Serial1.println("Transmitting..."); // Send a message to rf95_server
   
     // make packet from float or string payload

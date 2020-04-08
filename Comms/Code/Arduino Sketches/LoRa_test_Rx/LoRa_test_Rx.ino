@@ -4,11 +4,7 @@
 #include <SPI.h>
 #include <RH_RF95.h>
  
-/* for Feather32u4 RFM9x
-#define RFM95_CS 8
-#define RFM95_RST 4
-#define RFM95_INT 7
-*/
+
  
 // for feather m0 RFM9x
 #define RFM95_CS 8
@@ -16,48 +12,13 @@
 #define RFM95_INT 3
 
  
-/* for shield 
-#define RFM95_CS 10
-#define RFM95_RST 9
-#define RFM95_INT 7
-*/
- 
-/* Feather 32u4 w/wing
-#define RFM95_RST     11   // "A"
-#define RFM95_CS      10   // "B"
-#define RFM95_INT     2    // "SDA" (only SDA/SCL/RX/TX have IRQ!)
-*/
- 
 /* Feather m0 w/wing 
 #define RFM95_RST     11   // "A"
 #define RFM95_CS      10   // "B"
 #define RFM95_INT     6    // "D"
 */
  
-#if defined(ESP8266)
-  /* for ESP w/featherwing */ 
-  #define RFM95_CS  2    // "E"
-  #define RFM95_RST 16   // "D"
-  #define RFM95_INT 15   // "B"
- 
-#elif defined(ESP32)  
-  /* ESP32 feather w/wing */
-  #define RFM95_RST     27   // "A"
-  #define RFM95_CS      33   // "B"
-  #define RFM95_INT     12   //  next to A
- 
-#elif defined(NRF52)  
-  /* nRF52832 feather w/wing */
-  #define RFM95_RST     7   // "A"
-  #define RFM95_CS      11   // "B"
-  #define RFM95_INT     31   // "C"
-  
-#elif defined(TEENSYDUINO)
-  /* Teensy 3.x w/wing */
-  #define RFM95_RST     9   // "A"
-  #define RFM95_CS      10   // "B"
-  #define RFM95_INT     4    // "C"
-#endif
+
  
  
 // Change to 434.0 or other frequency, must match RX's freq!
@@ -78,13 +39,18 @@ void setup()
   pinMode(RFM95_RST, OUTPUT);
   digitalWrite(RFM95_RST, HIGH);
  
-  Serial.begin(115200);
-  //while (!Serial) {
-  //  delay(1);
-  //}
+  Serial.begin(9600);
+
+
+  while (!Serial) {
+    delay(1);
+  }
+
+
   delay(100);
- 
-  Serial.println("Feather LoRa RX Test!");
+  
+  Serial.println("Feather LoRa Pinger-Backer!");
+
  
   // manual reset
   digitalWrite(RFM95_RST, LOW);
@@ -111,8 +77,25 @@ void setup()
   // The default transmitter power is 13dBm, using PA_BOOST.
   // If you are using RFM95/96/97/98 modules which uses the PA_BOOST transmitter pin, then
   // you can set transmitter powers from 5 to 23 dBm:
+
+
+
+  RH_RF95::ModemConfig modem_config = {
+  0x78, // Reg 0x1D: BW=125kHz, Coding=4/8, Header=explicit... bits 7-4 govern BW, 3-1 governs C.R.
+        // LSB is header mode, leave as zero. 0x_2, 0x_4, 0x_6, 0x_8 represent C.R from 4/5->4/8. 
+        // All other values of bits 3-0 reserved. Useable BW ranges from 0x5_ (31.25kHz) to 0x9_ (500kHz).
+  0x94, // Reg 0x1E: Spread=512chips/symbol, CRC=enable...each bit increase in first nibble
+        // of the byte corresponds to doubling of spreading factor (change 0x94 to 0xC4 for max)
+        // Don't change bits 3-0. 
+  0x0C  // Reg 0x26: LowDataRate=On, Agc=On... only bits 3 and 2 have meaning. bit 3 = mobile node?
+        // bit 2 = automatic AGC?
+  };
+
   
   //rf95.setModemConfig(RH_RF95::Bw125Cr48Sf4096);
+  rf95.setModemRegisters(&modem_config);
+
+
 
   //set to maximum possible output power
   rf95.setTxPower(23, false);
@@ -139,12 +122,13 @@ void loop()
        Serial.print("RSSI: ");
       Serial.println(rf95.lastRssi(), DEC);
 
-
+/*
       if(buf[0:6]=="setSlow"){
         rf95.setModemConfig(RH_RF95::Bw125Cr48Sf4096);
-        Serial1.println("Spreading factor 12, CRC 4/8");
+        Serial.println("Spreading factor 12, CRC 4/8");
         }
       }
+*/
       // Send a reply
       uint8_t data[] = "You sent me ";
       rf95.send(data, sizeof(data));
