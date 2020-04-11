@@ -115,7 +115,7 @@ void setup()
 }
 
 void transmit(char msg[], int msgLength){
-  if (!rf95.sendtoWait((uint8_t *)msg, msgLength, 1)){
+  if (!rf95.sendtoWait((uint8_t *)msg, msgLength + 1, 1)){
     hsp.println("Transmission failed. No ACK received.");
   }
   else{

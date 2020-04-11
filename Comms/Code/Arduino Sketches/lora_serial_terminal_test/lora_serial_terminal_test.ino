@@ -137,7 +137,7 @@ void setup()
 // set vars for serial input function
 const byte numChars = 255;  // limits read to 255 bytes (full size of serial buffer
                             // and max length of a lora payload)
-char payLoad[numChars];
+char msgBuffer[numChars];
 boolean newData = false;
 int packetSize;
 int timeSent = 0;
@@ -148,16 +148,20 @@ void receiveLine() {
   char rc;
   while (hsp.available() > 0) {
     rc = hsp.read();
-    if ((rc != endMarker) && (ndx < (numChars - 1))) {
-      payLoad[ndx] = rc;
+
+// -----------------------NEED ERROR CORRECTION IF INPUT > 253 CHARS-------------
+    
+    if ((rc != endMarker) && (ndx < (numChars - 2))) {
+      msgBuffer[ndx] = rc;
       ndx++;
       if (ndx >= numChars) {
         ndx = numChars - 1;
       }
     }
     else {
-      payLoad[ndx] = '\0';
-      packetSize = ndx + 1;
+      msgBuffer[ndx] = '\n';
+      ndx++;
+      msgBuffer[ndx] = '\0';
       ndx = 0;
       newData = true;
     }
@@ -167,7 +171,7 @@ void receiveLine() {
 //----------------------LoRa methods---------------------------------------------
 
 void transmit(char msg[], int msgLength){
-  if (!rf95.sendtoWait((uint8_t *)msg, msgLength, 1)){
+  if (!rf95.sendtoWait((uint8_t *)msg, msgLength+1, 1)){
     hsp.println("Transmission failed. No ACK received.");
   }
   else{
@@ -177,10 +181,10 @@ void transmit(char msg[], int msgLength){
 
 void transmitLine() {
   if (newData == true) {
-    hsp.println(payLoad);
+    hsp.println(msgBuffer);
     newData = false;
     hsp.println("Transmitting...");             // Send a message to rf95_server
-    transmit(payLoad, packetSize);  //send() needs uint8_t so we cast it
+    transmit(msgBuffer, strlen(msgBuffer));  //send() needs uint8_t so we cast it
     timeSent = millis();
   }
 }
@@ -190,9 +194,9 @@ void battLevel() {
   vBatt *= 2;           // undo voltage divider
   vBatt *= 3.3;         // full scale reference
   vBatt /= 1023;        // undo analogRead() 10bit integer scaling
-  char cBuff[10];
+  char cBuff[20];
   sprintf(cBuff, "%6.3f", vBatt); // cast voltage as c style string
-  char voltagePacket[numChars] = "";
+  char voltagePacket[] = "";
   strcat(voltagePacket, "Current battery voltage: ");
   strcat(voltagePacket, cBuff);
   transmit(voltagePacket, strlen(voltagePacket));
