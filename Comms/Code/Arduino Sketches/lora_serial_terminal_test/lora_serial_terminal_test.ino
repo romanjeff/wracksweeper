@@ -8,7 +8,10 @@
 #include <SPI.h>
 #include <RH_RF95.h>
 #include <avr/dtostrf.h>
+#include <RHReliableDatagram.h>
 
+
+//------------------------DEBUG DEFINITIONS---------------------------------------------
 
 #define DEBUG
 
@@ -22,6 +25,8 @@ auto hsp = Serial; // use USB serial in debug
 auto hsp = Serial1; // normal operation use UART
 #endif
 
+//-------------------------PIN DEFINITIONS------------------------------------------------
+
 // For battery check, USB power check.
 #define VBATPIN A7 // pin D9 on feather board
 #define USB_PRESENT A2
@@ -34,15 +39,11 @@ auto hsp = Serial1; // normal operation use UART
 #define RFM95_RST 4
 #define RFM95_INT 3
 
-
-
-
 /* for shield
   #define RFM95_CS 10
   #define RFM95_RST 9
   #define RFM95_INT 7
 */
-
 
 /* Feather m0 w/wing
   #define RFM95_RST     11   // "A"
@@ -50,12 +51,21 @@ auto hsp = Serial1; // normal operation use UART
   #define RFM95_INT     6    // "D"
 */
 
+//--------------------------LORA SETTINGS DEFS---------------------------------------------
 
 // Change to 434.0 or other frequency, must match RX's freq!
 #define RF95_FREQ 915.0
+#define TIMEOUT 4000
+#define RETRIES 5
+#define SERVER_ADDRESS 1            // AUV radio is the server
+#define CLIENT_ADDRESS 2            // shore pc is the client
 
 // Singleton instance of the radio driver
-RH_RF95 rf95(RFM95_CS, RFM95_INT);
+RH_RF95 driver(RFM95_CS, RFM95_INT);                // driver is radio hardware driver
+RHReliableDatagram rf95(driver,SERVER_ADDRESS);     // rf95 is the msg manager
+
+//--------------------------Ping Time Variables--------------------------------------------
+
 
 unsigned long lastMsg;
 unsigned long timeSince;
@@ -74,14 +84,9 @@ void setup()
   pinMode(USB_PRESENT, INPUT);      // check to see if USB power is present
   pinMode(VBATPIN, INPUT);          // monitor battery level
 
-  hsp.begin(9600);  // Feather M0 hardware UART tx/rx are tied to "Serial1"
-  // and not Serial, use as with Serial library.
-
+  hsp.begin(9600);  // hsp = hardware serial port. usb in debug mode, uart in prod. mode.
   debug_hold();
-
   delay(100);
-
-
   hsp.println("Feather LoRa TX Test!");
 
   // manual reset
@@ -100,15 +105,15 @@ void setup()
   hsp.println("LoRa radio init OK!");
 
   // Defaults after init are 434.0MHz, modulation GFSK_Rb250Fd250, +13dbM
-  if (!rf95.setFrequency(RF95_FREQ)) {
+  if (!driver.setFrequency(RF95_FREQ)) {
     hsp.println("setFrequency failed");
     while (1);
   }
+  
   hsp.print("Set Freq to: "); hsp.println(RF95_FREQ);
 
   // Defaults after init are 434.0MHz, 13dBm, Bw = 125 kHz, Cr = 4/5, Sf = 128chips/symbol, CRC on
-
-
+  // Change this to taste by editing modem_config below:
 
   RH_RF95::ModemConfig modem_config = {
     0x72, // Reg 0x1D: BW=125kHz, Coding=4/8, Header=explicit... bits 7-4 govern BW, 3-1 governs C.R.
@@ -121,33 +126,26 @@ void setup()
     // bit 2 = automatic AGC?
   };
 
-  rf95.setModemRegisters(&modem_config);
-
-
-
-  // The default transmitter power is 13dBm, using PA_BOOST.
-  // If you are using RFM95/96/97/98 modules which uses the PA_BOOST transmitter pin, then
-  // you can set transmitter powers from 5 to 23 dBm:
-  rf95.setTxPower(23, false);
+  driver.setModemRegisters(&modem_config);      // give it the configuration we specified
+  driver.setTxPower(23, false);                 // don't touch this. max output power, no PA_BOOST pin avail.
+  rf95.setRetries(RETRIES);
+  rf95.setTimeout(TIMEOUT);
 }
 
 //------------------Serial Input Methods---------------------------------------------
 
 // set vars for serial input function
-const byte numChars = 255; //limits read to 255 bytes (full size of serial buffer
-// and max length of a lora payload)
+const byte numChars = 255;  // limits read to 255 bytes (full size of serial buffer
+                            // and max length of a lora payload)
 char payLoad[numChars];
 boolean newData = false;
 int packetSize;
 int timeSent = 0;
 
 void receiveLine() {
-
   static byte ndx = 0;
   char endMarker = '\n';
   char rc;
-
-
   while (hsp.available() > 0) {
     rc = hsp.read();
     if ((rc != endMarker) && (ndx < (numChars - 1))) {
@@ -166,14 +164,23 @@ void receiveLine() {
   }
 }
 
+//----------------------LoRa methods---------------------------------------------
 
-void sendLine() {
+void transmit(char msg[], int msgLength){
+  if (!rf95.sendtoWait((uint8_t *)msg, msgLength, 1)){
+    hsp.println("Transmission failed. No ACK received.");
+  }
+  else{
+    hsp.println("Transmission successful.");
+  }
+}
+
+void transmitLine() {
   if (newData == true) {
     hsp.println(payLoad);
     newData = false;
     hsp.println("Transmitting...");             // Send a message to rf95_server
-    rf95.send((uint8_t *)payLoad, packetSize);  //send() needs uint8_t so we cast it
-    rf95.waitPacketSent();
+    transmit(payLoad, packetSize);  //send() needs uint8_t so we cast it
     timeSent = millis();
   }
 }
@@ -188,9 +195,7 @@ void battLevel() {
   char voltagePacket[numChars] = "";
   strcat(voltagePacket, "Current battery voltage: ");
   strcat(voltagePacket, cBuff);
-  rf95.send((uint8_t *)voltagePacket, strlen(voltagePacket));
-  rf95.waitPacketSent();
-  delay(10);
+  transmit(voltagePacket, strlen(voltagePacket));
 }
 
 
@@ -202,9 +207,7 @@ void battCheck() {
   if (cmpVoltage < USB_VOLTAGE) {
     char helpMsg[numChars] = "";
     strcat(helpMsg, "The power system has failed. Please come find me. I'm scared.");
-    rf95.send((uint8_t *)helpMsg, strlen(helpMsg));
-    rf95.waitPacketSent();
-    delay(10);
+    transmit(helpMsg, strlen(helpMsg));
     battLevel();
     delay(30000);       // wait 30 seconds
   }
@@ -221,9 +224,16 @@ void loop()
     battCheck();            // check the power supply
     uint8_t buf[RH_RF95_MAX_MESSAGE_LEN];
     uint8_t len = sizeof(buf);
-
+    uint8_t from;
+    
     if (rf95.waitAvailableTimeout(1000)) {
       // Should be a reply message for us now
+      if(rf95.recvfromAck(buf, &len, &from)){
+        hsp.print("Message from client: "); hsp.println(from);
+        hsp.println((char*)buf);
+      }
+  
+      /*    
       if (rf95.recv(buf, &len)) {
         hsp.print((millis() - timeSent) / 1000.0);
         hsp.println(" seconds ping time.");
@@ -237,12 +247,14 @@ void loop()
         hsp.println("Receive failed.");
         timeSent = millis();
       }
+      */
+      
     }
   }
 
   if (hsp.available() > 0) {
     receiveLine();
-    sendLine();
+    transmitLine();
   }
 
 }

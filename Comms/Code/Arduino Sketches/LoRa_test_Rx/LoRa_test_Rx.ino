@@ -3,6 +3,7 @@
  
 #include <SPI.h>
 #include <RH_RF95.h>
+#include <RHReliableDatagram.h>
 #include <stdlib.h>  // for strtok() function to split strings
 #include <string.h>  // for strstr() stringsearch
  
@@ -13,6 +14,7 @@
 #ifdef DEBUG
 auto hsp = Serial; // use USB serial in debug
 #define debug_print(x) hsp.println(x); // provide method for tracing errors
+#define debug_hold() while(!hsp){delay(1);};
 #else
 auto hsp = Serial1; // normal operation use UART
 #endif
@@ -32,12 +34,19 @@ auto hsp = Serial1; // normal operation use UART
  
 
  
- 
+//--------------------------LORA SETTINGS DEFS---------------------------------------------
+
 // Change to 434.0 or other frequency, must match RX's freq!
 #define RF95_FREQ 915.0
- 
+#define TIMEOUT 4000
+#define RETRIES 5
+#define SERVER_ADDRESS 1            // AUV radio is the server
+#define CLIENT_ADDRESS 2            // shore pc is the client
+
 // Singleton instance of the radio driver
-RH_RF95 rf95(RFM95_CS, RFM95_INT);
+RH_RF95 driver(RFM95_CS, RFM95_INT);                // driver is radio hardware driver
+RHReliableDatagram rf95(driver,SERVER_ADDRESS);     // rf95 is the msg manager
+
  
 // Blinky on receipt
 #define LED 13
@@ -52,13 +61,7 @@ void setup()
   digitalWrite(RFM95_RST, HIGH);
  
   hsp.begin(9600);
-
-
-  while (!hsp) {
-    delay(1);
-  }
-
-
+  debug_hold();
   delay(100);
   
   hsp.println("Feather LoRa Pinger-Backer!");
@@ -78,17 +81,14 @@ void setup()
   hsp.println("LoRa radio init OK!");
  
   // Defaults after init are 434.0MHz, modulation GFSK_Rb250Fd250, +13dbM
-  if (!rf95.setFrequency(RF95_FREQ)) {
+  if (!driver.setFrequency(RF95_FREQ)) {
     hsp.println("setFrequency failed");
     while (1);
   }
   hsp.print("Set Freq to: "); hsp.println(RF95_FREQ);
  
   // Defaults after init are 434.0MHz, 13dBm, Bw = 125 kHz, Cr = 4/5, Sf = 128chips/symbol, CRC on
- 
-  // The default transmitter power is 13dBm, using PA_BOOST.
-  // If you are using RFM95/96/97/98 modules which uses the PA_BOOST transmitter pin, then
-  // you can set transmitter powers from 5 to 23 dBm:
+  // Change this to taste by editing modem_config below:
 
 
 
@@ -105,15 +105,23 @@ void setup()
 
   
   //rf95.setModemConfig(RH_RF95::Bw125Cr48Sf4096);
-  rf95.setModemRegisters(&modem_config);
-
-
-
+  driver.setModemRegisters(&modem_config);
+  
   //set to maximum possible output power
-  rf95.setTxPower(23, false);
+  driver.setTxPower(23, false);
+
+  rf95.setRetries(RETRIES);
+  rf95.setTimeout(TIMEOUT);
 }
 
-
+void transmit(char msg[], int msgLength){
+  if (!rf95.sendtoWait((uint8_t *)msg, msgLength, 1)){
+    hsp.println("Transmission failed. No ACK received.");
+  }
+  else{
+    hsp.println("Transmission successful.");
+  }
+}
 
  
 void loop()
@@ -124,7 +132,17 @@ void loop()
     // Should be a message for us now
     uint8_t buf[RH_RF95_MAX_MESSAGE_LEN];
     uint8_t len = sizeof(buf);
- 
+    uint8_t from;
+    if(rf95.recvfromAck(buf, &len, &from)){
+        hsp.print("Message from client: "); hsp.println(from);
+        hsp.println((char*)buf);
+        
+    }
+    else{
+      hsp.println("Receive failed.");
+    }
+      
+    /*
     if (rf95.recv(buf, &len))
     {
       char *s; // pointer for string search
@@ -153,9 +171,8 @@ void loop()
     }
     else
     {
-
       hsp.println("Receive failed.");
-
     }
+    */
   }
 }
