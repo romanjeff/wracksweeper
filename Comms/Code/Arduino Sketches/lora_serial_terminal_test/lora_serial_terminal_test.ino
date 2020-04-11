@@ -7,6 +7,7 @@
 
 #include <SPI.h>
 #include <RH_RF95.h>
+#include <avr/dtostrf.h>
 
 
 #define DEBUG
@@ -21,6 +22,11 @@ auto hsp = Serial; // use USB serial in debug
 auto hsp = Serial1; // normal operation use UART
 #endif
 
+// For battery check, USB power check.
+#define VBATPIN A7 // pin D9 on feather board
+#define USB_PRESENT A2
+#define USB_VOLTAGE 2.2   // half of maximum battery voltage. if USB pwr is gone
+// the USB pin will read vBatt instead of 4.6-5.5.
 
 
 // for feather m0
@@ -64,6 +70,9 @@ void setup()
   lastMsg = millis();
   pinMode(RFM95_RST, OUTPUT);
   digitalWrite(RFM95_RST, HIGH);
+
+  pinMode(USB_PRESENT, INPUT);      // check to see if USB power is present
+  pinMode(VBATPIN, INPUT);          // monitor battery level
 
   hsp.begin(9600);  // Feather M0 hardware UART tx/rx are tied to "Serial1"
   // and not Serial, use as with Serial library.
@@ -141,7 +150,7 @@ void receiveLine() {
 
   while (hsp.available() > 0) {
     rc = hsp.read();
-    if (rc != endMarker) {
+    if ((rc != endMarker) && (ndx < (numChars - 1))) {
       payLoad[ndx] = rc;
       ndx++;
       if (ndx >= numChars) {
@@ -163,12 +172,43 @@ void sendLine() {
     hsp.println(payLoad);
     newData = false;
     hsp.println("Transmitting...");             // Send a message to rf95_server
-    rf95.send((uint8_t *)payLoad,packetSize);   //send() needs uint8_t so we cast it
+    rf95.send((uint8_t *)payLoad, packetSize);  //send() needs uint8_t so we cast it
     rf95.waitPacketSent();
     timeSent = millis();
   }
 }
 
+void battLevel() {
+  float vBatt = analogRead(VBATPIN);
+  vBatt *= 2;           // undo voltage divider
+  vBatt *= 3.3;         // full scale reference
+  vBatt /= 1023;        // undo analogRead() 10bit integer scaling
+  char cBuff[10];
+  sprintf(cBuff, "%6.3f", vBatt); // cast voltage as c style string
+  char voltagePacket[numChars] = "";
+  strcat(voltagePacket, "Current battery voltage: ");
+  strcat(voltagePacket, cBuff);
+  rf95.send((uint8_t *)voltagePacket, strlen(voltagePacket));
+  rf95.waitPacketSent();
+  delay(10);
+}
+
+
+
+void battCheck() {
+  float cmpVoltage = analogRead(USB_PRESENT);
+  cmpVoltage *= 3.3;
+  cmpVoltage /= 1023;
+  if (cmpVoltage < USB_VOLTAGE) {
+    char helpMsg[numChars] = "";
+    strcat(helpMsg, "The power system has failed. Please come find me. I'm scared.");
+    rf95.send((uint8_t *)helpMsg, strlen(helpMsg));
+    rf95.waitPacketSent();
+    delay(10);
+    battLevel();
+    delay(30000);       // wait 30 seconds
+  }
+}
 
 //--------------------------------Mainline-----------------------------------
 
@@ -178,6 +218,7 @@ void sendLine() {
 void loop()
 {
   if (hsp.available() == 0) {
+    battCheck();            // check the power supply
     uint8_t buf[RH_RF95_MAX_MESSAGE_LEN];
     uint8_t len = sizeof(buf);
 
@@ -192,12 +233,10 @@ void loop()
         hsp.print("SNR: ");
         hsp.println(rf95.lastSNR(), DEC);
       }
-
       else {
         hsp.println("Receive failed.");
         timeSent = millis();
       }
-
     }
   }
 
