@@ -1,6 +1,7 @@
 // RecordData.cpp : Defines the entry point for the console application.
 //
-
+#include <netinet/ip_icmp.h>
+#include <sys/select.h>
 #include <sys/socket.h>
 #include <string>
 #include <stdio.h>
@@ -165,10 +166,7 @@ int main(int argc, char * argv[], char * envp[])
 
     if(sonarSwitches.StartGain<0)sonarSwitches.StartGain=0;
     if(sonarSwitches.StartGain>40)sonarSwitches.StartGain=40;//limit 0-40dB
-	else
-	{
-		outfile << 0xFE << endl;
-	}
+    
     m_nRange = sonarSwitches.Range;
     m_nRangeIndex = GetRangeIndex(m_nRange);
 
@@ -192,6 +190,7 @@ int main(int argc, char * argv[], char * envp[])
 
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(portnum);
+    server_addr.sin_addr.s_addr = inet_addr("192.168.0.5");
     inet_pton(AF_INET, ip, &server_addr.sin_addr);
 
 
@@ -212,6 +211,7 @@ int main(int argc, char * argv[], char * envp[])
 
         send(client, (void *)&(sonarSwitches), 27, 0);
         //index=client.Send((void *)&(sonarSwitches), 27, 0);
+	
         while(1)
         {
             sleep(300);
@@ -219,8 +219,9 @@ int main(int argc, char * argv[], char * envp[])
             //******************************************************************
             //******************************************************************
             recv(client, (void *)& Buffer, 1013, 0);
+		cout << "test" << endl; 
             //index=client.Receive((void *)&(m_ReceiveBuf), 1013, 0);
-
+		   	
             if(index>=1013)
             {
 
@@ -232,7 +233,8 @@ int main(int argc, char * argv[], char * envp[])
                     for (i = 0; i< 1000 ; i++)//flip the port side data 1000 bytes
                         m_DataBuf[999-i]=m_ReceiveBuf[i+12];
                 }
-                if(sonarSwitches.Pack_Number==2 )
+                
+		if(sonarSwitches.Pack_Number==2 )
                 {
                     //get the starboard side data
                     for (i = 0; i< 12; i++)
@@ -242,7 +244,7 @@ int main(int argc, char * argv[], char * envp[])
 
                     //write one ping data to file
                     //*********************************
-    
+   			
                     WriteOnePingData(outfile);
                 }
                 
@@ -356,7 +358,7 @@ void WriteOnePingData(fstream& outfile)
       if(outfile)
       {
 	      outfile << Buf << endl;
-          //outfile.write(Buf, 1000);
+          //outfile.write((char*)Buf, 1000);
           outfile.flush();
       }
 
@@ -369,7 +371,7 @@ void WriteOnePingData(fstream& outfile)
       if(outfile)
       {
 	      outfile << Buf << endl;
-          //outfile.write(Buf,1000);
+          //outfile.write((char*)Buf,1000);
           outfile.flush();
       }
 
@@ -384,8 +386,8 @@ void WriteOnePingData(fstream& outfile)
 
       if(outfile)
       {
-	      outfile << Buf << endl;
-          //outfile.write(Buf,96);
+	  outfile << Buf << endl;
+          //outfile.write(i(char*)Buf,96);
           outfile.flush();
       }
 
