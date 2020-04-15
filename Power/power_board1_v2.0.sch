@@ -5834,7 +5834,7 @@ Source: &lt;a href="http://www.mouser.com/ds/2/276/0430450212_PCB_HEADERS-142866
 <part name="GND20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND21" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND22" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="XL6009_BOOST_CONV_DAUGHTERBOARD" library="userlib" deviceset="CP8-ADJ" device=""/>
+<part name="XL6009_BOOST_CONV_DAUGHTERBOARD" library="userlib" deviceset="CP8-ADJ" device="" value="XL6009"/>
 <part name="GND26" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND27" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="15k"/>
