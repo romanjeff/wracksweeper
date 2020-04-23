@@ -1,5 +1,5 @@
 
-// This sketch transmits up to 255 bytes of serial input data from UART or USB and 
+// This sketch transmits up to 255 bytes of serial input data from UART or USB and
 // sends the data to another LoRa radio. There is the option to change the transmission
 // settings for both radios, and all transmissions are sent using reliable datagrams
 // with acknowledge and CRC. This sketch also monitors the voltage on the battery pin,
@@ -10,17 +10,15 @@
 //-------------------THIS IS INTENDED TO BE ONBOARD THE AUV-------------------------------
 
 #include <SPI.h>
-#include <RH_RF95.h>
+#include <RH_RF95.h> // this and RHReliableDatagram from https://github.com/adafruit/RadioHead
 #include <avr/dtostrf.h>
 #include <RHReliableDatagram.h>
 #include <string.h>
-#include <MemoryFree.h>
-
+#include <MemoryFree.h>  // get from https://github.com/mpflaga/Arduino-MemoryFree 
 
 //------------------------DEBUG DEFINITIONS---------------------------------------------
 
 #define DEBUG
-
 
 // choose which hardware serial port by toggling debug mode
 #ifdef DEBUG
@@ -29,6 +27,7 @@ auto hsp = Serial; // use USB serial in debug
 #define debug_print(x) hsp.println(x); // provide method for tracing errors
 #define debug_hold() while(!hsp){delay(1);};
 #else
+bool db = false;
 auto hsp = Serial1; // normal operation use UART
 #endif
 
@@ -51,10 +50,21 @@ auto hsp = Serial1; // normal operation use UART
 
 // Change to 434.0 or other frequency, must match RX's freq!
 #define RF95_FREQ 915.0
-#define TIMEOUT 6000
+#define TIMEOUT 8000
 #define RETRIES 5
-#define SERVER_ADDRESS 1            // AUV radio is the server
-#define CLIENT_ADDRESS 2            // shore pc is the client
+
+#define SHORE_CLIENT        /* UNCOMMENT TO MAKE SHORE CLIENT */
+
+#ifdef SHORE_CLIENT
+bool SYSTEM_CHECK = false;
+#define MY_ADDRESS 2            // shore pc is the client
+#define REMOTE_ADDRESS 1
+#else
+bool SYSTEM_CHECK = true;
+#define MY_ADDRESS 1
+#define REMOTE_ADDRESS 2
+#endif
+
 
 // SETTING OPTIONS FOR REGISTER 1D
 
@@ -104,7 +114,11 @@ static t_symstruct sfLUT[] = {
 
 // Singleton instance of the radio driver
 RH_RF95 driver(RFM95_CS, RFM95_INT);                // driver is radio hardware driver
-RHReliableDatagram rf95(driver, CLIENT_ADDRESS);    // rf95 is the msg manager
+RHReliableDatagram rf95(driver, MY_ADDRESS);    // rf95 is the msg manager
+
+//------------------------THIS SKETCH IS THE CLIENT(ADDRESS 2)----------------------------
+//-------------IT IS IMPORTANT NOT TO USE THE SAME SKETCH FOR BOTH RADIOS-----------------
+//-------------------THIS IS INTENDED TO BE ONBOARD THE AUV-------------------------------
 
 //---------------------------------SETUP----------------------------------------------------------
 
@@ -119,7 +133,7 @@ void setup()
   hsp.begin(9600);  // hsp = hardware serial port. usb in debug mode, uart in prod. mode.
   debug_hold();
   delay(100);
-  hsp.println("Feather LoRa TX Test!");
+  hsp.println("Welcome to the AUV Remote Command Center.");
 
   // manual reset
   digitalWrite(RFM95_RST, LOW);
@@ -165,6 +179,7 @@ void setup()
 // set vars for serial input function
 const byte numChars = 255;  // limits read to 255 bytes (full size of serial buffer
 // and max length of a lora payload)
+const int totalMem = 262144;
 byte msgBuffer[numChars];   // Serial input buffer
 boolean newData = false;
 byte set[3];      // global array to hold the settings
@@ -175,6 +190,8 @@ byte from;
 const char MODE[] = "-changemode\0";
 const char RCVD[] = "-received-\0";
 int memDiff;
+int lastMem = freeMemory();
+float memPct;
 
 
 //------------------Serial Input Methods----------------------------------------------------
@@ -233,23 +250,23 @@ int keyfromstring(char *key, int param)  // param = 0 for bw/cr, 1 for sf
   return -1;
 }
 
-
 //------------------------------LoRa methods---------------------------------------------
-
 void transmit(byte msg[], int msgLength) {
-  if (!rf95.sendtoWait((uint8_t *)msg, msgLength + 1, SERVER_ADDRESS)) {
+  int packetTime = millis();
+  if (!rf95.sendtoWait((uint8_t *)msg, msgLength + 1, REMOTE_ADDRESS)) {
     hsp.println("Transmission failed. No ACK received.");
   }
 
   else {
+    packetTime = millis() - packetTime;
     hsp.println("Transmission successful. Bytes sent: ");
-
     for (int i = 0; i <= msgLength; i++) {
       hsp.print(msg[i], HEX);
     }
-
     hsp.print("\n");
+    hsp.print(packetTime / 1000.0); hsp.println(" seconds packet time.");
   }
+
 }
 
 //----------------------------Initiate Settings Change Handshake-------------------
@@ -304,12 +321,11 @@ int modeChangeLocal(byte msg[]) {
     c++;
   }
 
-  
   if (set[2] == 1) {
     return -1;
   }
 
-  if (!rf95.sendtoWait(msg, strlen((char*)msg) + 1, SERVER_ADDRESS)) {
+  if (!rf95.sendtoWait(msg, strlen((char*)msg) + 1, REMOTE_ADDRESS)) {
     hsp.println("No Ack received, cannot change mode.");
     return -1;
   }
@@ -380,7 +396,7 @@ int modeChangeRemote(byte msg[]) {
   debug_print(newSF);
   debug_print(confirmation);
   delay(100);
-  if (!rf95.sendtoWait((uint8_t *)confirmation, strlen(confirmation) + 1, CLIENT_ADDRESS)) {
+  if (!rf95.sendtoWait((uint8_t *)confirmation, strlen(confirmation) + 1, REMOTE_ADDRESS)) {
     hsp.println("No Ack received, cannot change mode.");
     return -1;
   }
@@ -395,6 +411,7 @@ int modeChangeRemote(byte msg[]) {
     delay(10);
     driver.setModemRegisters(&new_modem_config);      // give it the configuration we specified
     delay(10);
+
     if (db) {
       driver.printRegisters();
     }
@@ -402,6 +419,8 @@ int modeChangeRemote(byte msg[]) {
   }
   return 0;
 }
+
+//----------------Transmit received Serial data or initiate settings change locally-----------
 
 void transmitLine() {
   if (newData == true) {
@@ -414,7 +433,7 @@ void transmitLine() {
       if (modeChangeLocal(msgBuffer) == 0) {
         hsp.println("Acknowledge received. Will change settings once handshake is complete.");
       }
-      else{
+      else {
         hsp.println("Attempt to change transmission settings failed.");
       }
     }
@@ -423,7 +442,6 @@ void transmitLine() {
       transmit(msgBuffer, strlen((char*)msgBuffer));  //send() needs uint8_t so we cast it
     }
   }
-
 }
 
 //--------------------Battery Monitoring Functions-----------------------------
@@ -441,8 +459,6 @@ void battLevel() {
   transmit((uint8_t*)voltagePacket, strlen(voltagePacket));
 }
 
-
-
 void battCheck() {
   float cmpVoltage = analogRead(USB_PRESENT);
   cmpVoltage *= 3.3;
@@ -458,17 +474,22 @@ void battCheck() {
 
 //--------------------------------Mainline-----------------------------------
 
-
-
-
 void loop()
 {
+  if (hsp.available() > 0) {
+    receiveLine();
+    transmitLine();
+
+  }
+
   if (hsp.available() == 0) {
-    battCheck();            // check the power supply
+    if (SYSTEM_CHECK) {
+      battCheck();            // check the power supply
+    }
     uint8_t buf[numChars];
     uint8_t len = sizeof(buf);
     uint8_t from;
-    
+
     if (rf95.available()) {
       // Should be a reply message for us now
       if (rf95.recvfromAck(buf, &len, &from)) {
@@ -478,17 +499,26 @@ void loop()
         hsp.println(driver.lastRssi(), DEC);
         hsp.print("SNR: ");
         hsp.println(driver.lastSNR(), DEC);
-        memDiff = lastMem-freeMemory();
+        int freeMem = freeMemory();
+        memDiff = lastMem - freeMem;
         hsp.print("Memory used since last receive: ");
         hsp.println(memDiff);
         hsp.print("Total memory left: ");
-        hsp.printline(freeMemory());
+        hsp.println(freeMem);
+        memPct = ((freeMem / 262144.0)*100.0);
+        hsp.print(memPct); hsp.println("% memory left");
         char tmp[numChars];
         for (int i = 0; i < numChars; i++) {
           tmp[i] = (char)buf[i];
         }
         char *token = strtok(tmp, " ");
         while (token != NULL) {
+          if (strcmp(token, MODE) == 0) {
+            debug_print("Request to change settings.");
+            if (modeChangeRemote(buf) == 0) {
+              hsp.println("Transmission settings changed successfully.");
+            }
+          }
           if (strcmp(token, RCVD) == 0) {
 
             RH_RF95::ModemConfig new_modem_config = {
@@ -499,10 +529,10 @@ void loop()
             delay(100);
             driver.setModemRegisters(&new_modem_config);      // give it the configuration we specified
             delay(100);
-            
+
             if (db) {
               driver.printRegisters();
-              }
+            }
 
             hsp.println("confirmed. Mode has been changed to new settings.");
           }
@@ -511,11 +541,4 @@ void loop()
       }
     }
   }
-
-  if (hsp.available() > 0) {
-    receiveLine();
-    transmitLine();
-
-  }
-
 }

@@ -1,11 +1,18 @@
 // This sketch is a pingback program to respond to a ping from the LoRa radio
 // It sends back the exact message that it receives.
 
+//------------------------THIS SKETCH IS THE SERVER(ADDRESS 1)----------------------------
+//-------------IT IS IMPORTANT NOT TO USE THE SAME SKETCH FOR BOTH RADIOS-----------------
+//-------------------THIS IS INTENDED TO BE ONBOARD THE AUV-------------------------------
+
 #include <SPI.h>
 #include <RH_RF95.h>
 #include <RHReliableDatagram.h>
 #include <avr/dtostrf.h>
 #include <string.h>  // for strstr() stringsearch
+
+
+//------------------------DEBUG DEFINITIONS---------------------------------------------
 
 #define DEBUG
 
@@ -85,6 +92,10 @@ static t_symstruct sfLUT[] = {
 RH_RF95 driver(RFM95_CS, RFM95_INT);                // driver is radio hardware driver
 RHReliableDatagram rf95(driver, SERVER_ADDRESS);    // rf95 is the msg manager
 
+//------------------------THIS SKETCH IS THE SERVER(ADDRESS 1)----------------------------
+//-------------IT IS IMPORTANT NOT TO USE THE SAME SKETCH FOR BOTH RADIOS-----------------
+//-------------------THIS IS INTENDED TO BE ONBOARD THE AUV-------------------------------
+
 // Blinky on receipt
 #define LED 13
 
@@ -123,7 +134,7 @@ void setup()
   hsp.print("Set Freq to: "); hsp.println(RF95_FREQ);
 
   RH_RF95::ModemConfig modem_config = {
-    bw125cr45,
+    bw500cr45,
     sf128,
     0x0C  // LEAVE THIS ALONE
   };
@@ -139,34 +150,64 @@ void setup()
 
 
 
+//------------------------------------------------------------------------------------------
 
-byte set[3];
-const byte numChars = 255;
+//----------------------------Global Variables----------------------------------------------
+
+// set vars for serial input function
+const byte numChars = 255;  // limits read to 255 bytes (full size of serial buffer
+// and max length of a lora payload)
+byte msgBuffer[numChars];   // Serial input buffer
+boolean newData = false;
+byte set[3];      // global array to hold the settings
+byte buf[numChars];      // receive buffer
+byte len = sizeof(buf);
+byte from;
+// command keywords
 const char MODE[] = "-changemode\0";
+const char RCVD[] = "-received-\0";
+int memDiff;
 
-void transmit(byte msg[], int msgLength) {
-  if (!rf95.sendtoWait((uint8_t *)msg, msgLength + 1, CLIENT_ADDRESS)) {
-    hsp.println("Transmission failed. No ACK received.");
-  }
-  else {
-    hsp.println("Transmission successful. Bytes sent: ");
-    for (int i = 0; i < msgLength; i++) {
-      hsp.print(msg[i], HEX);
+
+//------------------Serial Input Methods----------------------------------------------------
+
+void receiveLine() {
+  static byte ndx = 0;
+  byte endMarker = '\n';
+  byte rc;
+  while (hsp.available() > 0) {
+    rc = hsp.read();
+
+    // -----------------------STILL NEED ERROR CORRECTION IF INPUT > 253 CHARS-------------
+
+    if ((rc != endMarker) && (ndx < (numChars - 2))) {
+      msgBuffer[ndx] = rc;
+      ndx++;
+      if (ndx >= numChars) {
+        ndx = numChars - 1;
+      }
     }
-    hsp.print("\n");
+    else {
+      msgBuffer[ndx] = endMarker;
+      ndx++;
+      msgBuffer[ndx] = '\0';
+      ndx = 0;
+      newData = true;
+    }
   }
 }
 
+//------------------Look Up Table Access for Settings ------------------------------------
+
 int keyfromstring(char *key, int param)  // param = 0 for bw/cr, 1 for sf
 {
-  debug_print("the key i'm comparing is: ");
-  debug_print(key)
   int NKEYS;
   if (param == 2) {
     NKEYS = N_sfKeys;
     for (int i = 0; i < NKEYS; i++) {
       if (strcmp(sfLUT[i].key, key) == 0) {
         debug_print("matched.")
+        debug_print(key);
         return sfLUT[i].val;
       }
     }
@@ -176,6 +217,7 @@ int keyfromstring(char *key, int param)  // param = 0 for bw/cr, 1 for sf
     for (int i = 0; i < NKEYS; i++) {
       if (strcmp(bwLUT[i].key, key) == 0) {
         debug_print("matched.")
+        debug_print(key);
         return bwLUT[i].val;
       }
     }
@@ -184,8 +226,96 @@ int keyfromstring(char *key, int param)  // param = 0 for bw/cr, 1 for sf
 }
 
 
+//------------------------------LoRa methods---------------------------------------------
 
-int modeChange(byte msg[]) {
+void transmit(byte msg[], int msgLength) {
+  if (!rf95.sendtoWait((uint8_t *)msg, msgLength + 1, SERVER_ADDRESS)) {
+    hsp.println("Transmission failed. No ACK received.");
+  }
+
+  else {
+    hsp.println("Transmission successful. Bytes sent: ");
+
+    for (int i = 0; i <= msgLength; i++) {
+      hsp.print(msg[i], HEX);
+    }
+
+    hsp.print("\n");
+  }
+}
+
+//----------------------------Initiate Settings Change Handshake-------------------
+
+int modeChangeLocal(byte msg[]) {
+  set[2] = 0;
+  int c = 0;
+  char msgCopy[numChars];
+  strcpy(msgCopy, (char*)msg);
+  char* rest = msgCopy;
+  char* token = strtok(rest, "\n");       // clean off newline
+  token = strtok(rest, "\r");       // clean off carriage return
+
+  while (token = strtok_r(rest, " ", &rest)) {
+    if (c == 1) {
+      switch (keyfromstring(token, c)) {  // param 0 corresponds to bw,cr parameter
+        case -1:
+          hsp.println("not a valid setting.");
+          hsp.println("Try again with the settings format -changemode bw___cr__ sf___");
+          set[2] = 1;    // must check set[2] to ensure valid overall settings
+          break;
+        case bw125cr45: set[0] = bw125cr45; break;
+        case bw125cr46: set[0] = bw125cr46; break;
+        case bw125cr47: set[0] = bw125cr47; break;
+        case bw125cr48: set[0] = bw125cr48; break;
+        case bw250cr45: set[0] = bw250cr45; break;
+        case bw250cr46: set[0] = bw250cr46; break;
+        case bw250cr47: set[0] = bw250cr47; break;
+        case bw250cr48: set[0] = bw250cr48; break;
+        case bw500cr45: set[0] = bw500cr45; break;
+        case bw500cr46: set[0] = bw500cr46; break;
+        case bw500cr47: set[0] = bw500cr47; break;
+        case bw500cr48: set[0] = bw500cr48; break;
+      }
+    }
+
+    if (c == 2) {
+      switch (keyfromstring(token, c)) {
+        case -1:
+          hsp.println("not a valid setting.");
+          hsp.println("Try again with the settings format -changemode bw___cr__ sf___");
+          set[2] = 1;    // must check set[2] to ensure valid overall settings
+          break;
+        case sf128: set[1] = sf128; break;
+        case sf256: set[1] = sf256; break;
+        case sf512: set[1] = sf512; break;
+        case sf1024: set[1] = sf1024; break;
+        case sf2048: set[1] = sf2048; break;
+        case sf4096: set[1] = sf4096; break;
+      }
+    }
+    c++;
+  }
+
+  
+  if (set[2] == 1) {
+    return -1;
+  }
+
+  if (!rf95.sendtoWait(msg, strlen((char*)msg) + 1, SERVER_ADDRESS)) {
+    hsp.println("No Ack received, cannot change mode.");
+    return -1;
+  }
+
+  else {
+    return 0;
+  }
+}
+
+
+
+//----------------Handshake to settings change from other side of RF Link-------------------
+
+int modeChangeRemote(byte msg[]) {
 
   set[2] = 0;
   int sC = 0;
@@ -259,61 +389,120 @@ int modeChange(byte msg[]) {
     delay(10);
     driver.setModemRegisters(&new_modem_config);      // give it the configuration we specified
     delay(10);
-    if(db){driver.printRegisters();}
+    if (db) {
+      driver.printRegisters();
+    }
 
   }
   return 0;
 }
 
+//----------------Transmit received Serial data or initiate settings change locally-----------
 
-int i = 0;
+void transmitLine() {
+  if (newData == true) {
+    hsp.println((char*)msgBuffer);
+    newData = false;
+    char tmp[numChars];
+    strcpy(tmp, (char*)msgBuffer);
+    char *token = strtok(tmp, " ");
+    if (strcmp(token, MODE) == 0) {
+      if (modeChangeLocal(msgBuffer) == 0) {
+        hsp.println("Acknowledge received. Will change settings once handshake is complete.");
+      }
+      else{
+        hsp.println("Attempt to change transmission settings failed.");
+      }
+    }
+    else {
+      hsp.println("Transmitting...");             // Send a message to rf95_server
+      transmit(msgBuffer, strlen((char*)msgBuffer));  //send() needs uint8_t so we cast it
+    }
+  }
+
+}
+
+//--------------------Battery Monitoring Functions-----------------------------
+
+void battLevel() {
+  float vBatt = analogRead(VBATPIN);
+  vBatt *= 2;           // undo voltage divider
+  vBatt *= 3.3;         // full scale reference
+  vBatt /= 1023;        // undo analogRead() 10bit integer scaling
+  char cBuff[20];
+  sprintf(cBuff, "%6.3f", vBatt); // cast voltage as c style string
+  char voltagePacket[] = "";
+  strcat(voltagePacket, "Current battery voltage: ");
+  strcat(voltagePacket, cBuff);
+  transmit((uint8_t*)voltagePacket, strlen(voltagePacket));
+}
+
+
+
+void battCheck() {
+  float cmpVoltage = analogRead(USB_PRESENT);
+  cmpVoltage *= 3.3;
+  cmpVoltage /= 1023;
+  if (cmpVoltage < USB_VOLTAGE) {
+    char helpMsg[numChars] = "";
+    strcat(helpMsg, "The power system has failed. Please come find me. I'm scared.");
+    transmit((uint8_t*)helpMsg, strlen(helpMsg));
+    battLevel();
+    delay(30000);       // wait 30 seconds
+  }
+}
+
+//--------------------------------Mainline-------------------------------------------
+
 
 void loop()
 {
+  if (hsp.available() > 0) {
+    receiveLine();
+    transmitLine();
+  }
 
-  if (rf95.available())
+
+  if (hsp.available() == 0)
   {
     // Should be a message for us now
     uint8_t buf[numChars];
     uint8_t len = sizeof(buf);
     uint8_t from;
-    if (rf95.recvfromAck(buf, &len, &from)) {
-      i++;
-      if (i == 2) {
-        hsp.println("Changing settings now.");
-        RH_RF95::ModemConfig new_modem_config = {
-          150,
-          164,
-          0x0C  // LEAVE THIS ALONE
-        };
-        delay(10);
-        driver.setModemRegisters(&new_modem_config);      // give it the configuration we specified
-        delay(10);
-        if(db){driver.printRegisters();}
-      }
-      
-      hsp.print("Message from client: "); hsp.println(from);
-      hsp.println((char*)buf);
-      for (int i = 0; i < len; i++) {
-        hsp.print(buf[i], HEX);
-      }
-      hsp.print("\n");
-      char tmp[numChars];
-      for (int i = 0; i < numChars; i++) {
-        tmp[i] = (char)buf[i];
-      }
-      char *token = strtok(tmp, " ");
-      while ((token != NULL) && (token != "\n")) {
-        if (strcmp(token, MODE) == 0) {
-          debug_print("Request to change settings.");
-          if (modeChange(buf) == 0) {
-            hsp.println("Transmission settings changed successfully.");
-          }
+
+    if (rf95.available()) {
+      if (rf95.recvfromAck(buf, &len, &from)) {
+        hsp.print("Message from client: "); hsp.println(from);
+        hsp.println((char*)buf);
+        for (int i = 0; i < len; i++) {
+          hsp.print(buf[i], HEX);
         }
-        token = strtok(NULL, " ");
+        hsp.print("\n");
+        hsp.print("RSSI: ");
+        hsp.println(driver.lastRssi(), DEC);
+        hsp.print("SNR: ");
+        hsp.println(driver.lastSNR(), DEC);
+        memDiff = lastMem - freeMemory();
+        hsp.print("Memory used since last receive: ");
+        hsp.println(memDiff);
+        hsp.print("Total memory left: ");
+        hsp.printline(freeMemory());
+        char tmp[numChars];
+        for (int i = 0; i < numChars; i++) {
+          tmp[i] = (char)buf[i];
+        }
+        char *token = strtok(tmp, " ");
+        while ((token != NULL) && (token != "\n")) {
+          if (strcmp(token, MODE) == 0) {
+            debug_print("Request to change settings.");
+            if (modeChangeRemote(buf) == 0) {
+              hsp.println("Transmission settings changed successfully.");
+            }
+          }
+          token = strtok(NULL, " ");
+        }
       }
+
     }
-
   }
-
 }
