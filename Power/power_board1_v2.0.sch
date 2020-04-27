@@ -5724,67 +5724,74 @@ Source: &lt;a href="http://www.molex.com/webdocs/datasheets/pdf/en-us//003928102
 </deviceset>
 </devicesets>
 </library>
-<library name="43045-0212">
-<description>&lt;2 way 2 row vertical header,3mm pitch Molex MICRO-FIT 3.0 Series, Series Number 43045, 3mm Pitch 2 Way 2 Row Shrouded Straight PCB Header, Through Hole&lt;/b&gt;&lt;p&gt;
+<library name="43650-0218">
+<description>&lt;Micro-Fit 3.0 Vertical Header, 3.00mm Pitch, Single Row,  Circuits, with PCB Polarizing Peg, Gold, Glow-Wire Capable, Black&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
 <packages>
-<package name="0430450212">
-<description>&lt;b&gt;0430450212&lt;/b&gt;&lt;br&gt;
+<package name="436500218">
+<description>&lt;b&gt;43650-0218-5&lt;/b&gt;&lt;br&gt;
 </description>
-<pad name="1" x="0" y="2.47" drill="1.07" diameter="1.62"/>
-<pad name="2" x="0" y="5.47" drill="1.07" diameter="1.62"/>
-<pad name="3" x="-3" y="6.41" drill="1.07" diameter="1.62"/>
-<pad name="4" x="3" y="6.41" drill="1.07" diameter="1.62"/>
-<text x="-0.32" y="3.952" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="-0.32" y="3.952" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-3.325" y1="7.37" x2="3.325" y2="7.37" width="0.2" layer="51"/>
-<wire x1="3.325" y1="7.37" x2="3.325" y2="0" width="0.2" layer="51"/>
-<wire x1="3.325" y1="0" x2="-3.325" y2="0" width="0.2" layer="51"/>
-<wire x1="-3.325" y1="0" x2="-3.325" y2="7.37" width="0.2" layer="51"/>
-<wire x1="-3.325" y1="7.37" x2="3.325" y2="7.37" width="0.2" layer="21"/>
-<wire x1="3.325" y1="0" x2="-3.325" y2="0" width="0.2" layer="21"/>
-<wire x1="-3.325" y1="0" x2="-3.325" y2="5.357" width="0.2" layer="21"/>
-<wire x1="3.325" y1="0" x2="3.325" y2="5.357" width="0.2" layer="21"/>
-<circle x="-0.004" y="-0.418" radius="0.07355" width="0.2" layer="25"/>
+<pad name="1" x="0" y="0" drill="1.07" diameter="1.3"/>
+<pad name="2" x="-3" y="0" drill="1.07" diameter="1.3"/>
+<pad name="MH1" x="-5.15" y="0" drill="2.46" diameter="2.8"/>
+<pad name="MH2" x="2.15" y="0" drill="2.46" diameter="2.8"/>
+<text x="-1.5" y="-0.3" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="-1.5" y="-0.3" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-6.325" y1="3.1" x2="3.325" y2="3.1" width="0.2" layer="51"/>
+<wire x1="3.325" y1="3.1" x2="3.325" y2="-2.47" width="0.2" layer="51"/>
+<wire x1="3.325" y1="-2.47" x2="-6.325" y2="-2.47" width="0.2" layer="51"/>
+<wire x1="-6.325" y1="-2.47" x2="-6.325" y2="3.1" width="0.2" layer="51"/>
+<wire x1="-7.55" y1="4.1" x2="4.55" y2="4.1" width="0.1" layer="51"/>
+<wire x1="4.55" y1="4.1" x2="4.55" y2="-4.7" width="0.1" layer="51"/>
+<wire x1="4.55" y1="-4.7" x2="-7.55" y2="-4.7" width="0.1" layer="51"/>
+<wire x1="-7.55" y1="-4.7" x2="-7.55" y2="4.1" width="0.1" layer="51"/>
+<wire x1="-6.325" y1="3.1" x2="3.325" y2="3.1" width="0.1" layer="21"/>
+<wire x1="-6.325" y1="-2.47" x2="3.325" y2="-2.47" width="0.1" layer="21"/>
+<wire x1="0" y1="-3.5" x2="0" y2="-3.5" width="0.2" layer="21"/>
+<wire x1="0" y1="-3.5" x2="0" y2="-3.7" width="0.2" layer="21" curve="180"/>
+<wire x1="0" y1="-3.7" x2="0" y2="-3.7" width="0.2" layer="21"/>
+<wire x1="0" y1="-3.7" x2="0" y2="-3.5" width="0.2" layer="21" curve="180"/>
 </package>
 </packages>
 <symbols>
-<symbol name="43045-0212">
-<wire x1="5.08" y1="2.54" x2="15.24" y2="2.54" width="0.254" layer="94"/>
-<wire x1="15.24" y1="-2.54" x2="15.24" y2="2.54" width="0.254" layer="94"/>
-<wire x1="15.24" y1="-2.54" x2="5.08" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="5.08" y1="2.54" x2="5.08" y2="-2.54" width="0.254" layer="94"/>
-<text x="16.51" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
-<text x="16.51" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
-<pin name="1" x="0" y="0" length="middle"/>
-<pin name="2" x="20.32" y="0" length="middle" rot="R180"/>
+<symbol name="43650-0218">
+<wire x1="5.08" y1="2.54" x2="17.78" y2="2.54" width="0.254" layer="94"/>
+<wire x1="17.78" y1="-10.16" x2="17.78" y2="2.54" width="0.254" layer="94"/>
+<wire x1="17.78" y1="-10.16" x2="5.08" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="-10.16" width="0.254" layer="94"/>
+<text x="19.05" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
+<text x="19.05" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
+<pin name="1" x="0" y="-5.08" length="middle"/>
+<pin name="2" x="0" y="-2.54" length="middle"/>
+<pin name="MH1" x="0" y="0" length="middle"/>
+<pin name="MH2" x="0" y="-7.62" length="middle"/>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="43045-0212" prefix="J">
-<description>&lt;b&gt;2 way 2 row vertical header,3mm pitch Molex MICRO-FIT 3.0 Series, Series Number 43045, 3mm Pitch 2 Way 2 Row Shrouded Straight PCB Header, Through Hole&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="http://www.mouser.com/ds/2/276/0430450212_PCB_HEADERS-142866.pdf"&gt; Datasheet &lt;/a&gt;</description>
+<deviceset name="43650-0218" prefix="J">
+<description>&lt;b&gt;Micro-Fit 3.0 Vertical Header, 3.00mm Pitch, Single Row,  Circuits, with PCB Polarizing Peg, Gold, Glow-Wire Capable, Black&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://www.molex.com/pdm_docs/sd/436500716_sd.pdf"&gt; Datasheet &lt;/a&gt;</description>
 <gates>
-<gate name="G$1" symbol="43045-0212" x="0" y="0"/>
+<gate name="G$1" symbol="43650-0218" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="0430450212">
+<device name="" package="436500218">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="MH1" pad="MH1"/>
+<connect gate="G$1" pin="MH2" pad="MH2"/>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="ALLIED_NUMBER" value="70090950" constant="no"/>
-<attribute name="ALLIED_PRICE-STOCK" value="https://www.alliedelec.com/molex-incorporated-43045-0212/70090950/" constant="no"/>
-<attribute name="DESCRIPTION" value="2 way 2 row vertical header,3mm pitch Molex MICRO-FIT 3.0 Series, Series Number 43045, 3mm Pitch 2 Way 2 Row Shrouded Straight PCB Header, Through Hole" constant="no"/>
-<attribute name="HEIGHT" value="mm" constant="no"/>
+<attribute name="DESCRIPTION" value="Micro-Fit 3.0 Vertical Header, 3.00mm Pitch, Single Row,  Circuits, with PCB Polarizing Peg, Gold, Glow-Wire Capable, Black" constant="no"/>
+<attribute name="HEIGHT" value="10.15mm" constant="no"/>
 <attribute name="MANUFACTURER_NAME" value="Molex" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="43045-0212" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="538-430-45-0212" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.com/Search/Refine.aspx?Keyword=538-430-45-0212" constant="no"/>
-<attribute name="RS_PART_NUMBER" value="2332860P" constant="no"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/2332860P" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="43650-0218" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="538-43650-0218" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.com/Search/Refine.aspx?Keyword=538-43650-0218" constant="no"/>
+<attribute name="RS_PART_NUMBER" value="6704705P" constant="no"/>
+<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/6704705P" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -5987,13 +5994,13 @@ Source: &lt;a href="http://www.mouser.com/ds/2/276/0430450212_PCB_HEADERS-142866
 <part name="GND31" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="Q1" library="FQD11P06TM" deviceset="FQD11P06TM" device=""/>
 <part name="J0_PLOAD_CONN" library="0039281023" deviceset="0039281023" device=""/>
-<part name="J4_SSSBOARD_CONN" library="43045-0212" deviceset="43045-0212" device=""/>
+<part name="J4_SSSBOARD_CONN" library="43650-0218" deviceset="43650-0218" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="96.45" y="34.22" size="1.778" layer="95">XL6009_BOOST_CONV_DAUGHTERBOARD</text>
-<text x="139.84" y="30.09" size="1.778" layer="95">24V</text>
+<text x="83.75" y="34.22" size="1.778" layer="95">XL6009_BOOST_CONV_DAUGHTERBOARD</text>
+<text x="141.11" y="27.55" size="1.778" layer="95">24V</text>
 <text x="155.92" y="77.35" size="1.778" layer="96">6.8uH</text>
 <text x="157.49" y="133.63" size="1.778" layer="96">6.8uH</text>
 <text x="158.76" y="186.61" size="1.778" layer="96">12uH</text>
@@ -6018,10 +6025,10 @@ Source: &lt;a href="http://www.mouser.com/ds/2/276/0430450212_PCB_HEADERS-142866
 <wire x1="243.84" y1="91.44" x2="243.84" y2="78.74" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="243.84" y1="78.74" x2="215.9" y2="78.74" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="215.9" y1="78.74" x2="215.9" y2="91.44" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="144.78" y1="30.48" x2="171.45" y2="30.48" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="171.45" y1="30.48" x2="171.45" y2="17.78" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="171.45" y1="17.78" x2="144.78" y2="17.78" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="144.78" y1="17.78" x2="144.78" y2="30.48" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="147.32" y1="31.75" x2="168.91" y2="31.75" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="168.91" y1="31.75" x2="168.91" y2="16.51" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="168.91" y1="16.51" x2="147.32" y2="16.51" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="147.32" y1="16.51" x2="147.32" y2="31.75" width="0.1524" layer="97" style="shortdash"/>
 <text x="208.28" y="180.34" size="1.778" layer="97">Connector "J1_B3_CONN" powers the Payload's
 BeagleBone Black uprocessor</text>
 <text x="209.55" y="124.46" size="1.778" layer="97">Connector "J2_LORA_CONN" powers the 
@@ -6164,12 +6171,12 @@ on the AUV's existing Power Controller Board</text>
 <instance part="GND22" gate="1" x="97.79" y="54.61" smashed="yes">
 <attribute name="VALUE" x="95.25" y="52.07" size="1.778" layer="96"/>
 </instance>
-<instance part="XL6009_BOOST_CONV_DAUGHTERBOARD" gate="G$1" x="118.11" y="22.86" smashed="yes"/>
+<instance part="XL6009_BOOST_CONV_DAUGHTERBOARD" gate="G$1" x="109.22" y="22.86" smashed="yes"/>
 <instance part="GND26" gate="1" x="134.62" y="17.78" smashed="yes">
 <attribute name="VALUE" x="132.08" y="15.24" size="1.778" layer="96"/>
 </instance>
-<instance part="GND27" gate="1" x="102.87" y="17.78" smashed="yes">
-<attribute name="VALUE" x="100.33" y="15.24" size="1.778" layer="96"/>
+<instance part="GND27" gate="1" x="93.98" y="17.78" smashed="yes">
+<attribute name="VALUE" x="91.44" y="15.24" size="1.778" layer="96"/>
 </instance>
 <instance part="R17" gate="G$1" x="77.47" y="200.66" smashed="yes" rot="R90">
 <attribute name="NAME" x="75.62" y="201.5614" size="1.778" layer="95" rot="R180"/>
@@ -6213,8 +6220,8 @@ on the AUV's existing Power Controller Board</text>
 <instance part="GND13" gate="1" x="236.22" y="191.77" smashed="yes">
 <attribute name="VALUE" x="233.68" y="189.23" size="1.778" layer="96"/>
 </instance>
-<instance part="GND23" gate="1" x="167.64" y="20.32" smashed="yes">
-<attribute name="VALUE" x="165.1" y="17.78" size="1.778" layer="96"/>
+<instance part="GND23" gate="1" x="144.78" y="17.78" smashed="yes">
+<attribute name="VALUE" x="142.24" y="15.24" size="1.778" layer="96"/>
 </instance>
 <instance part="GND24" gate="1" x="237.49" y="82.55" smashed="yes">
 <attribute name="VALUE" x="234.95" y="80.01" size="1.778" layer="96"/>
@@ -6283,12 +6290,12 @@ on the AUV's existing Power Controller Board</text>
 <attribute name="MPN" x="205.74" y="85.09" size="1.778" layer="96" rot="R180" display="off"/>
 <attribute name="DESC" x="205.74" y="85.09" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
-<instance part="R22" gate="G$1" x="140.97" y="25.4" smashed="yes" rot="R180">
-<attribute name="NAME" x="143.51" y="23.9014" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="142.24" y="28.702" size="1.778" layer="96" rot="R180"/>
-<attribute name="MFR" x="140.97" y="25.4" size="1.778" layer="96" rot="R180" display="off"/>
-<attribute name="MPN" x="140.97" y="25.4" size="1.778" layer="96" rot="R180" display="off"/>
-<attribute name="DESC" x="140.97" y="25.4" size="1.778" layer="96" rot="R180" display="off"/>
+<instance part="R22" gate="G$1" x="134.62" y="25.4" smashed="yes" rot="R180">
+<attribute name="NAME" x="137.16" y="23.9014" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="135.89" y="28.702" size="1.778" layer="96" rot="R180"/>
+<attribute name="MFR" x="134.62" y="25.4" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="MPN" x="134.62" y="25.4" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="DESC" x="134.62" y="25.4" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="R26" gate="G$1" x="27.94" y="194.31" smashed="yes" rot="R180">
 <attribute name="NAME" x="33.02" y="194.0814" size="1.778" layer="95" rot="R180"/>
@@ -6406,9 +6413,9 @@ on the AUV's existing Power Controller Board</text>
 <attribute name="NAME" x="5.08" y="200.66" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="5.08" y="186.69" size="1.778" layer="96" align="center-left"/>
 </instance>
-<instance part="J4_SSSBOARD_CONN" gate="G$1" x="167.64" y="25.4" smashed="yes" rot="R180">
-<attribute name="NAME" x="171.45" y="31.75" size="1.778" layer="95" rot="R180" align="center-left"/>
-<attribute name="VALUE" x="160.02" y="20.32" size="1.778" layer="96" rot="R180" align="center-left"/>
+<instance part="J4_SSSBOARD_CONN" gate="G$1" x="149.86" y="27.94" smashed="yes">
+<attribute name="NAME" x="147.32" y="33.02" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="148.59" y="17.78" size="1.778" layer="96" align="center-left"/>
 </instance>
 </instances>
 <busses>
@@ -6452,17 +6459,12 @@ on the AUV's existing Power Controller Board</text>
 <segment>
 <pinref part="XL6009_BOOST_CONV_DAUGHTERBOARD" gate="G$1" pin="OUT-"/>
 <pinref part="GND26" gate="1" pin="GND"/>
-<wire x1="133.604" y1="20.32" x2="134.62" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="124.714" y1="20.32" x2="134.62" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="XL6009_BOOST_CONV_DAUGHTERBOARD" gate="G$1" pin="IN-"/>
 <pinref part="GND27" gate="1" pin="GND"/>
-<wire x1="103.124" y1="20.32" x2="102.87" y2="20.32" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<wire x1="167.64" y1="22.86" x2="167.64" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="GND23" gate="1" pin="GND"/>
-<pinref part="J4_SSSBOARD_CONN" gate="G$1" pin="1"/>
+<wire x1="94.234" y1="20.32" x2="93.98" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND19" gate="1" pin="GND"/>
@@ -6588,6 +6590,12 @@ on the AUV's existing Power Controller Board</text>
 <segment>
 <pinref part="C7" gate="G$1" pin="2"/>
 <pinref part="GND31" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="J4_SSSBOARD_CONN" gate="G$1" pin="1"/>
+<pinref part="GND23" gate="1" pin="GND"/>
+<wire x1="149.86" y1="22.86" x2="144.78" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="22.86" x2="144.78" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="FB_SPOT" class="0">
@@ -6830,20 +6838,20 @@ on the AUV's existing Power Controller Board</text>
 <junction x="86.36" y="96.52"/>
 </segment>
 </net>
-<net name="VIN_XL6009" class="0">
+<net name="VIN_SSS" class="0">
 <segment>
 <pinref part="R15" gate="G$1" pin="1"/>
 <pinref part="XL6009_BOOST_CONV_DAUGHTERBOARD" gate="G$1" pin="IN+"/>
-<wire x1="74.93" y1="25.4" x2="103.124" y2="25.4" width="0.1524" layer="91"/>
-<label x="83.82" y="25.4" size="1.778" layer="95"/>
+<wire x1="74.93" y1="25.4" x2="94.234" y2="25.4" width="0.1524" layer="91"/>
+<label x="78.74" y="26.67" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="V_SSS" class="0">
 <segment>
 <pinref part="XL6009_BOOST_CONV_DAUGHTERBOARD" gate="G$1" pin="OUT+"/>
 <pinref part="R22" gate="G$1" pin="2"/>
-<wire x1="133.604" y1="25.4" x2="135.89" y2="25.4" width="0.1524" layer="91"/>
-<label x="132.08" y="27.94" size="1.778" layer="95"/>
+<wire x1="124.714" y1="25.4" x2="129.54" y2="25.4" width="0.1524" layer="91"/>
+<label x="125.73" y="29.21" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SW_SPOT" class="0">
@@ -6995,7 +7003,7 @@ on the AUV's existing Power Controller Board</text>
 <net name="V_SSS1" class="0">
 <segment>
 <pinref part="R22" gate="G$1" pin="1"/>
-<wire x1="147.32" y1="25.4" x2="146.05" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="25.4" x2="139.7" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="J4_SSSBOARD_CONN" gate="G$1" pin="2"/>
 </segment>
 </net>
