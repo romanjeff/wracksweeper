@@ -9,10 +9,14 @@ give it new mission parameters, or toggle sonar functions without recovery and r
 
 This project has been conducted at Portland State University by a team consisting of:
 
-Drew Wendebrn, Matthew Moore, Patrick Hawn - Mechanical Engineering\n
-Roman Minko, Adel Alkharraz - Sonar Interface Software\n
-Colton Bruce - Beacon and RF link characterization\n
-Jeff Roman - Communications Software\n
-Jens Evens, Grace Semerdjian - Power System\n\n
+Drew Wendebrn, Matthew Moore, Patrick Hawn - Mechanical Engineering.  
+
+Roman Minko, Adel Alkharraz - Sonar Interface Software.  
+
+Colton Bruce - Beacon and RF link characterization.  
+
+Jeff Roman - Communications Software.  
+
+Jens Evens, Grace Semerdjian - Power System.  
 
 http://www.wracksweeper.com
