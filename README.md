@@ -1,5 +1,6 @@
-# wracksweeper
-In which we outfit a  UUV running MOOS-iVP with Emergency Beacon, Sidescan Sonar, and other goodies.
+We are a Capstone team working with the Portland State University NEAR lab, under advisement by Dr. Martin
+Siderius, and this repo is for the necessary files to implement or reference tha customizations we have done
+to the AUV owned by the NEAR lab for academic research purposes. 
 
 Our AUV is a Riptide Systems MP1 Mk.II, managed by a Beaglebone Black running MOOS-IvP (http://www.moos-ivp.org).
 
