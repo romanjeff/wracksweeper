@@ -1,13 +1,51 @@
+// AUV LoRa Link Arduino Sketch
+// This revision: v.1.0;
+// Original authorship: Jeff Roman, 04/2020
+// PSU Capstone Team: Wracksweeper/WAVES
 
-// This sketch transmits up to 255 bytes of serial input data from UART or USB and
-// sends the data to another LoRa radio. There is the option to change the transmission
-// settings for both radios, and all transmissions are sent using reliable datagrams
-// with acknowledge and CRC. This sketch also monitors the voltage on the battery pin,
-// sending a help signal if the USB power supply turns off and battery power is utilized.
+// Designed for use with Adafruit Feather M0 packaged with onboard HopeRF RFM95 LoRa module.
+// Battery monitoring provided by setting a voltage divider of 2 2.2k resistors from the
+// "USB" pin to analog pin A2 to ground.
 
+// CURRENT FUNCTIONALITY:
+// This is the Shore Client-enabled sketch of the terminal-over-LoRa software which enables
+// a team to remotely query and direct the MOOS community running in a surfaced AUV within
+// range of the RF link. It transmits any serial input up to 100 bytes (more possible based
+// on specific link settings) to a shore client, and conveys any received data as UART
+// output when set as an AUV/server. When set as shore client, it provides wireless data
+// transmission of all serial input up to 100 bytes and returns any response. In shore client
+// mode, there is a feature LINKMON which also includes data on RF link quality (RSSI, SNR).
+
+// There is a method -changemode which can be invoked from either side that can allow
+// a switch to different RF link settings for faster datarate in better link environments or
+// slower transfer in areas with poor link quality. All messaging is ACK-based and CRC'ed,
+// with CRC coding settable with -changemode.
+
+// The AUV server mode is intended to interface with a custom UART daemon which properly
+// deals with any of the valid inputs.
+
+// The shore client mode is intended to interface with a CLI-based python script which will
+// display received messages and allow the user to choose to send any output along to a local
+// MOOS community.
+
+// DESIRED FUTURE FUNCTIONALITY:
+// 1) A getGPS procedure for inclusion and regular transmission from AUV while it's floating.
+//    This will require a query to BBB, with the last known GPS sentence stored in case BBB
+//    dies for inclusion in help message transmissions.
+// 2) A "help" dialogue which can be entered from the shore client command line to access
+//    available calls and get guidance.
+// 3) A more extensible flag system for non-terminal methods like -changemode that only affect
+//    the arduinos.
+// 4) A buffer handler to enable data of arbitrary size to be transmitted with full reliable
+//    datagram accuracy, enabling "upload" and "download" capabilities.
+
+
+
+//---------WARNING-----------WARNING-------------WARNING-------------WARNING--------------
 //------------------------THIS SKETCH IS THE CLIENT(ADDRESS 2)----------------------------
 //-------------IT IS IMPORTANT NOT TO USE THE SAME SKETCH FOR BOTH RADIOS-----------------
-//-------------------THIS IS INTENDED TO BE ONBOARD THE AUV-------------------------------
+
+
 
 #include <SPI.h>
 #include <RH_RF95.h> // this and RHReliableDatagram from https://github.com/adafruit/RadioHead
@@ -17,6 +55,13 @@
 #include <MemoryFree.h>  // get from https://github.com/mpflaga/Arduino-MemoryFree 
 
 //------------------------DEBUG DEFINITIONS---------------------------------------------
+
+
+
+//============WARNING====================WARNING===============WARNING==================
+// COMMENT OUT THE DEFINITION OF DEBUG FOR USE INSIDE AUV. DEBUG MODE DIRECTS ALL SERIAL
+// DATA TO USB INSTEAD OF UART! THIS IS IMPORTANT!
+
 
 #define DEBUG
 
@@ -29,6 +74,8 @@ auto hsp = Serial; // use USB serial in debug
 #else
 bool db = false;
 auto hsp = Serial1; // normal operation use UART
+#define debug_print(x)
+#define debug_hold()
 #endif
 
 //-------------------------PIN DEFINITIONS------------------------------------------------
@@ -38,6 +85,9 @@ auto hsp = Serial1; // normal operation use UART
 #define USB_PRESENT A2
 #define USB_VOLTAGE 2.2   // half of maximum battery voltage. if USB pwr is gone
 // the USB pin will read vBatt instead of 4.6-5.5.
+
+
+#define LED 13
 
 
 // for feather m0
@@ -53,18 +103,31 @@ auto hsp = Serial1; // normal operation use UART
 #define TIMEOUT 8000
 #define RETRIES 5
 
-#define SHORE_CLIENT        /* UNCOMMENT TO MAKE SHORE CLIENT */
+
+#define SHORE_CLIENT            /* UNCOMMENT FOR SHORE CLIENT */
 
 #ifdef SHORE_CLIENT
-bool SYSTEM_CHECK = false;
-#define MY_ADDRESS 2            // shore pc is the client
+const bool SHORE = true;
+#define MY_ADDRESS 2                // shore pc is the client
 #define REMOTE_ADDRESS 1
 #else
-bool SYSTEM_CHECK = true;
+const bool SHORE = false;
 #define MY_ADDRESS 1
 #define REMOTE_ADDRESS 2
 #endif
 
+// EFFECTS OF CHANGING BW: -3dB link budget for each doubling of BW
+// but datarate can effectively double.
+// EFFECTS of CHANGING SF: +2.5dB link budget for each increase of SF
+// but datarate cuts in half.
+// EFFECTS OF CHANGING CR: Datarate penalty relative to how many chars
+// are used just for CRC vs. how many used for payload.
+
+// Fastest Packet time - bw500cr45 sf128, ~0.1s
+// Slowest Packet time - bw125cr48 sf4096, ~7s
+
+// Pending distance testing, recommend default bw125cr48 sf512 for best
+// balance of link budget, reliability, and datarate. ~1-2s packet time.
 
 // SETTING OPTIONS FOR REGISTER 1D
 
@@ -116,24 +179,48 @@ static t_symstruct sfLUT[] = {
 RH_RF95 driver(RFM95_CS, RFM95_INT);                // driver is radio hardware driver
 RHReliableDatagram rf95(driver, MY_ADDRESS);    // rf95 is the msg manager
 
+
+
+//----WARNING-----------WARNING-------------WARNING-------------WARNING-------------------
 //------------------------THIS SKETCH IS THE CLIENT(ADDRESS 2)----------------------------
 //-------------IT IS IMPORTANT NOT TO USE THE SAME SKETCH FOR BOTH RADIOS-----------------
-//-------------------THIS IS INTENDED TO BE ONBOARD THE AUV-------------------------------
 
-//---------------------------------SETUP----------------------------------------------------------
+
+void ledFlash(int n) {
+  int i = 0;
+  while (i < n) {
+    digitalWrite(LED, HIGH);
+    delay(100);
+    digitalWrite(LED, LOW);
+    delay(100);
+    i++;
+  }
+}
+
+//---------------------------------SETUP-----------------------------------------------------
+
+
 
 void setup()
 {
   pinMode(RFM95_RST, OUTPUT);
   digitalWrite(RFM95_RST, HIGH);
+  pinMode(LED, OUTPUT);
+  digitalWrite(LED, LOW);
 
-  pinMode(USB_PRESENT, INPUT);      // check to see if USB power is present
-  pinMode(VBATPIN, INPUT);          // monitor battery level
 
-  hsp.begin(9600);  // hsp = hardware serial port. usb in debug mode, uart in prod. mode.
+  ledFlash(2);
+  hsp.begin(9600);
+
   debug_hold();
   delay(100);
-  hsp.println("Welcome to the AUV Remote Command Center.");
+  if (SHORE) {
+    hsp.println("Welcome to the AUV Remote Command Center.");
+    hsp.println("Please limit packets to 100 characters. Type and press enter to send.");
+  }
+  else {
+    debug_print("I am an AUV. This is how I talk!");
+  }
 
   // manual reset
   digitalWrite(RFM95_RST, LOW);
@@ -144,21 +231,25 @@ void setup()
   //-------------------------RFM95 Configuration Time------------------
 
   while (!rf95.init()) {
-    hsp.println("LoRa radio init failed");
-    hsp.println("Uncomment '#define SERIAL_DEBUG' in RH_RF95.cpp for detailed debug info");
-    while (1);
+    debug_print("LoRa radio init failed");
+    debug_print("Uncomment '#define SERIAL_DEBUG' in RH_RF95.cpp for detailed debug info");
+    while (1) {
+      ledFlash(1);
+    }
   }
-  hsp.println("LoRa radio init OK!");
+  debug_print("LoRa radio init OK!");
 
   // Defaults after init are 434.0MHz, modulation GFSK_Rb250Fd250, +13dbM
   if (!driver.setFrequency(RF95_FREQ)) {
-    hsp.println("setFrequency failed");
-    while (1);
+    debug_print("setFrequency failed");
+    while (1) {
+      ledFlash(1);
+    }
   }
-
-  hsp.print("Set Freq to: "); hsp.println(RF95_FREQ);
+  debug_print("Set Freq to: "); debug_print(RF95_FREQ);
 
   // Initial transmission settings
+  // DEFAULT: FASTEST DATARATE AVAILABLE
 
   RH_RF95::ModemConfig modem_config = {
     bw500cr45,
@@ -166,8 +257,11 @@ void setup()
     0x0C  // LEAVE THIS ALONE
   };
 
-  driver.setModemRegisters(&modem_config);      // give it the configuration we specified
-  driver.setTxPower(23, false);                 // don't touch this. max output power, no PA_BOOST pin avail.
+  driver.setModemRegisters(&modem_config);
+
+  //set to maximum possible output power
+  driver.setTxPower(23, false);
+
   rf95.setRetries(RETRIES);
   rf95.setTimeout(TIMEOUT);
 }
@@ -192,7 +286,7 @@ const char RCVD[] = "-received-\0";
 int memDiff;
 int lastMem = freeMemory();
 float memPct;
-
+int timer = millis();
 
 //------------------Serial Input Methods----------------------------------------------------
 
@@ -251,22 +345,24 @@ int keyfromstring(char *key, int param)  // param = 0 for bw/cr, 1 for sf
 }
 
 //------------------------------LoRa methods---------------------------------------------
+
 void transmit(byte msg[], int msgLength) {
   int packetTime = millis();
   if (!rf95.sendtoWait((uint8_t *)msg, msgLength + 1, REMOTE_ADDRESS)) {
-    hsp.println("Transmission failed. No ACK received.");
+    debug_print("Transmission failed. No ACK received.");
   }
 
   else {
-    packetTime = millis() - packetTime;
-    hsp.println("Transmission successful. Bytes sent: ");
-    for (int i = 0; i <= msgLength; i++) {
-      hsp.print(msg[i], HEX);
+    if (SHORE) {
+      packetTime = millis() - packetTime;
+      hsp.println("Transmission successful. Bytes sent: ");
+      for (int i = 0; i <= msgLength; i++) {
+        hsp.print(msg[i], HEX);
+      }
+      hsp.print("\n");
+      hsp.print(packetTime / 1000.0); hsp.println(" seconds packet time.");
     }
-    hsp.print("\n");
-    hsp.print(packetTime / 1000.0); hsp.println(" seconds packet time.");
   }
-
 }
 
 //----------------------------Initiate Settings Change Handshake-------------------
@@ -341,7 +437,7 @@ int modeChangeRemote(byte msg[]) {
 
   set[2] = 0;
   int sC = 0;
-  hsp.print("The char array looks like: ");
+  debug_print("The char array looks like: ");
   debug_print((char*)msg);
   char msgCopy[numChars];
   char newBWCR[] = "";
@@ -384,8 +480,8 @@ int modeChangeRemote(byte msg[]) {
     c++;
   }
   if (sC < 2) {
-    hsp.println("That didn't work.");
-    hsp.println("Try again with the settings format -changemode bw___cr__ sf___");
+    debug_print("That didn't work.");
+    debug_print("Try again with the settings format -changemode bw___cr__ sf___");
     return -1;
   }
   char confirmation[numChars] = "";
@@ -397,11 +493,11 @@ int modeChangeRemote(byte msg[]) {
   debug_print(confirmation);
   delay(100);
   if (!rf95.sendtoWait((uint8_t *)confirmation, strlen(confirmation) + 1, REMOTE_ADDRESS)) {
-    hsp.println("No Ack received, cannot change mode.");
+    debug_print("No Ack received, cannot change mode.");
     return -1;
   }
   else {
-    hsp.println("Acknowledge received. Changing mode now.");
+    debug_print("Acknowledge received. Changing mode now.");
 
     RH_RF95::ModemConfig new_modem_config = {
       set[0],
@@ -411,7 +507,6 @@ int modeChangeRemote(byte msg[]) {
     delay(10);
     driver.setModemRegisters(&new_modem_config);      // give it the configuration we specified
     delay(10);
-
     if (db) {
       driver.printRegisters();
     }
@@ -424,7 +519,7 @@ int modeChangeRemote(byte msg[]) {
 
 void transmitLine() {
   if (newData == true) {
-    hsp.println((char*)msgBuffer);
+    debug_print((char*)msgBuffer);
     newData = false;
     char tmp[numChars];
     strcpy(tmp, (char*)msgBuffer);
@@ -438,7 +533,7 @@ void transmitLine() {
       }
     }
     else {
-      hsp.println("Transmitting...");             // Send a message to rf95_server
+      debug_print("Transmitting...");             // Send a message to rf95_server
       transmit(msgBuffer, strlen((char*)msgBuffer));  //send() needs uint8_t so we cast it
     }
   }
@@ -446,18 +541,7 @@ void transmitLine() {
 
 //--------------------Battery Monitoring Functions-----------------------------
 
-void battLevel() {
-  float vBatt = analogRead(VBATPIN);
-  vBatt *= 2;           // undo voltage divider
-  vBatt *= 3.3;         // full scale reference
-  vBatt /= 1023;        // undo analogRead() 10bit integer scaling
-  char cBuff[20];
-  sprintf(cBuff, "%6.3f", vBatt); // cast voltage as c style string
-  char voltagePacket[] = "";
-  strcat(voltagePacket, "Current battery voltage: ");
-  strcat(voltagePacket, cBuff);
-  transmit((uint8_t*)voltagePacket, strlen(voltagePacket));
-}
+
 
 void battCheck() {
   float cmpVoltage = analogRead(USB_PRESENT);
@@ -465,48 +549,72 @@ void battCheck() {
   cmpVoltage /= 1023;
   if (cmpVoltage < USB_VOLTAGE) {
     char helpMsg[numChars] = "";
-    strcat(helpMsg, "The power system has failed. Please come find me. I'm scared.");
+    strcat(helpMsg, "The power system has failed. Please come find me. I'm scared. ");
+    float vBatt = analogRead(VBATPIN);
+    vBatt *= 2;           // undo voltage divider
+    vBatt *= 3.3;         // full scale reference
+    vBatt /= 1023;        // undo analogRead() 10bit integer scaling
+    char cBuff[12];
+    sprintf(cBuff, "%6.3f", vBatt); // cast voltage as c style string
+    strcat(helpMsg, "Current battery voltage: ");
+    strcat(helpMsg, cBuff);
     transmit((uint8_t*)helpMsg, strlen(helpMsg));
-    battLevel();
-    delay(30000);       // wait 30 seconds
+    timer = millis();       // wait 30 seconds
   }
 }
 
-//--------------------------------Mainline-----------------------------------
+//--------------------------------Mainline-------------------------------------------
 
 void loop()
 {
+
   if (hsp.available() > 0) {
+    digitalWrite(LED, HIGH);
     receiveLine();
     transmitLine();
-
+    digitalWrite(LED, LOW);
   }
 
-  if (hsp.available() == 0) {
-    if (SYSTEM_CHECK) {
-      battCheck();            // check the power supply
+
+  if (hsp.available() == 0)
+  {
+    if (!SHORE) {
+      if (millis() - timer > 30000) {
+        battCheck();            // check the power supply
+      }
     }
+    // Should be a message for us now
     uint8_t buf[numChars];
     uint8_t len = sizeof(buf);
     uint8_t from;
 
     if (rf95.available()) {
-      // Should be a reply message for us now
       if (rf95.recvfromAck(buf, &len, &from)) {
-        hsp.print("Message from client: "); hsp.println(from);
-        hsp.println((char*)buf);
-        hsp.print("RSSI: ");
-        hsp.println(driver.lastRssi(), DEC);
-        hsp.print("SNR: ");
-        hsp.println(driver.lastSNR(), DEC);
-        int freeMem = freeMemory();
-        memDiff = lastMem - freeMem;
-        hsp.print("Memory used since last receive: ");
-        hsp.println(memDiff);
-        hsp.print("Total memory left: ");
-        hsp.println(freeMem);
-        memPct = ((freeMem / 262144.0)*100.0);
-        hsp.print(memPct); hsp.println("% memory left");
+        if (SHORE) {          // if shore client, give rf link info and packet time as well as message
+          ledFlash(2);
+          hsp.println((char*)buf);
+
+          hsp.print("RSSI: ");
+          hsp.println(driver.lastRssi(), DEC);
+          hsp.print("SNR: ");
+          hsp.println(driver.lastSNR(), DEC);
+          int freeMem = freeMemory();
+          memDiff = lastMem - freeMem;
+          lastMem = freeMem;
+          hsp.print("Memory used since last receive: ");
+          hsp.println(memDiff);
+          hsp.print("Total memory left: ");
+          hsp.println(freeMem);
+          memPct = ((freeMem / 262144.0) * 100.0);
+          hsp.print(memPct); hsp.println("% memory left");
+        }
+
+
+        if (!SHORE) {               // if at sea, convey message verbatim
+          hsp.println((char*)buf);
+        }
+
+
         char tmp[numChars];
         for (int i = 0; i < numChars; i++) {
           tmp[i] = (char)buf[i];
@@ -516,7 +624,7 @@ void loop()
           if (strcmp(token, MODE) == 0) {
             debug_print("Request to change settings.");
             if (modeChangeRemote(buf) == 0) {
-              hsp.println("Transmission settings changed successfully.");
+              debug_print("Transmission settings changed successfully.");
             }
           }
           if (strcmp(token, RCVD) == 0) {
