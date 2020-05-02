@@ -297,14 +297,21 @@ void setup()
 void receiveLine() {
   static byte ndx = 0;
   byte endMarker = '\n';
+  byte backSpace = '\b';
   byte rc;
   while (hsp.available() > 0) {
     rc = hsp.read();
-    if ((rc != endMarker) && (ndx < (numChars - 2))) {
+    if ((rc != endMarker) && (rc != backSpace) && (ndx < (numChars - 2))) {
       msgBuffer[ndx] = rc;
       ndx++;
       if (ndx >= numChars) {
         ndx = numChars - 1;
+      }
+    }
+    else if (rc == backSpace){
+      ndx--;
+      if (ndx < 0){
+        ndx = 0;
       }
     }
     else {
