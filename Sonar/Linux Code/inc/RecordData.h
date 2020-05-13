@@ -54,7 +54,7 @@
 
 SonarSwitches sonarSwitches;
 
-BYTE m_ReceiveBuf[1024], m_DataBuf[2046], m_HeaderBuf[12];
+BYTE receiveBuf[1024], dataBuf[2046], headerBuf[12];
 int ping_number,m_nRepRate,m_nLastTime;
 std::string m_strDate, m_strTime;
 int m_nRange, m_nRangeIndex;//match YellowFin style
