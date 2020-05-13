@@ -63,7 +63,7 @@ int main(int argc, char * argv[], char * envp[])
         filename=filename+".872";
 
         fstream outfile;
-        outfile.open(filename, ios::out | ios::binary);
+        outfile.open(filename, ios::out/* | ios::binary*/);
 	
 	if(!outfile)
             cout << "Error, file not created" << endl;
@@ -101,17 +101,18 @@ int main(int argc, char * argv[], char * envp[])
     sonarSwitches.Resvd10 = 0;        //Byte25,
     sonarSwitches.Term =0xFD;        //Byte26, 0xFD
 //******************************************************************
-  
-	sonarSwitches.Range = 0x0A;
-	sonarSwitches.Freq = 0x0A;
-	sonarSwitches.StartGain = 0x0A;
+ 
+// Testing purposes
+/*	sonarSwitches.Range = 50;
+	sonarSwitches.Freq = 1;
+	sonarSwitches.StartGain = 20;*/
 
-//    cout << "\nEnter a range: ";
-//    cin >> sonarSwitches.Range;
+    cout << "\nEnter a range: ";
+    cin >> sonarSwitches.Range;
 
     std::string CfgFilename=strPath+"settings.cfg";
 
-/*    if(sonarSwitches.Range<10) sonarSwitches.Range=10;
+    if(sonarSwitches.Range<10) sonarSwitches.Range=10;
     if(sonarSwitches.Range>200) sonarSwitches.Range=200;
 
     cout << "\nEnter a frequency: ";
@@ -130,14 +131,8 @@ int main(int argc, char * argv[], char * envp[])
     
     m_nRange = sonarSwitches.Range;
     m_nRangeIndex = GetRangeIndex(m_nRange);
-*/
+
     int client;
-    int portnum = 4040;
-    bool isExit = false;
-    int BufSize = 4096;
-    BYTE receiveBuf[1024];
-    BYTE dataBuf[2046];
-    BYTE headerBuf[12];
 
     const char ip[] = "192.168.0.5";
 
@@ -153,7 +148,7 @@ int main(int argc, char * argv[], char * envp[])
     cout << "Socket created" << endl;
 
     server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(portnum);
+    server_addr.sin_port = htons(PORT);
     server_addr.sin_addr.s_addr = inet_addr("192.168.0.5");
     inet_pton(AF_INET, ip, &server_addr.sin_addr);
 
@@ -164,7 +159,6 @@ int main(int argc, char * argv[], char * envp[])
     ping_number=0;
 
     index=0;
-    u_int32_t count = 0;
 
     index = send(client, (void *)&(sonarSwitches), 27, 0);
 
@@ -287,7 +281,7 @@ void WriteOnePingData(fstream& outfile)
     Buf[index++] = (BYTE)((nBytes)&0x00FF);
 
     for (i = 0; i< 12; i++)        //start at index=53
-        Buf[index+i]=m_HeaderBuf[i];//add sonar header 12 bytes
+        Buf[index+i]=headerBuf[i];//add sonar header 12 bytes
 
     index=70;
     Buf[index++] = 1;//AUV board
@@ -303,6 +297,11 @@ void WriteOnePingData(fstream& outfile)
           outfile.write((char*)Buf, 1000);
           outfile.flush();
       }
+
+	if (outfile)
+	{
+		outfile.write((char*)dataBuf, m_numDataPoints);
+	}
 
     //zero fill for GPS
     for(i=0;i<1001;i++)Buf[i]=0;//init to all zeros
@@ -324,7 +323,7 @@ void WriteOnePingData(fstream& outfile)
           outfile.flush();
       }
 
-      outfile.close();
+//      outfile.close();
 
     //m_nRepRate=abs(GetTickCount()-m_nLastTime);
     //m_nLastTime=GetTickCount();
