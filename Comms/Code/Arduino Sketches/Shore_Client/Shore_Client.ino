@@ -117,8 +117,8 @@ auto hsp = Serial1; // normal operation use UART
 
 // Change to 434.0 or other frequency, must match RX's freq!
 #define RF95_FREQ 915.0
-#define TIMEOUT 5000
-#define RETRIES 5
+#define TIMEOUT 4000
+#define RETRIES 3
 
 // EFFECTS OF CHANGING BW: -3dB link budget for each doubling of BW
 // but datarate can effectively double.
@@ -277,13 +277,13 @@ void setup()
   // DEFAULT: FASTEST DATARATE AVAILABLE
 
   RH_RF95::ModemConfig modem_config = {
-    bw125cr47,
-    sf1024,
+    bw500cr45,
+    sf256,
     0x0C  // LEAVE THIS ALONE
   };
 
   driver.setModemRegisters(&modem_config);
-  
+
   //set to maximum possible output power
   driver.setTxPower(23, false);
   rf95.setRetries(RETRIES);
@@ -308,16 +308,16 @@ void receiveLine() {
         ndx = numChars - 1;
       }
     }
-    else if (rc == backSpace){
+    else if (rc == backSpace) {
       ndx--;
-      if (ndx < 0){
+      if (ndx < 0) {
         ndx = 0;
       }
     }
     else {
-      msgBuffer[ndx] = endMarker;
-      ndx++;
       msgBuffer[ndx] = '\0';
+      ndx++;
+      msgBuffer[ndx] = endMarker;
       ndx = 0;
       newData = true;
     }
@@ -432,7 +432,7 @@ int modeChangeLocal(byte msg[], bool BOTH) {
     return -1;
   }
   if (BOTH) {
-    if (!rf95.sendtoWait(msg, strlen((char*)msg) + 1, REMOTE_ADDRESS)) {
+    if (!rf95.sendtoWait((uint8_t*)msg, strlen((char*)msg) + 1, REMOTE_ADDRESS)) {
       hsp.println("No Ack received, cannot change mode.");
       return -1;
     }
@@ -469,7 +469,7 @@ int modeChangeRemote(byte msg[]) {
   char* rest = msgCopy;         // pointer for tokenizing
   char* token = strtok(rest, " ");
   while (token != NULL) {
-    switch (keyfromstring(token, 1)) {  // param 0 corresponds to bw,cr parameter
+    switch (keyfromstring(token, 1)) {  // param corresponds to bw,cr parameter
       case -1: break;
       case bw125cr45: set[0] = bw125cr45; strcat(newBWCR, "125kHz, 4_5, "); sC++; break;
       case bw125cr46: set[0] = bw125cr46; strcat(newBWCR, "125kHz, 4_6, "); sC++; break;
@@ -573,6 +573,9 @@ void transmitLine() {
     else {
       debug_print("Transmitting...");             // Send a message to rf95_server
       transmit(msgBuffer, strlen((char*)msgBuffer));  //send() needs uint8_t so we cast it
+      if (!SHORE){
+        hsp.println("...");  
+      }
     }
   }
 }
@@ -610,13 +613,15 @@ void battCheck() {
 
 void loop()
 {
+  bool remoteControl = false;
+
   if (hsp.available() > 0) {
     digitalWrite(LED, HIGH);
     receiveLine();
     transmitLine();
     digitalWrite(LED, LOW);
   }
-  
+
   if (hsp.available() == 0)
   {
     if (!SHORE) {
@@ -652,27 +657,29 @@ void loop()
             hsp.print(memPct); hsp.println("% memory left");
           }
         }
-        if (!SHORE) {               // if at sea, convey message verbatim
-          hsp.println((char*)buf);
-        }
         char tmp[numChars];
         for (int i = 0; i < numChars; i++) {
           tmp[i] = (char)buf[i];
         }
         char *token = strtok(tmp, "\n");
         token = strtok(token, " ");
+
         while (token != NULL) {
+
           if (strcmp(token, MODE) == 0) {
+            remoteControl = true;
             debug_print("Request to change settings.");
             if (modeChangeRemote(buf) == 0) {
               debug_print("Transmission settings changed successfully.");
             }
           }
-          if (strcmp(token, "PING\0") == 0) {
+          else if (strcmp(token, "PING\0") == 0) {
+            remoteControl = true;
             char msg[] = "pingback\0";
             transmit((uint8_t*)msg, strlen(msg));
           }
-          if (strcmp(token, RCVD) == 0) {
+          else if (strcmp(token, RCVD) == 0) {
+            remoteControl = true;
             RH_RF95::ModemConfig new_modem_config = {
               set[0],
               set[1],
@@ -688,6 +695,12 @@ void loop()
           }
           token = strtok(NULL, " ");
         }
+        if (!remoteControl) {
+          if (!SHORE) {               // if at sea, convey message verbatim
+            hsp.println((char*)buf);
+          }
+        }
+
       }
     }
   }
