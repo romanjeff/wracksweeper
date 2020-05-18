@@ -63,13 +63,12 @@ def main():
                             if line[0:2] == '\n':
                                 pass
                             else:
-                                SD.notify('WATCHDOG=1')
                                 ser.write(line.encode())
-                                time.sleep(0.01)
+                                time.sleep(0.005)
                                 ack = getAck()
-                                c = 1000    #try each line at most ten seconds
+                                c = 1000    #try each line at most five seconds
                                 while((ack<1) and (c>0)):
-                                    time.sleep(0.01)
+                                    time.sleep(0.005)
                                     ack = getAck()
                                     c = c -1
                         os.remove(outLog)
@@ -77,8 +76,11 @@ def main():
                 if(numBytes>0):
                     chunk = ser.read(numBytes)
                     key = chunk[0].encode('ascii')
+		    tok = str(chunk).replace('\n','').replace('\r','').split()[0]
                     if (key =="-"):
                         pass
+		    elif (tok == '...'):
+			pass
                     else:
                         os.system('touch ' + outLog)
                         chunk = chunk.replace('\n','').replace('\r','')
@@ -88,7 +90,6 @@ def main():
                                                 stdout=outFile,
                                                 stderr=outFile)
                         time.sleep(0.01)
-                SD.notify("WATCHDOG=1")
         except Exception as e1:
             print ("error communicating...: " + str(e1))
 

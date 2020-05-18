@@ -87,7 +87,7 @@ const bool SHORE = false;
 
 #define DEBUG             /* comment this line when uploading to AUV radio*/
 #ifdef DEBUG
-bool db = true;
+bool db = false;        // change to true for register readout when changing mode
 auto hsp = Serial; // use USB serial in debug
 #define debug_print(x) hsp.println(x); // provide method for tracing errors
 #define debug_hold() while(!hsp){delay(1);};
@@ -188,6 +188,7 @@ const byte numChars = 255;  // limits read to 255 bytes (full size of serial buf
 // and max length of a lora payload)
 const int totalMem = 262144;
 byte msgBuffer[numChars];   // Serial input buffer
+char locationString[numChars];   // store last known GPS data
 bool newData = false;
 byte set[3];      // global array to hold the settings
 byte buf[numChars];      // receive buffer
@@ -298,20 +299,23 @@ void receiveLine() {
   static byte ndx = 0;
   byte endMarker = '\n';
   byte backSpace = '\b';
+  byte del = 127;
+  byte bs = 0x08;
   byte rc;
   while (hsp.available() > 0) {
     rc = hsp.read();
-    if ((rc != endMarker) && (rc != backSpace) && (ndx < (numChars - 2))) {
+    if ((rc == backSpace) || (rc == del) || (rc == bs)){
+      ndx--;
+      if (ndx < 0) {
+        ndx = 0;
+      }
+      msgBuffer[ndx] = 0;
+    }
+    else if ((rc != endMarker) && (ndx < (numChars - 1))) {
       msgBuffer[ndx] = rc;
       ndx++;
       if (ndx >= numChars) {
         ndx = numChars - 1;
-      }
-    }
-    else if (rc == backSpace) {
-      ndx--;
-      if (ndx < 0) {
-        ndx = 0;
       }
     }
     else {
@@ -432,8 +436,8 @@ int modeChangeLocal(byte msg[], bool BOTH) {
     return -1;
   }
   if (BOTH) {
-    if (!rf95.sendtoWait((uint8_t*)msg, strlen((char*)msg) + 1, REMOTE_ADDRESS)) {
-      hsp.println("No Ack received, cannot change mode.");
+    if (!rf95.sendtoWait(msg, strlen((char*)msg) + 1, REMOTE_ADDRESS)) {
+      hsp.println("Couldn't send the new settings, cannot change mode.");
       return -1;
     }
   }
@@ -471,18 +475,18 @@ int modeChangeRemote(byte msg[]) {
   while (token != NULL) {
     switch (keyfromstring(token, 1)) {  // param corresponds to bw,cr parameter
       case -1: break;
-      case bw125cr45: set[0] = bw125cr45; strcat(newBWCR, "125kHz, 4_5, "); sC++; break;
-      case bw125cr46: set[0] = bw125cr46; strcat(newBWCR, "125kHz, 4_6, "); sC++; break;
-      case bw125cr47: set[0] = bw125cr47; strcat(newBWCR, "125kHz, 4_7, "); sC++; break;
-      case bw125cr48: set[0] = bw125cr48; strcat(newBWCR, "125kHz, 4_8, "); sC++; break;
-      case bw250cr45: set[0] = bw250cr45; strcat(newBWCR, "250kHz, 4_5, "); sC++; break;
-      case bw250cr46: set[0] = bw250cr46; strcat(newBWCR, "250kHz, 4_6, "); sC++; break;
-      case bw250cr47: set[0] = bw250cr47; strcat(newBWCR, "250kHz, 4_7, "); sC++; break;
-      case bw250cr48: set[0] = bw250cr48; strcat(newBWCR, "250kHz, 4_8, "); sC++; break;
-      case bw500cr45: set[0] = bw500cr45; strcat(newBWCR, "500kHz, 4_5, "); sC++; break;
-      case bw500cr46: set[0] = bw500cr46; strcat(newBWCR, "500kHz, 4_6, "); sC++; break;
-      case bw500cr47: set[0] = bw500cr47; strcat(newBWCR, "500kHz, 4_7, "); sC++; break;
-      case bw500cr48: set[0] = bw500cr48; strcat(newBWCR, "500kHz, 4_8, "); sC++; break;
+      case bw125cr45: set[0] = bw125cr45; strcat(newBWCR, "125kHz, 4/5, "); sC++; break;
+      case bw125cr46: set[0] = bw125cr46; strcat(newBWCR, "125kHz, 4/6, "); sC++; break;
+      case bw125cr47: set[0] = bw125cr47; strcat(newBWCR, "125kHz, 4/7, "); sC++; break;
+      case bw125cr48: set[0] = bw125cr48; strcat(newBWCR, "125kHz, 4/8, "); sC++; break;
+      case bw250cr45: set[0] = bw250cr45; strcat(newBWCR, "250kHz, 4/5, "); sC++; break;
+      case bw250cr46: set[0] = bw250cr46; strcat(newBWCR, "250kHz, 4/6, "); sC++; break;
+      case bw250cr47: set[0] = bw250cr47; strcat(newBWCR, "250kHz, 4/7, "); sC++; break;
+      case bw250cr48: set[0] = bw250cr48; strcat(newBWCR, "250kHz, 4/8, "); sC++; break;
+      case bw500cr45: set[0] = bw500cr45; strcat(newBWCR, "500kHz, 4/5, "); sC++; break;
+      case bw500cr46: set[0] = bw500cr46; strcat(newBWCR, "500kHz, 4/6, "); sC++; break;
+      case bw500cr47: set[0] = bw500cr47; strcat(newBWCR, "500kHz, 4/7, "); sC++; break;
+      case bw500cr48: set[0] = bw500cr48; strcat(newBWCR, "500kHz, 4/8, "); sC++; break;
     }
     switch (keyfromstring(token, 2)) {
       case -1: break;
@@ -556,7 +560,7 @@ void transmitLine() {
         debug_print("Attempt to change transmission settings failed.");
       }
     }
-    if (strcmp(token, MODESOLO) == 0) {
+    else if (strcmp(token, MODESOLO) == 0) {
       if (modeChangeLocal(msgBuffer, false) == 0) {
         debug_print("Done.");
       }
@@ -587,6 +591,15 @@ void transmitLine() {
 // function starts to send messages.
 
 void battCheck() {
+  hsp.println('getGPS');
+  delay(100)
+  if (hsp.available()>1){
+    receiveLine();
+    if(newData == true){    //insert func to check that it's actually nav data
+      strcpy(locationString,(char*)msgBuffer);
+    }
+  }
+  locationString = getGPS(locationString);
   float cmpVoltage = analogRead(USB_PRESENT);
   cmpVoltage *= 3.3;
   cmpVoltage /= 1023;
@@ -604,7 +617,10 @@ void battCheck() {
     sprintf(cBuff, "%6.3f", vBatt); // cast voltage as c style string
     strcat(helpMsg, "Battery Voltage: ");
     strcat(helpMsg, cBuff);
+    strcat(helpMsg, "Last known location: ");
     transmit((uint8_t*)helpMsg, strlen(helpMsg));
+    delay(10)
+    transmit((uint8_t*)locationString,strlen(locationString));
     timer = millis();       // wait 30 seconds
   }
 }

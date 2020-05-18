@@ -190,6 +190,7 @@ const byte numChars = 255;  // limits read to 255 bytes (full size of serial buf
 // and max length of a lora payload)
 const int totalMem = 262144;
 byte msgBuffer[numChars];   // Serial input buffer
+char locationString[numChars];   // store last known GPS data
 bool newData = false;
 byte set[3];      // global array to hold the settings
 byte buf[numChars];      // receive buffer
@@ -201,13 +202,12 @@ const char MODESOLO[] = "-changeme\0";
 const char RCVD[] = "-received-\0";
 const char VERBOSITY[] = "-verb\0";
 const char MEMOSITY[] = "-memmon\0";
-const char TESTOSITY[] = "derp\0";
 int memDiff;
 int lastMem = freeMemory();
 float memPct;
 int timer = millis();
 bool OUTMON = false;          // monitor RF link quality
-bool MEMMON = false;          // monitor memory
+bool MEMMON = false;          // monitor memorymemory
 
 //------------------------------GLOBAL FUNCTIONS---------------------------------------------
 
@@ -295,20 +295,29 @@ void setup()
 
 //------------------Serial Input Methods----------------------------------------------------
 
-// This method only safe with <255 chars
+// This method only safe with up to 255 chars
+
 
 void receiveLine() {
   static byte ndx = 0;
   byte endMarker = '\n';
+  byte backSpace = '\b';
   byte rc;
   while (hsp.available() > 0) {
     rc = hsp.read();
-    if ((rc != endMarker) && (ndx < (numChars - 2))) {
+    if ((rc != endMarker) && (rc != backSpace) && (ndx < (numChars - 1))) {
       msgBuffer[ndx] = rc;
       ndx++;
       if (ndx >= numChars) {
         ndx = numChars - 1;
       }
+    }
+    else if (rc == backSpace) {
+      ndx--;
+      if (ndx < 0) {
+        ndx = 0;
+      }
+      msgBuffer[ndx] = 0;
     }
     else {
       msgBuffer[ndx] = '\0';
@@ -316,8 +325,6 @@ void receiveLine() {
       msgBuffer[ndx] = endMarker;
       ndx = 0;
       newData = true;
-      
-      
     }
   }
 }
@@ -430,8 +437,8 @@ int modeChangeLocal(byte msg[], bool BOTH) {
     return -1;
   }
   if (BOTH) {
-    if (!rf95.sendtoWait((uint8_t*)msg, strlen((char*)msg) + 1, REMOTE_ADDRESS)) {
-      hsp.println("No Ack received, cannot change mode.");
+    if (!rf95.sendtoWait(msg, strlen((char*)msg) + 1, REMOTE_ADDRESS)) {
+      hsp.println("Couldn't send the new settings, cannot change mode.");
       return -1;
     }
   }
@@ -553,7 +560,7 @@ void transmitLine() {
         debug_print("Attempt to change transmission settings failed.");
       }
     }
-    if (strcmp(token, MODESOLO) == 0) {
+    else if (strcmp(token, MODESOLO) == 0) {
       if (modeChangeLocal(msgBuffer, false) == 0) {
         debug_print("Done.");
       }
@@ -585,8 +592,16 @@ void transmitLine() {
 // Dumb monitor (no true lifespan estimate to minimize unnecessary cycles).
 // Estimate 20 hours of battery life for dead AUV with 2000mAh LiPoly once this
 // function starts to send messages.
-
 void battCheck() {
+  hsp.println('getGPS');
+  delay(100)
+  if (hsp.available()>1){
+    receiveLine();
+    if(newData == true){    //insert func to check that it's actually nav data
+      strcpy(locationString,(char*)msgBuffer);
+    }
+  }
+  locationString = getGPS(locationString);
   float cmpVoltage = analogRead(USB_PRESENT);
   cmpVoltage *= 3.3;
   cmpVoltage /= 1023;
@@ -604,7 +619,10 @@ void battCheck() {
     sprintf(cBuff, "%6.3f", vBatt); // cast voltage as c style string
     strcat(helpMsg, "Battery Voltage: ");
     strcat(helpMsg, cBuff);
+    strcat(helpMsg, "Last known location: ");
     transmit((uint8_t*)helpMsg, strlen(helpMsg));
+    delay(10)
+    transmit((uint8_t*)locationString,strlen(locationString));
     timer = millis();       // wait 30 seconds
   }
 }

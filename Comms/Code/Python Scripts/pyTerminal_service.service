@@ -6,7 +6,6 @@ ExecStart=/usr/bin/python /home/debian/pyTerminal.py
 Restart=always
 Type=notify
 TimeoutSec=30
-WatchdogSec=30
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
