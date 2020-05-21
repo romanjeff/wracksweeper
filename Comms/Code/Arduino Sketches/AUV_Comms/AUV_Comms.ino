@@ -71,22 +71,22 @@
 //-------------------THIS IS INTENDED TO BE ONBOARD THE AUV-------------------------------
 
 
-//#define SHORE_CLIENT            /* UNCOMMENT FOR SHORE CLIENT, COMMENT FOR AUV SERVER */
+#define SHORE_CLIENT            /* UNCOMMENT FOR SHORE CLIENT, COMMENT FOR AUV SERVER */
 #ifdef SHORE_CLIENT
 const bool SHORE = true;
-#define MY_ADDRESS 2
-#define REMOTE_ADDRESS 1
+#define MY_ADDRESS 66
+#define REMOTE_ADDRESS 69
 #else
 const bool SHORE = false;
-#define MY_ADDRESS 1
-#define REMOTE_ADDRESS 2
+#define MY_ADDRESS 69
+#define REMOTE_ADDRESS 66
 #endif
 
 //============WARNING====================WARNING===============WARNING==================
 // COMMENT OUT THE DEFINITION OF DEBUG FOR USE INSIDE AUV. DEBUG MODE DIRECTS ALL SERIAL
 // DATA TO USB INSTEAD OF UART! CANNOT TEST RADIO OVER USB SERIAL IF NOT IN DEBUG MODE!!
 
-//#define DEBUG             /* comment this line when uploading to AUV radio*/
+#define DEBUG             /* comment this line when uploading to AUV radio*/
 #ifdef DEBUG
 bool db = true;
 auto hsp = Serial; // use USB serial in debug
@@ -449,9 +449,9 @@ int modeChangeLocal(byte msg[], bool BOTH) {
       set[1],
       0x0C  // LEAVE THIS ALONE
     };
-    delay(10);
+    delay(100);
     driver.setModemRegisters(&new_modem_config);      // give it the configuration we specified
-    delay(10);
+    delay(100);
   }
 
   else {
@@ -574,14 +574,11 @@ void transmitLine() {
     else if (strcmp(token, MEMOSITY) == 0) {        // toggle memory monitoring
       MEMMON = !MEMMON;
     }
-    else if (strcmp(token, TESTOSITY) == 0) {
-      hsp.println("DERP INDEED, TWERP.");
-    }
     else {
       debug_print("Transmitting...");             // Send a message to rf95_server
       transmit(msgBuffer, strlen((char*)msgBuffer));  //send() needs uint8_t so we cast it
-      if (!SHORE){
-        hsp.println("...");  
+      if (!SHORE) {
+        hsp.println("...");
       }
     }
   }
@@ -593,15 +590,14 @@ void transmitLine() {
 // Estimate 20 hours of battery life for dead AUV with 2000mAh LiPoly once this
 // function starts to send messages.
 void battCheck() {
-  hsp.println('getGPS');
-  delay(100)
-  if (hsp.available()>1){
-    receiveLine();
-    if(newData == true){    //insert func to check that it's actually nav data
-      strcpy(locationString,(char*)msgBuffer);
-    }
-  }
-  locationString = getGPS(locationString);
+//  hsp.println('getGPS');
+//  delay(100)
+//  if (hsp.available() > 1) {
+//    receiveLine();
+//    if (newData == true) {  //insert func to check that it's actually nav data
+//      strcpy(locationString, (char*)msgBuffer);
+//    }
+//  }
   float cmpVoltage = analogRead(USB_PRESENT);
   cmpVoltage *= 3.3;
   cmpVoltage /= 1023;
@@ -621,8 +617,8 @@ void battCheck() {
     strcat(helpMsg, cBuff);
     strcat(helpMsg, "Last known location: ");
     transmit((uint8_t*)helpMsg, strlen(helpMsg));
-    delay(10)
-    transmit((uint8_t*)locationString,strlen(locationString));
+    delay(10);
+    //transmit((uint8_t*)locationString, strlen(locationString));
     timer = millis();       // wait 30 seconds
   }
 }
@@ -715,7 +711,9 @@ void loop()
         }
         if (!remoteControl) {
           if (!SHORE) {               // if at sea, convey message verbatim
-            hsp.println((char*)buf);
+            if (from == REMOTE_ADDRESS) {     // but only if it's from us
+              hsp.println((char*)buf);
+            }
           }
         }
 

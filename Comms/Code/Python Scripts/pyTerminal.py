@@ -34,17 +34,15 @@ def initPort(thePort):
 
 def getAck():
     numBytes = ser.in_waiting
-    if(numBytes==0):
+    if(numBytes<3):
         return 0
-    if(numBytes>0):
+    else:
         chunk = ser.read(numBytes)
-        chunk = chunk.replace('\n','').replace('\r','')
-        if (str(chunk.split()[0]) != "..."):
-            return 0
-        else:
-            return 1
+        chunk = str(chunk).split()
+        return chunk[0]
 
 def main():
+    escFlag = False
     initPort(thePort)
     if ser.is_open:
         try:
@@ -60,36 +58,44 @@ def main():
                     with open(outLog,"r") as f:
                         lines = f.readlines()
                         for line in lines:
+                            if escFlag == True:
+                                ser.write(line.encode())
+                                break
                             if line[0:2] == '\n':
                                 pass
                             else:
                                 ser.write(line.encode())
-                                time.sleep(0.005)
                                 ack = getAck()
-                                c = 1000    #try each line at most five seconds
-                                while((ack<1) and (c>0)):
-                                    time.sleep(0.005)
-                                    ack = getAck()
-                                    c = c -1
+                                if (ack == 'esc'):
+                                    escFlag = True
+                                t = time.time()    #try each line at most five seconds
+                                while((ack != '...') and (t > (time.time()-5))):
+                                    ack = getAck
+                                    if (ack == 'esc'):
+                                        escFlag = True
+                                        break
                         os.remove(outLog)
+                        escFlag = False
                 numBytes = ser.in_waiting
                 if(numBytes>0):
                     chunk = ser.read(numBytes)
-                    key = chunk[0].encode('ascii')
-		    tok = str(chunk).replace('\n','').replace('\r','').split()[0]
-                    if (key =="-"):
-                        pass
-		    elif (tok == '...'):
-			pass
+                    chunk = str(chunk).split()
+                    key = chunk[0]
+        	    if (key =="-"):
+                     	pass
+        	    elif (key == '...'):
+        		pass
                     else:
                         os.system('touch ' + outLog)
-                        chunk = chunk.replace('\n','').replace('\r','')
                         with open(outLog,'w+') as outFile:
-                                subprocess.call([chunk],
-                                                shell=True,
-                                                stdout=outFile,
-                                                stderr=outFile)
-                        time.sleep(0.01)
+                                try:
+				    subprocess.call(chunk,
+                                                    shell=False,
+                                                    stdout=outFile,
+                                                    stderr=outFile)
+				except Exception as e3:
+				    ser.write(("Couldn't execute. " + str(e3) + "\n").encode())
+                        time.sleep(0.005)
         except Exception as e1:
             print ("error communicating...: " + str(e1))
 
