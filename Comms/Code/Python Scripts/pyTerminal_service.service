@@ -1,0 +1,11 @@
+[Unit]
+Description=UART2 Autodaemon
+
+[Service]
+ExecStart=/usr/bin/python /home/debian/pyTerminal.py
+Restart=always
+Type=notify
+TimeoutSec=30
+
+[Install]
+WantedBy=multi-user.target

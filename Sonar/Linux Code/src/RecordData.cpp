@@ -1,22 +1,8 @@
 // RecordData.cpp : Defines the entry point for the console application.
 //
-#include <netinet/ip_icmp.h>
-#include <sys/select.h>
-#include <sys/socket.h>
-#include <string>
-#include <stdio.h>
+
 #include "RecordData.h"
-#include <iostream>
-#include <sys/types.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <netdb.h>
-#include <cstring>
-#include <fstream>
-#include <ctime>
-#include <sys/time.h>
+
 #define PORT 4040
 
 #ifdef _DEBUG
@@ -51,20 +37,6 @@ int main(int argc, char * argv[], char * envp[])
     int nRetCode = 0;
     struct sockaddr_in serv_add;
 
-    // initialize MFC and print and error on failure
-    /*if (!AfxWinInit(::GetModuleHandle(NULL), NULL, ::GetCommandLine(), 0))
-    {
-        cerr << _T("Fatal Error: MFC initialization failed") << endl;
-        nRetCode = 1;
-    }
-    else
-    {
-        if (!AfxSocketInit())
-        {
-            cerr << _T("Socket initialization failed") << endl;
-            return 1;
-        }*/
-
         std::string strPath, filename;
         char input[256];
         int index=0, i=0;
@@ -90,68 +62,58 @@ int main(int argc, char * argv[], char * envp[])
 
         filename=filename+".872";
 
-        fstream outfile/*(filename std::ofstream::binary)*/;
-        outfile.open(filename, ios::out | ios::binary);
+        fstream outfile;
+        outfile.open(filename, ios::out/* | ios::binary*/);
 	
 	if(!outfile)
             cout << "Error, file not created" << endl;
-
-	/*else
-	{
-		outfile << 0xFE << endl;
-	}*/
-        
-	/*outfile=NULL;
-
-        if (!outfile.is_open(filename, NULL))
-        {
-            cerr << _T("File creation failed") << endl;
-         //   outfile=NULL;
-            return 1;
-
-        }*/
 
     //******************************************************************
     m_dAUVSpeed =0.;//if there is the speed info, feed in
 
     m_nRange=50;
     m_nRangeIndex = 9;
-    sonarSwitches.Start1=0xFE;        //Byte0, always 0xFE
-    sonarSwitches.Start2=0x44;        //Byte1, always 0x44
-    sonarSwitches.Head_ID=0;        //Byte2, 0x00
+    sonarSwitches.Start1 = 0xFE;        //Byte0, always 0xFE
+    sonarSwitches.Start2 = 0x44;        //Byte1, always 0x44
+    sonarSwitches.Head_ID = 0;        //Byte2, 0x00
     sonarSwitches.Range = m_nRange;    //Byte3,
-    sonarSwitches.RangeOffset =0;    //Byte4, 0
-    sonarSwitches.HOLD =0;            //Byte5, not used
-    sonarSwitches.MA_SL =0x00;        //Byte6,
-    sonarSwitches.Freq =0;            //Byte7, 0: low, 1: medium 2:high
+    sonarSwitches.RangeOffset = 0;    //Byte4, 0
+    sonarSwitches.HOLD = 0;            //Byte5, not used
+    sonarSwitches.MA_SL = 0x00;        //Byte6,
+    sonarSwitches.Freq = 0;            //Byte7, 0: low, 1: medium 2:high
     sonarSwitches.StartGain = 20;    //Byte8,
     sonarSwitches.LOGF = 0;            //Byte9,
-    sonarSwitches.Absorption=0;        //Byte10,
-    sonarSwitches.PulseLength=0;    //Byte11,
-    sonarSwitches.Delay=0;            //Byte12,
-    sonarSwitches.Resvd0 =0x00;        //Byte13,
-    sonarSwitches.PortGain =0x00;    //Byte14,
-    sonarSwitches.StbdGain =0x00;    //Byte15,
-    sonarSwitches.Resvd1 =0;        //Byte16, Researved, always 0
-    sonarSwitches.Resvd2 =0;        //Byte17, Researved, always 0
-    sonarSwitches.Pack_Number =0;    //Byte18, packet number?
-    sonarSwitches.Resvd4 =0;        //Byte19, Researved, always 0
-    sonarSwitches.Resvd5 =0;        //Byte20,
-    sonarSwitches.Resvd6 =0;        //Byte21,
-    sonarSwitches.Resvd7 =0;        //Byte22,
-    sonarSwitches.Resvd8 =0;        //Byte23, Researved
-    sonarSwitches.Resvd9 =0;        //Byte24, Researved
-    sonarSwitches.Resvd10 =0;        //Byte25,
+    sonarSwitches.Absorption = 0;        //Byte10,
+    sonarSwitches.PulseLength = 0;    //Byte11,
+    sonarSwitches.Delay = 0;            //Byte12,
+    sonarSwitches.Resvd0 = 0x00;        //Byte13,
+    sonarSwitches.PortGain = 0x00;    //Byte14,
+    sonarSwitches.StbdGain = 0x00;    //Byte15,
+    sonarSwitches.Resvd1 = 0;        //Byte16, Researved, always 0
+    sonarSwitches.Resvd2 = 0;        //Byte17, Researved, always 0
+    sonarSwitches.Pack_Number = 0;    //Byte18, packet number?
+    sonarSwitches.Resvd4 = 0;        //Byte19, Researved, always 0
+    sonarSwitches.Resvd5 = 0;        //Byte20,
+    sonarSwitches.Resvd6 = 0;        //Byte21,
+    sonarSwitches.Resvd7 = 0;        //Byte22,
+    sonarSwitches.Resvd8 = 0;        //Byte23, Researved
+    sonarSwitches.Resvd9 = 0;        //Byte24, Researved
+    sonarSwitches.Resvd10 = 0;        //Byte25,
     sonarSwitches.Term =0xFD;        //Byte26, 0xFD
 //******************************************************************
-    
+ 
+// Testing purposes
+/*	sonarSwitches.Range = 50;
+	sonarSwitches.Freq = 1;
+	sonarSwitches.StartGain = 20;*/
+
     cout << "\nEnter a range: ";
     cin >> sonarSwitches.Range;
 
     std::string CfgFilename=strPath+"settings.cfg";
 
-    if(sonarSwitches.Range<10)sonarSwitches.Range=10;
-    if(sonarSwitches.Range>200)sonarSwitches.Range=200;
+    if(sonarSwitches.Range<10) sonarSwitches.Range=10;
+    if(sonarSwitches.Range>200) sonarSwitches.Range=200;
 
     cout << "\nEnter a frequency: ";
     cin >> sonarSwitches.Freq;
@@ -171,10 +133,7 @@ int main(int argc, char * argv[], char * envp[])
     m_nRangeIndex = GetRangeIndex(m_nRange);
 
     int client;
-    int portnum = 4040;
-    bool isExit = false;
-    int BufSize = 4096;
-    char Buffer[BufSize];
+
     const char ip[] = "192.168.0.5";
 
     struct sockaddr_in server_addr;
@@ -189,7 +148,7 @@ int main(int argc, char * argv[], char * envp[])
     cout << "Socket created" << endl;
 
     server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(portnum);
+    server_addr.sin_port = htons(PORT);
     server_addr.sin_addr.s_addr = inet_addr("192.168.0.5");
     inet_pton(AF_INET, ip, &server_addr.sin_addr);
 
@@ -200,71 +159,50 @@ int main(int argc, char * argv[], char * envp[])
     ping_number=0;
 
     index=0;
-    /*index=socketClient.Create();
-    if(!socketClient.Connect("192.168.0.2",4040))
+
+    index = send(client, (void *)&(sonarSwitches), 27, 0);
+
+    while(1)
     {
-        index=GetLastError();
-        AfxMessageBox("Connection Failed!");
-    }*/
-    //else
-    //{
+	    index = recv(client, (void *)&(receiveBuf), 1013, 0);
 
-        send(client, (void *)&(sonarSwitches), 27, 0);
-        //index=client.Send((void *)&(sonarSwitches), 27, 0);
-	
-        while(1)
-        {
-            sleep(300);
+	    if (index >= 1013)
+	    {
+		    if (sonarSwitches.Pack_Number == 0)
+		    {
+			    for (i = 0; i < 1000; i++)
+				    dataBuf[999 - i] = receiveBuf[i + 12];
+		    }
 
-            //******************************************************************
-            //******************************************************************
-            recv(client, (void *)& Buffer, 1013, 0);
-		cout << "test" << endl; 
-            //index=client.Receive((void *)&(m_ReceiveBuf), 1013, 0);
-		   	
-            if(index>=1013)
-            {
+		    if (sonarSwitches.Pack_Number == 2)
+		    {
+			    for (i = 0; i < 12; i++)
+				    headerBuf[i] = receiveBuf[i];
+			    for (i = 0; i< 1001; i++)
+				    dataBuf[i + 1000] = receiveBuf[i + 12];
 
-                //changes made (Oct-16-2007) need to have two packets to get 2000 bytes
-                //1000 bytes/channel
-                if(sonarSwitches.Pack_Number ==0)
-                {//side scan
+			    WriteOnePingData(outfile);
+		    }
 
-                    for (i = 0; i< 1000 ; i++)//flip the port side data 1000 bytes
-                        m_DataBuf[999-i]=m_ReceiveBuf[i+12];
-                }
-                
-		if(sonarSwitches.Pack_Number==2 )
-                {
-                    //get the starboard side data
-                    for (i = 0; i< 12; i++)
-                        m_HeaderBuf[i]= m_ReceiveBuf[i];
-                    for (i = 0; i< 1001 ; i++)
-                        m_DataBuf[i+1000]=m_ReceiveBuf[i+12];
+		    if (sonarSwitches.Pack_Number == 0)
+			    sonarSwitches.Pack_Number = 2;
+		    else if (sonarSwitches.Pack_Number == 2)
+			    sonarSwitches.Pack_Number == 0;
 
-                    //write one ping data to file
-                    //*********************************
-   			
-                    WriteOnePingData(outfile);
-                }
-                
-                //******************************************************************
-                                //need change packet number here before send command
-                if(sonarSwitches.Pack_Number ==0)sonarSwitches.Pack_Number =2;
-                else if(sonarSwitches.Pack_Number ==2)sonarSwitches.Pack_Number =0;
-                send(client, (void *)&(sonarSwitches), 27, 0);
-            }
-        }
-                //    }//connected OK
+		    index = send(client, (void *)&(sonarSwitches), 27, 0);
+	    }
+    }
 
-                ////////////////////////////////////////////////
-    if(!outfile);
+    if(outfile)
+	    outfile.close();
 
     return nRetCode;
 }
 
 void WriteOnePingData(fstream& outfile)
 {
+    // Write a formatted .872 file using data received from the YellowFin Side Scan Sonar
+    
     BYTE Buf[1001];
     int nBytes, index, i;
     index=0;
@@ -343,7 +281,7 @@ void WriteOnePingData(fstream& outfile)
     Buf[index++] = (BYTE)((nBytes)&0x00FF);
 
     for (i = 0; i< 12; i++)        //start at index=53
-        Buf[index+i]=m_HeaderBuf[i];//add sonar header 12 bytes
+        Buf[index+i]=headerBuf[i];//add sonar header 12 bytes
 
     index=70;
     Buf[index++] = 1;//AUV board
@@ -354,29 +292,24 @@ void WriteOnePingData(fstream& outfile)
     Buf[index++] = (BYTE)((temp&0xFF00)>>8);
     Buf[index++] = (BYTE)(temp&0x00FF);
 
-
       if(outfile)
       {
-	      outfile << Buf << endl;
-          //outfile.write((char*)Buf, 1000);
+          outfile.write((char*)Buf, 1000);
           outfile.flush();
       }
 
-    // write out the two channel data 1000 bytes and zero fill 1000 bytes
-      //if(outfile)
-          //write(m_DataBuf,m_numDataPoints);//now 2000 bytes (Oct-16-2007)
+	if (outfile)
+	{
+		outfile.write((char*)dataBuf, m_numDataPoints);
+	}
 
     //zero fill for GPS
     for(i=0;i<1001;i++)Buf[i]=0;//init to all zeros
       if(outfile)
       {
-	      outfile << Buf << endl;
-          //outfile.write((char*)Buf,1000);
+          outfile.write((char*)Buf,1000);
           outfile.flush();
       }
-
-    //************** Zero fill ********************
-    for(i=0;i<1001;i++)Buf[i]=0;//init to all zeros
 
     //4094-4095
     //pointer to a previous ping bytes of this ping + last ping
@@ -386,12 +319,11 @@ void WriteOnePingData(fstream& outfile)
 
       if(outfile)
       {
-	  outfile << Buf << endl;
-          //outfile.write(i(char*)Buf,96);
+          outfile.write((char*)Buf,96);
           outfile.flush();
       }
 
-      outfile.close();
+//      outfile.close();
 
     //m_nRepRate=abs(GetTickCount()-m_nLastTime);
     //m_nLastTime=GetTickCount();

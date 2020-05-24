@@ -1,0 +1,17 @@
+# Executables
+*.exe  binary
+# MS Office files
+*.pptx filter=lfs diff=lfs merge=lfs -text
+*.xlsx diff-excel
+*.docx diff=word
+*.png  diff=exif
+# Matlab binary files
+*.mlx -crlf -diff -merge
+*.mat -crlf -diff -merge
+*.fig -crlf -diff -merge
+*.p -crlf -diff -merge
+*.slx -crlf -diff -merge
+*.mdl -crlf -diff -merge
+# Databse files
+*.db filter=lfs diff=lfs merge=lfs -text
+*.db3 filter=lfs diff=lfs merge=lfs -text
