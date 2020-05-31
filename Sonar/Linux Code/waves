@@ -6,6 +6,6 @@ echo "You have entered the underwater search for the Spanish Galleon"
 cd wracksweeper
 make clean
 make
-./RecordData
+./RecordData $1 $2 $3 $4
 
 echo "ALL DONE"
