@@ -105,7 +105,7 @@ int main(int argc, char * argv[], char * envp[])
 	//******************************************************************
 
 	// Prompt user for range
-	int temp; 
+	uint8_t temp; 
 	cout << "Enter a range: ";
 	cin >> temp;
 	cin.ignore(256, '\n');
