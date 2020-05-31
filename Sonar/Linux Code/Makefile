@@ -1,3 +1,7 @@
+# Simple Makefile
+# Alex Higgins, higginja AT ece DOT pdx DOT edu
+# 30-Apr-2020 12:40:16
+ 
 EXE = RecordData
 
 CC = gcc
