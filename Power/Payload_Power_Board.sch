@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="2" display="yes" altdistance="0.01" altunitdist="inch" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -6040,7 +6040,6 @@ Source: &lt;a href="https://www.molex.com/pdm_docs/sd/436500716_sd.pdf"&gt; Data
 <text x="175.26" y="171.45" size="1.778" layer="97">2x22uF and 1x6.8uF caps to be stacked vertically</text>
 <text x="176.53" y="118.11" size="1.778" layer="97">2x22uF and 1x6.8uF caps to be stacked vertically</text>
 <text x="176.53" y="63.5" size="1.778" layer="97">2x22uF and 1x6.8uF caps to be stacked vertically</text>
-<text x="5.08" y="203.2" size="1.778" layer="97">18V @ [0.92A,1.55A,2.4A]</text>
 <text x="208.28" y="180.34" size="1.778" layer="97">Connector "J1_BBB" powers the Payload's
 BeagleBone Black uprocessor</text>
 <text x="209.55" y="124.46" size="1.778" layer="97">Connector "J2_LORA" powers the Adafruit
@@ -6058,6 +6057,7 @@ Imagenex Ethernet Sidescan Sonar board</text>
 <text x="7.62" y="157.48" size="1.778" layer="97">Connector "J0_PLOAD" brings in the payload
 power from the "J3 Pload" connector on the 
 AUV's existing Power Controller Board</text>
+<text x="5.08" y="203.2" size="1.778" layer="97">[15V,18V,21V] @ [0.92A,1.55A,2.4A]</text>
 </plain>
 <instances>
 <instance part="LORA_VOLT_REG" gate="G$1" x="118.11" y="128.27" smashed="yes">
@@ -6099,7 +6099,7 @@ AUV's existing Power Controller Board</text>
 <attribute name="VALUE" x="95.25" y="107.95" size="1.778" layer="96"/>
 </instance>
 <instance part="B3_VOLT_REG" gate="G$1" x="118.11" y="181.61" smashed="yes">
-<attribute name="NAME" x="109.22" y="198.12" size="1.778" layer="95"/>
+<attribute name="NAME" x="105.41" y="198.12" size="1.778" layer="95"/>
 <attribute name="VALUE" x="114.81" y="177.42" size="1.778" layer="96"/>
 </instance>
 <instance part="R6" gate="G$1" x="97.79" y="171.45" smashed="yes" rot="R90">
