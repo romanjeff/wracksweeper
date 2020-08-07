@@ -318,7 +318,7 @@ void WriteOnePingData(fstream& outfile)
 		outfile.flush();
 	}
 
-	// Write out tje two channel data 1000 bytes and zero fill 1000 bytes
+	// Write out the two channel data 1000 bytes and zero fill 1000 bytes
 	if (outfile)
 		outfile.write((char*)dataBuf, m_numDataPoints);
 
