@@ -1,7 +1,3 @@
-# Simple Makefile
-# Alex Higgins, higginja AT ece DOT pdx DOT edu
-# 30-Apr-2020 12:40:16
- 
 EXE = RecordData
 
 CC = gcc
@@ -21,10 +17,10 @@ _OBJ = RecordData.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: $(SDIR)/%.cpp $(IDIR)/RecordData.h
-	$(CXX) -c -o $@ $< $(CXFLAGS)
+	$(CXX) -lncurses -c -o $@ $< $(CXFLAGS)
 
 RecordData: $(OBJ)
-	$(CXX) -o $@ $^ $(CFLAGS) $(LIBS)
+	$(CXX) -lncurses -o $@ $^ $(CFLAGS) $(LIBS)
 
 .PHONY: all
 all: $(EXE) 
