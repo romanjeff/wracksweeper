@@ -1,0 +1,1010 @@
+4790.227        MOOS_DEBUG           pLogger         Closing : MOOSLog_8_11_2020_____23_12_58 
+4790.604        MOOS_DEBUG           pLogger         Now Logging to : MOOSLog_8_11_2020_____23_32_45 
+4792.137        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+4792.458        MOOS_DEBUG           pNav            EKF Completes iteration 46500 
+4792.458        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6033] 
+4792.458        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [727] 
+4792.458        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [728] 
+4792.458        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [30100] 
+4792.458        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [58288] 
+4792.664        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+4793.674        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+4794.692        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+4794.848        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: clear 
+4794.891        MOOS_DEBUG           pMarinePID      pMarinePID Control Is On 
+4797.781        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+4798.291        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+4801.362        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+4802.395        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+4803.295        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [30128] 
+4803.295        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [58362] 
+4803.295        MOOS_DEBUG           pNav            EKF Completes iteration 46600 
+4803.295        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6042] 
+4803.295        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [729] 
+4803.295        MOOS_DEBUG           pNav            EKF Rejecting 9 percent of GPS[Y] [730] 
+4803.847        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: MissingDecVars:depth,speed 
+4804.102        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: clear 
+4805.433        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+4806.452        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+4807.476        MOOS_DEBUG           pNav            LSQ Completes iteration 2700 
+4809.498        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+4813.777        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [58520] 
+4813.777        MOOS_DEBUG           pNav            EKF Completes iteration 46700 
+4813.777        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6077] 
+4813.777        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4813.777        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4813.777        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [30200] 
+4824.111        MOOS_DEBUG           pNav            EKF Completes iteration 46800 
+4824.111        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6081] 
+4824.111        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4824.111        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4824.111        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [30250] 
+4824.112        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [58658] 
+4834.376        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6099] 
+4834.376        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4834.376        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4834.376        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [30322] 
+4834.376        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [58830] 
+4834.376        MOOS_DEBUG           pNav            EKF Completes iteration 46900 
+4844.618        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [30372] 
+4844.618        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [59030] 
+4844.618        MOOS_DEBUG           pNav            EKF Completes iteration 47000 
+4844.618        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6108] 
+4844.618        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4844.618        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4854.960        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [30418] 
+4854.960        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [59230] 
+4854.960        MOOS_DEBUG           pNav            EKF Completes iteration 47100 
+4854.960        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6115] 
+4854.960        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4854.960        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4864.261        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: MissingDecVars:depth,speed 
+4864.512        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: clear 
+4865.366        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [30484] 
+4865.367        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [59316] 
+4865.366        MOOS_DEBUG           pNav            EKF Completes iteration 47200 
+4865.366        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6121] 
+4865.366        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4865.366        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4873.536        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: MissingDecVars:depth,speed 
+4873.788        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: clear 
+4875.568        MOOS_DEBUG           pNav            EKF Completes iteration 47300 
+4875.568        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6142] 
+4875.568        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4875.568        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4875.569        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [30530] 
+4875.569        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [59510] 
+4885.862        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [59708] 
+4885.862        MOOS_DEBUG           pNav            EKF Completes iteration 47400 
+4885.862        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6155] 
+4885.862        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4885.862        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4885.862        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [30590] 
+4896.156        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [59846] 
+4896.156        MOOS_DEBUG           pNav            EKF Completes iteration 47500 
+4896.156        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6157] 
+4896.156        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4896.156        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4896.156        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [30674] 
+4906.332        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [60000] 
+4906.332        MOOS_DEBUG           pNav            EKF Completes iteration 47600 
+4906.332        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6159] 
+4906.332        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4906.332        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4906.332        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [30736] 
+4916.722        MOOS_DEBUG           pNav            EKF Completes iteration 47700 
+4916.722        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6162] 
+4916.722        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4916.722        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4916.724        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [30802] 
+4916.724        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [60176] 
+4927.020        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [30860] 
+4927.021        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [60312] 
+4927.020        MOOS_DEBUG           pNav            EKF Completes iteration 47800 
+4927.020        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6183] 
+4927.020        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4927.020        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4933.953        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: MissingDecVars:depth,speed 
+4934.204        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: clear 
+4937.621        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [30936] 
+4937.621        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [60420] 
+4937.620        MOOS_DEBUG           pNav            EKF Completes iteration 47900 
+4937.621        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6190] 
+4937.621        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4937.621        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4943.234        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: MissingDecVars:depth,speed 
+4943.473        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: NothingToDo 
+4947.953        MOOS_DEBUG           pNav            EKF Completes iteration 48000 
+4947.953        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6205] 
+4947.953        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4947.953        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4947.953        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [31014] 
+4947.953        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [60606] 
+4948.626        MOOS_DEBUG           pMarinePID      Paused Due To Tardy HELM Input: THRUST=0 
+4958.501        MOOS_DEBUG           pNav            EKF Completes iteration 48100 
+4958.501        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6218] 
+4958.501        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4958.501        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4958.501        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [31066] 
+4958.501        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [60700] 
+4968.801        MOOS_DEBUG           pNav            EKF Completes iteration 48200 
+4968.808        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6226] 
+4968.808        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4968.808        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4968.808        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [31160] 
+4968.808        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [60796] 
+4979.078        MOOS_DEBUG           pNav            EKF Completes iteration 48300 
+4979.078        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6229] 
+4979.078        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4979.083        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4979.083        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [31238] 
+4979.083        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [60952] 
+4989.361        MOOS_DEBUG           pNav            EKF Completes iteration 48400 
+4989.361        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6244] 
+4989.362        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4989.362        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+4989.362        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [31320] 
+4989.362        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [61106] 
+4999.654        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [31402] 
+4999.654        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [61202] 
+4999.652        MOOS_DEBUG           pNav            EKF Completes iteration 48500 
+4999.654        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6277] 
+4999.654        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+4999.654        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+5010.042        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [31472] 
+5010.042        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [61346] 
+5010.042        MOOS_DEBUG           pNav            EKF Completes iteration 48600 
+5010.042        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6283] 
+5010.042        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+5010.042        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+5020.327        MOOS_DEBUG           pNav            EKF Completes iteration 48700 
+5020.327        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6291] 
+5020.327        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+5020.327        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+5020.327        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [31520] 
+5020.327        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [61442] 
+5024.657        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5025.694        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5026.715        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5029.765        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5030.532        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [31592] 
+5030.532        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [61480] 
+5030.532        MOOS_DEBUG           pNav            EKF Completes iteration 48800 
+5030.532        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6298] 
+5030.532        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+5030.532        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+5030.783        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5033.837        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5034.853        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5036.894        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5037.909        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5040.806        MOOS_DEBUG           pNav            EKF Completes iteration 48900 
+5040.806        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6311] 
+5040.806        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [731] 
+5040.806        MOOS_DEBUG           pNav            EKF Rejecting 14 percent of GPS[Y] [731] 
+5040.806        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [31644] 
+5040.806        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [61636] 
+5040.955        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5041.973        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5045.047        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5046.065        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5049.120        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5050.148        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5050.167        MOOS_DEBUG           pNav            LSQ Completes iteration 2720 
+5051.321        MOOS_DEBUG           pNav            EKF Completes iteration 49000 
+5051.321        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6331] 
+5051.321        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [735] 
+5051.321        MOOS_DEBUG           pNav            EKF Rejecting 11 percent of GPS[Y] [735] 
+5051.321        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [31742] 
+5051.321        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [61714] 
+5053.201        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5054.216        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5057.297        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5058.306        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5061.362        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5061.718        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [31768] 
+5061.718        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [61856] 
+5061.718        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [736] 
+5061.718        MOOS_DEBUG           pNav            EKF Rejecting 11 percent of GPS[Y] [736] 
+5061.718        MOOS_DEBUG           pNav            EKF Completes iteration 49100 
+5061.718        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6343] 
+5062.377        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5065.436        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5066.452        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5069.502        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5070.519        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5071.997        MOOS_DEBUG           pNav            EKF Completes iteration 49200 
+5071.997        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6369] 
+5071.997        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [742] 
+5071.997        MOOS_DEBUG           pNav            EKF Rejecting 8 percent of GPS[Y] [742] 
+5071.997        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [31836] 
+5071.997        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [62000] 
+5073.570        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5074.602        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5076.646        MOOS_DEBUG           pNav            LSQ Completes iteration 2740 
+5077.658        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5078.677        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5081.725        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5082.183        MOOS_DEBUG           pNav            EKF Completes iteration 49300 
+5082.183        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6382] 
+5082.183        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [742] 
+5082.183        MOOS_DEBUG           pNav            EKF Rejecting 8 percent of GPS[Y] [742] 
+5082.183        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [31882] 
+5082.183        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [62106] 
+5082.742        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5084.777        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5085.791        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5088.869        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5089.894        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5092.571        MOOS_DEBUG           pNav            EKF Completes iteration 49400 
+5092.572        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6388] 
+5092.572        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [743] 
+5092.572        MOOS_DEBUG           pNav            EKF Rejecting 7 percent of GPS[Y] [743] 
+5092.572        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32002] 
+5092.572        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [62228] 
+5092.978        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5093.994        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5097.056        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5097.570        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5098.586        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5099.606        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5101.637        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5102.653        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5102.954        MOOS_DEBUG           pNav            EKF Completes iteration 49500 
+5102.954        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6390] 
+5102.954        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [744] 
+5102.954        MOOS_DEBUG           pNav            EKF Rejecting 7 percent of GPS[Y] [744] 
+5102.954        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32050] 
+5102.954        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [62322] 
+5104.685        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5105.697        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5105.728        MOOS_DEBUG           pNav            LSQ Completes iteration 2760 
+5108.745        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5109.794        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5112.867        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5113.228        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [62394] 
+5113.228        MOOS_DEBUG           pNav            EKF Completes iteration 49600 
+5113.228        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6398] 
+5113.228        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [747] 
+5113.228        MOOS_DEBUG           pNav            EKF Rejecting 6 percent of GPS[Y] [747] 
+5113.228        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32068] 
+5113.880        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5116.938        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5117.956        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5121.036        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5122.055        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5123.586        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [748] 
+5123.586        MOOS_DEBUG           pNav            EKF Rejecting 5 percent of GPS[Y] [748] 
+5123.586        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32116] 
+5123.586        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [62436] 
+5123.586        MOOS_DEBUG           pNav            EKF Completes iteration 49700 
+5123.586        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6411] 
+5125.112        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5126.132        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5129.188        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5130.217        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5132.297        MOOS_DEBUG           pNav            LSQ Completes iteration 2780 
+5133.297        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5133.958        MOOS_DEBUG           pNav            EKF Completes iteration 49800 
+5133.958        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6427] 
+5133.958        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [754] 
+5133.958        MOOS_DEBUG           pNav            EKF Rejecting 4 percent of GPS[Y] [754] 
+5133.960        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32178] 
+5133.960        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [62522] 
+5134.316        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5137.379        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5138.414        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5141.463        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5142.491        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5144.422        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [62672] 
+5144.422        MOOS_DEBUG           pNav            EKF Completes iteration 49900 
+5144.422        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6437] 
+5144.422        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [756] 
+5144.422        MOOS_DEBUG           pNav            EKF Rejecting 3 percent of GPS[Y] [756] 
+5144.422        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32236] 
+5145.541        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5146.557        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5149.626        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5150.645        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5153.697        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5154.687        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [62800] 
+5154.687        MOOS_DEBUG           pNav            EKF Completes iteration 50000 
+5154.687        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6444] 
+5154.687        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [756] 
+5154.687        MOOS_DEBUG           pNav            EKF Rejecting 3 percent of GPS[Y] [756] 
+5154.687        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32266] 
+5154.720        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5157.780        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5158.799        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5159.829        MOOS_DEBUG           pNav            LSQ Completes iteration 2800 
+5161.849        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5162.865        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5164.863        MOOS_DEBUG           pNav            EKF Completes iteration 50100 
+5164.865        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6454] 
+5164.865        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [760] 
+5164.865        MOOS_DEBUG           pNav            EKF Rejecting 3 percent of GPS[Y] [760] 
+5164.865        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32336] 
+5164.865        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [62892] 
+5165.929        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5166.948        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5169.997        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5171.024        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5173.057        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5174.112        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5175.178        MOOS_DEBUG           pNav            EKF Completes iteration 50200 
+5175.178        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6461] 
+5175.178        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [760] 
+5175.178        MOOS_DEBUG           pNav            EKF Rejecting 3 percent of GPS[Y] [760] 
+5175.178        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32350] 
+5175.178        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [62982] 
+5177.158        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5178.714        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5180.841        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5183.769        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5188.660        MOOS_DEBUG           pNav            EKF Completes iteration 50300 
+5188.660        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6464] 
+5188.660        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [761] 
+5188.660        MOOS_DEBUG           pNav            EKF Rejecting 3 percent of GPS[Y] [761] 
+5188.661        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32368] 
+5188.661        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [63008] 
+5189.885        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5190.396        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5190.424        MOOS_DEBUG           pNav            LSQ Completes iteration 2820 
+5193.450        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5194.482        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5197.535        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5198.560        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5199.068        MOOS_DEBUG           pNav            EKF Completes iteration 50400 
+5199.068        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6475] 
+5199.068        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [762] 
+5199.068        MOOS_DEBUG           pNav            EKF Rejecting 2 percent of GPS[Y] [762] 
+5199.068        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32444] 
+5199.068        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [63102] 
+5201.624        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5202.650        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5205.724        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5206.739        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5209.330        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [63246] 
+5209.330        MOOS_DEBUG           pNav            EKF Rejecting 2 percent of GPS[Y] [762] 
+5209.330        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32502] 
+5209.330        MOOS_DEBUG           pNav            EKF Completes iteration 50500 
+5209.330        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6481] 
+5209.330        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [762] 
+5209.786        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5210.798        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5213.852        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5214.865        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5216.908        MOOS_DEBUG           pNav            LSQ Completes iteration 2840 
+5217.917        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5218.933        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5219.516        MOOS_DEBUG           pNav            EKF Completes iteration 50600 
+5219.516        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6481] 
+5219.516        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [762] 
+5219.516        MOOS_DEBUG           pNav            EKF Rejecting 2 percent of GPS[Y] [762] 
+5219.516        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32538] 
+5219.516        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [63262] 
+5221.998        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5223.013        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5226.072        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5226.582        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5227.709        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5228.216        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5229.234        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5229.744        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5229.999        MOOS_DEBUG           pNav            EKF Completes iteration 50700 
+5229.999        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6500] 
+5229.999        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [763] 
+5229.999        MOOS_DEBUG           pNav            EKF Rejecting 2 percent of GPS[Y] [763] 
+5229.999        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32608] 
+5229.999        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [63346] 
+5230.797        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5232.413        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5237.573        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5238.084        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5240.877        MOOS_DEBUG           pNav            EKF Completes iteration 50800 
+5240.877        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6506] 
+5240.877        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [764] 
+5240.877        MOOS_DEBUG           pNav            EKF Rejecting 2 percent of GPS[Y] [764] 
+5240.877        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32630] 
+5240.877        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [63402] 
+5241.137        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5242.148        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5244.212        MOOS_DEBUG           pNav            LSQ Completes iteration 2860 
+5245.206        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5246.238        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5249.293        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5250.313        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5251.192        MOOS_DEBUG           pNav            EKF Completes iteration 50900 
+5251.192        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6514] 
+5251.192        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [767] 
+5251.192        MOOS_DEBUG           pNav            EKF Rejecting 2 percent of GPS[Y] [767] 
+5251.192        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32680] 
+5251.192        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [63452] 
+5253.369        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5254.388        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5257.461        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5258.478        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5261.500        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [63548] 
+5261.500        MOOS_DEBUG           pNav            EKF Completes iteration 51000 
+5261.500        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6516] 
+5261.500        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [767] 
+5261.500        MOOS_DEBUG           pNav            EKF Rejecting 2 percent of GPS[Y] [767] 
+5261.500        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32740] 
+5261.552        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5262.567        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5265.638        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5266.661        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5269.723        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5270.236        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5271.249        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5271.755        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5271.770        MOOS_DEBUG           pNav            LSQ Completes iteration 2880 
+5271.909        MOOS_DEBUG           pNav            EKF Completes iteration 51100 
+5271.909        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6522] 
+5271.909        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [767] 
+5271.909        MOOS_DEBUG           pNav            EKF Rejecting 2 percent of GPS[Y] [767] 
+5271.909        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32760] 
+5271.909        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [63648] 
+5273.801        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5274.308        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5277.366        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5278.382        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5281.441        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5282.105        MOOS_DEBUG           pNav            EKF Completes iteration 51200 
+5282.106        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6524] 
+5282.106        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [769] 
+5282.106        MOOS_DEBUG           pNav            EKF Rejecting 2 percent of GPS[Y] [769] 
+5282.106        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32784] 
+5282.106        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [63694] 
+5282.460        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5285.509        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5286.530        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5289.577        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5290.598        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5292.296        MOOS_DEBUG           pNav            EKF Completes iteration 51300 
+5292.296        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6540] 
+5292.296        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [776] 
+5292.296        MOOS_DEBUG           pNav            EKF Rejecting 1 percent of GPS[Y] [776] 
+5292.296        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32846] 
+5292.303        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [63812] 
+5293.681        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5294.706        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5297.774        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5298.787        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5298.813        MOOS_DEBUG           pNav            LSQ Completes iteration 2900 
+5300.827        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5301.837        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5302.507        MOOS_DEBUG           pNav            EKF Completes iteration 51400 
+5302.507        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6541] 
+5302.507        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [776] 
+5302.507        MOOS_DEBUG           pNav            EKF Rejecting 1 percent of GPS[Y] [776] 
+5302.507        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32910] 
+5302.507        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [63872] 
+5304.901        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5305.914        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5309.002        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5310.026        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5312.820        MOOS_DEBUG           pNav            EKF Completes iteration 51500 
+5312.820        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6556] 
+5312.820        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [778] 
+5312.820        MOOS_DEBUG           pNav            EKF Rejecting 1 percent of GPS[Y] [778] 
+5312.821        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32932] 
+5312.821        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [63980] 
+5313.072        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5314.083        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5317.152        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5318.169        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5321.252        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5322.264        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5323.053        MOOS_DEBUG           pNav            EKF Completes iteration 51600 
+5323.053        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6567] 
+5323.053        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [780] 
+5323.053        MOOS_DEBUG           pNav            EKF Rejecting 1 percent of GPS[Y] [780] 
+5323.053        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32964] 
+5323.053        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [64024] 
+5325.342        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5326.365        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5326.384        MOOS_DEBUG           pNav            LSQ Completes iteration 2920 
+5329.421        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5330.448        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5333.346        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [780] 
+5333.346        MOOS_DEBUG           pNav            EKF Rejecting 1 percent of GPS[Y] [780] 
+5333.346        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [32996] 
+5333.346        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [64122] 
+5333.346        MOOS_DEBUG           pNav            EKF Completes iteration 51700 
+5333.346        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6586] 
+5333.491        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5334.509        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5337.574        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5338.590        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5341.651        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5342.675        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5343.859        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [64156] 
+5343.859        MOOS_DEBUG           pNav            EKF Completes iteration 51800 
+5343.859        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6593] 
+5343.859        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [782] 
+5343.859        MOOS_DEBUG           pNav            EKF Rejecting 1 percent of GPS[Y] [782] 
+5343.859        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33004] 
+5345.744        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5346.762        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5349.832        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5350.860        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5352.908        MOOS_DEBUG           pNav            LSQ Completes iteration 2940 
+5353.905        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5354.060        MOOS_DEBUG           pNav            EKF Completes iteration 51900 
+5354.060        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6593] 
+5354.060        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [782] 
+5354.060        MOOS_DEBUG           pNav            EKF Rejecting 1 percent of GPS[Y] [782] 
+5354.060        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33034] 
+5354.060        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [64258] 
+5354.925        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5357.974        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5359.003        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5362.059        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5363.071        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5364.250        MOOS_DEBUG           pNav            EKF Completes iteration 52000 
+5364.250        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6594] 
+5364.250        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [785] 
+5364.250        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [785] 
+5364.250        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33086] 
+5364.250        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [64336] 
+5365.110        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5365.627        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5367.695        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5368.705        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5369.721        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5370.228        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5373.289        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5373.802        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5374.673        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [64420] 
+5374.673        MOOS_DEBUG           pNav            EKF Completes iteration 52100 
+5374.673        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6612] 
+5374.673        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [786] 
+5374.673        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [786] 
+5374.673        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33154] 
+5376.861        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5377.883        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5379.915        MOOS_DEBUG           pNav            LSQ Completes iteration 2960 
+5380.940        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5382.457        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5385.059        MOOS_DEBUG           pNav            EKF Completes iteration 52200 
+5385.059        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6619] 
+5385.059        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [789] 
+5385.059        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [789] 
+5385.059        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33190] 
+5385.059        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [64510] 
+5385.514        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5386.024        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5389.077        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5390.093        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5393.150        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5394.170        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5395.367        MOOS_DEBUG           pNav            EKF Completes iteration 52300 
+5395.367        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6628] 
+5395.368        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [791] 
+5395.368        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [791] 
+5395.368        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33230] 
+5395.368        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [64586] 
+5397.249        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5398.266        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5401.325        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5402.344        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5405.402        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5405.656        MOOS_DEBUG           pNav            EKF Completes iteration 52400 
+5405.656        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6630] 
+5405.656        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [793] 
+5405.656        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [793] 
+5405.656        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33256] 
+5405.656        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [64652] 
+5406.417        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5407.446        MOOS_DEBUG           pNav            LSQ Completes iteration 2980 
+5409.469        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5410.486        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5413.556        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5414.574        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5415.956        MOOS_DEBUG           pNav            EKF Completes iteration 52500 
+5415.956        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6647] 
+5415.956        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [795] 
+5415.956        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [795] 
+5415.956        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33316] 
+5415.956        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [64742] 
+5417.634        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5418.650        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5421.702        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5422.729        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5425.782        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5426.140        MOOS_DEBUG           pNav            EKF Completes iteration 52600 
+5426.140        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6658] 
+5426.140        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [796] 
+5426.140        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [796] 
+5426.140        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33362] 
+5426.140        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [64804] 
+5426.812        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5429.865        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5430.880        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5433.965        MOOS_DEBUG           pNav            LSQ Completes iteration 3000 
+5434.964        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5435.980        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5436.450        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [799] 
+5436.450        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33384] 
+5436.450        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [64842] 
+5436.450        MOOS_DEBUG           pNav            EKF Completes iteration 52700 
+5436.450        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6665] 
+5436.450        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [799] 
+5441.076        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5442.106        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5445.150        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5446.171        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5446.884        MOOS_DEBUG           pNav            EKF Completes iteration 52800 
+5446.884        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6690] 
+5446.884        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [800] 
+5446.884        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [800] 
+5446.884        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33432] 
+5446.884        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [64958] 
+5449.229        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5450.245        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5453.299        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5454.316        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5457.325        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33474] 
+5457.325        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [64984] 
+5457.325        MOOS_DEBUG           pNav            EKF Completes iteration 52900 
+5457.325        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6697] 
+5457.325        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [802] 
+5457.325        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [802] 
+5457.374        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5458.404        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5460.438        MOOS_DEBUG           pNav            LSQ Completes iteration 3020 
+5461.451        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5462.468        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5465.536        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5466.557        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5467.674        MOOS_DEBUG           pNav            EKF Completes iteration 53000 
+5467.674        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6701] 
+5467.674        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [804] 
+5467.674        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [804] 
+5467.674        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33562] 
+5467.674        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65098] 
+5469.628        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5470.648        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5473.719        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5474.257        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5477.316        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5477.970        MOOS_DEBUG           pNav            EKF Completes iteration 53100 
+5477.970        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6709] 
+5477.970        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [806] 
+5477.970        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [806] 
+5477.970        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33584] 
+5477.979        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65134] 
+5478.326        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5481.382        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5482.401        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5485.456        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5486.477        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5487.530        MOOS_DEBUG           pNav            LSQ Completes iteration 3040 
+5488.181        MOOS_DEBUG           pNav            EKF Completes iteration 53200 
+5488.181        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6725] 
+5488.181        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [811] 
+5488.181        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [811] 
+5488.182        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33640] 
+5488.182        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65260] 
+5489.549        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5490.561        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5493.625        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5494.645        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5497.722        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5498.485        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65306] 
+5498.485        MOOS_DEBUG           pNav            EKF Completes iteration 53300 
+5498.485        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6729] 
+5498.485        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [811] 
+5498.485        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [811] 
+5498.485        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33658] 
+5498.737        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5501.798        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5502.820        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5504.852        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5505.881        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5508.967        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5509.034        MOOS_DEBUG           pNav            EKF Completes iteration 53400 
+5509.034        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6741] 
+5509.034        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [811] 
+5509.034        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [811] 
+5509.034        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33712] 
+5509.034        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65396] 
+5509.992        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5513.054        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5514.070        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5515.122        MOOS_DEBUG           pNav            LSQ Completes iteration 3060 
+5517.131        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5518.154        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5519.460        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [814] 
+5519.460        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33756] 
+5519.460        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65458] 
+5519.460        MOOS_DEBUG           pNav            EKF Completes iteration 53500 
+5519.460        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6753] 
+5519.460        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [814] 
+5521.237        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5522.253        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5525.325        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5526.337        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5528.392        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5529.437        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5529.993        MOOS_DEBUG           pNav            EKF Completes iteration 53600 
+5529.993        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6783] 
+5529.993        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [814] 
+5529.993        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [814] 
+5529.993        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33798] 
+5529.993        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65520] 
+5530.454        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5531.502        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5532.513        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5533.020        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5538.119        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5538.625        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5540.737        MOOS_DEBUG           pNav            EKF Completes iteration 53700 
+5540.737        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6843] 
+5540.737        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [814] 
+5540.737        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [814] 
+5540.737        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33804] 
+5540.737        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65528] 
+5541.697        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5542.721        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5542.776        MOOS_DEBUG           pNav            LSQ Completes iteration 3080 
+5545.742        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5546.765        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5549.831        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5550.852        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5551.214        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [815] 
+5551.214        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [815] 
+5551.214        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33826] 
+5551.214        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65556] 
+5551.213        MOOS_DEBUG           pNav            EKF Completes iteration 53800 
+5551.214        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6854] 
+5553.909        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5554.924        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5557.994        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5559.013        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5561.512        MOOS_DEBUG           pNav            EKF Completes iteration 53900 
+5561.513        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6859] 
+5561.513        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [818] 
+5561.513        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [818] 
+5561.513        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33858] 
+5561.513        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65610] 
+5562.076        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5563.089        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5566.133        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5567.149        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5569.224        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5570.245        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5570.285        MOOS_DEBUG           pNav            LSQ Completes iteration 3100 
+5572.036        MOOS_DEBUG           pNav            EKF Completes iteration 54000 
+5572.036        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6860] 
+5572.036        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [818] 
+5572.036        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [818] 
+5572.036        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33868] 
+5572.036        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65660] 
+5573.313        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5573.823        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5576.914        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5578.439        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5581.520        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5582.489        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33910] 
+5582.489        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65704] 
+5582.489        MOOS_DEBUG           pNav            EKF Completes iteration 54100 
+5582.489        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6868] 
+5582.489        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [818] 
+5582.489        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [818] 
+5582.539        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5585.617        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5586.132        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5589.181        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5590.210        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5592.835        MOOS_DEBUG           pNav            EKF Completes iteration 54200 
+5592.835        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6878] 
+5592.835        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [818] 
+5592.835        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [818] 
+5592.835        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33946] 
+5592.835        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65738] 
+5593.288        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5594.310        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5596.353        MOOS_DEBUG           pNav            LSQ Completes iteration 3120 
+5597.371        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5598.386        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5601.434        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5602.449        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5603.065        MOOS_DEBUG           pNav            EKF Completes iteration 54300 
+5603.065        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6883] 
+5603.065        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [820] 
+5603.065        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [820] 
+5603.065        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [33978] 
+5603.065        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65792] 
+5605.518        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5606.548        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5609.658        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5610.680        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5613.391        MOOS_DEBUG           pNav            EKF Completes iteration 54400 
+5613.392        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6891] 
+5613.392        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [820] 
+5613.392        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [820] 
+5613.392        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34008] 
+5613.392        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65808] 
+5613.741        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5614.764        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5617.834        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5618.857        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5621.928        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5622.441        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5623.476        MOOS_DEBUG           pNav            LSQ Completes iteration 3140 
+5623.839        MOOS_DEBUG           pNav            EKF Completes iteration 54500 
+5623.842        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6892] 
+5623.842        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [821] 
+5623.842        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [821] 
+5623.842        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34010] 
+5623.842        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65864] 
+5624.490        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5624.998        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5626.014        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5626.531        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5627.537        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5628.045        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5630.116        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5630.644        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5631.644        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5632.150        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5634.201        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5634.453        MOOS_DEBUG           pNav            EKF Completes iteration 54600 
+5634.453        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6893] 
+5634.453        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [821] 
+5634.453        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [821] 
+5634.453        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34028] 
+5634.453        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65884] 
+5635.228        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5637.284        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5638.811        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5640.849        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5642.376        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5644.889        MOOS_DEBUG           pNav            EKF Completes iteration 54700 
+5644.889        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6898] 
+5644.889        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [821] 
+5644.889        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [821] 
+5644.889        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34036] 
+5644.889        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [65950] 
+5645.448        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5645.954        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5649.000        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5650.020        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5652.064        MOOS_DEBUG           pNav            LSQ Completes iteration 3160 
+5653.090        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5654.106        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5655.090        MOOS_DEBUG           pNav            EKF Completes iteration 54800 
+5655.090        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6902] 
+5655.090        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [821] 
+5655.090        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [821] 
+5655.090        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34042] 
+5655.090        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [66010] 
+5657.185        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5658.193        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5661.265        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5662.279        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5665.384        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5665.540        MOOS_DEBUG           pNav            EKF Completes iteration 54900 
+5665.540        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6906] 
+5665.540        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [821] 
+5665.540        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [821] 
+5665.540        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34070] 
+5665.540        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [66054] 
+5666.398        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5669.475        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5670.490        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5673.536        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5674.552        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5675.945        MOOS_DEBUG           pNav            EKF Completes iteration 55000 
+5675.945        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6908] 
+5675.945        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [821] 
+5675.945        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [821] 
+5675.945        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34100] 
+5675.945        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [66118] 
+5677.641        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5678.649        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5679.676        MOOS_DEBUG           pNav            LSQ Completes iteration 3180 
+5681.689        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5682.709        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5685.777        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5686.346        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6921] 
+5686.346        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [821] 
+5686.346        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [821] 
+5686.346        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34126] 
+5686.346        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [66168] 
+5686.338        MOOS_DEBUG           pNav            EKF Completes iteration 55100 
+5686.793        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5689.857        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5690.881        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5693.954        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5694.966        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5696.685        MOOS_DEBUG           pNav            EKF Completes iteration 55200 
+5696.685        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6923] 
+5696.685        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [823] 
+5696.685        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [823] 
+5696.685        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34138] 
+5696.685        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [66174] 
+5698.066        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5699.094        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5705.220        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5706.233        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5706.274        MOOS_DEBUG           pNav            LSQ Completes iteration 3200 
+5707.060        MOOS_DEBUG           pNav            EKF Completes iteration 55300 
+5707.060        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6925] 
+5707.060        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [824] 
+5707.060        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [824] 
+5707.060        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34146] 
+5707.060        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [66204] 
+5709.293        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5710.312        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5713.405        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5713.949        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5717.021        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5717.378        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [66286] 
+5717.378        MOOS_DEBUG           pNav            EKF Completes iteration 55400 
+5717.378        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6939] 
+5717.378        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [827] 
+5717.378        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [826] 
+5717.378        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34164] 
+5718.037        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5721.081        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5722.095        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5725.142        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5726.157        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5727.542        MOOS_DEBUG           pNav            EKF Completes iteration 55500 
+5727.542        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6953] 
+5727.542        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [827] 
+5727.542        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [826] 
+5727.542        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34232] 
+5727.543        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [66408] 
+5729.217        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5730.232        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5732.262        MOOS_DEBUG           pNav            LSQ Completes iteration 3220 
+5733.273        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5734.289        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5737.334        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5737.693        MOOS_DEBUG           pNav            EKF Completes iteration 55600 
+5737.693        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [6991] 
+5737.693        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [827] 
+5737.693        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [826] 
+5737.693        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34318] 
+5737.693        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [66570] 
+5738.368        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5741.422        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5742.439        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5745.499        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5746.522        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5747.894        MOOS_DEBUG           pNav            EKF Completes iteration 55700 
+5747.894        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [7005] 
+5747.894        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [833] 
+5747.894        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [832] 
+5747.894        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34386] 
+5747.894        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [66692] 
+5749.586        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5750.608        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5753.660        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5754.677        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5757.734        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5758.090        MOOS_DEBUG           pNav            EKF Completes iteration 55800 
+5758.090        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [7038] 
+5758.090        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [833] 
+5758.090        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [832] 
+5758.090        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34448] 
+5758.090        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [66846] 
+5758.749        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5759.772        MOOS_DEBUG           pNav            LSQ Completes iteration 3240 
+5761.802        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5762.821        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5765.883        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5766.897        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5768.272        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [66974] 
+5768.272        MOOS_DEBUG           pNav            EKF Completes iteration 55900 
+5768.272        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of DEPTH [7055] 
+5768.272        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[X] [839] 
+5768.272        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of GPS[Y] [838] 
+5768.272        MOOS_DEBUG           pNav            EKF Rejecting 0 percent of IMU [34534] 
+5769.945        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
+5770.964        MOOS_DEBUG           pNav            LSQ now has sufficient observations for a solution 
+5773.001        MOOS_DEBUG           pNav            No LSQ solution with only 3 out of 5 observations 
