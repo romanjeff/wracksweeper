@@ -1,0 +1,415 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       ./MOOSLog_19_9_2018_____19_32_40/MOOSLog_19_9_2018_____19_32_40._moos
+%% FILE OPENED ON  Thu Jan  1 00:00:00 1970
+%% LOGSTART                1537385558.5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ServerHost = localhost
+ServerPort = 9000
+Community  = uuuv
+
+GlobalLogPath = "/media/store/data/"
+
+//------------------------------------------
+// Antler configuration  block
+ProcessConfig = ANTLER
+{
+  MSBetweenLaunches = 200
+
+  Run = MOOSDB	         @ NewConsole = false
+  Run = pLogger	         @ NewConsole = false
+  Run = iRiptideMicroUUV @ NewConsole = false
+  Run = pNav             @ NewConsole = false
+  Run = pMarinePID       @ NewConsole = false
+//  Run = pAcommsHandler @ NewConsole =false, XConfig = 1
+  Run = uRiptideOLEDDisplay @ NewConsole = false
+     Run = iRiptideSpartonIMU @ NewConsole = false
+  Run = pRiptideMOOSMonitor @ NewConsole = false
+}
+
+ProcessConfig = iRiptideMicroUUV
+{
+  // run the application at 20Hz
+  AppTick = 20
+  CommsTick = 20
+
+  //MK2//  MK2 = TRUE
+
+  // whether the IMU is managed by iRiptideMicroUUV
+      IMU_PRESENT = FALSE
+
+  TARDY_CMD_THRESHOLD = 5
+
+  MAX_FIN_ANGLE = 18
+
+  // Configure zero point of each fin, if needed (degrees)
+  // Warning: This must match the actual vehicle hardware
+  //STARBOARD_FIN_ZERO = 0
+  //PORT_FIN_ZERO = 0
+  //DORSAL_FIN_ZERO = 0
+
+  // configure the max and min thrust if needed
+  //MAX_THRUST_PERCENTAGE = 100
+  //MIN_THRUST_PERCENTAGE = 0
+
+  // Flip the fin rotational direction depending on mounting
+  // Warning: This must match the actual vehicle hardware
+  //FLIP_STARBOARD_FIN = 0
+  //FLIP_STARBOARD_FIN = 0
+  //FLIP_STARBOARD_FIN = 0
+
+  // If the dorsal fin is a different size, indicate the relative scale factor
+  // Values allowed are [0.5,1.5]
+  //UUUV// DORSAL_FIN_SCALE_FACTOR = 1.1
+
+  // If we desire a fin angle of X, we must command X*FIN_ANGLE_SCAL_FACTOR 
+      FIN_ANGLE_SCALE_FACTOR = 2.5
+
+  // Indicates the angle of the altimeter face
+    //UUUV// ALTIMETER_UP_ANGLE_DEGREES = 21.42
+  //MK2// //UUUV// ALTIMETER_UP_ANGLE_DEGREES = 0
+      ALTIMETER_UP_ANGLE_DEGREES = 5.42
+    //2MP// ALTIMETER_UP_ANGLE_DEGREES = 5.82
+}
+
+
+ProcessConfig = pNav
+{
+  AppTick = 20
+  CommsTick = 20
+
+  X 	= EKF @ 1.0, LSQ @ 2.0
+  Y 	= EKF @ 1.0, LSQ @ 2.0
+  Depth = PS_FILTERED 
+  Yaw   = IMU
+  Heading  = IMU 
+
+  // "pitch" and "roll" and "Z" sensors are not supported in the EKF
+  Pitch = IMU 
+  Roll  = IMU
+  Z	= IMU 
+
+  Altitude = ALT 
+  Speed = EKF
+  FIXEDTIDE = 1.0 @ 1.0
+
+  ALWAYS_READ = DESIRED_THRUST,GPS_X,GPS_Y
+
+
+  SENSOR_XY = iRiptideMicroUUV -> GPS @ 0,0,0 2.0
+    SENSOR_ORIENTATION = iRiptideSpartonIMU -> IMU @ 0,0,0,0 0.1
+  //BOSCH// SENSOR_ORIENTATION = iRiptideMicroUUV -> IMU @ 0,0,0,0 0.1
+//MK2// SENSOR_ORIENTATION = iRiptideMicroUUV -> IMU @ 0,0,0,0 0.1
+  SENSOR_DEPTH = iRiptideMicroUUV -> DEPTH @ 0,0,0,0 0.1
+  SENSOR_CONTROL = pMarinePID -> THRUST  @ 0,0.0,0 0.1
+  SENSOR_BODY_VEL = pMarinePID -> THRUST_DERIVED_BODY_VEL @ 0,0,0,0 0.1
+
+  // Use odometry from thruster for dead reckoning underwater
+  THRUST2VELOCITY = TRUE
+  THRUST2VELOCITY_GAIN = 0.1
+
+  // Use the Least Squares Filter; the LSQ solution will initialize the EKF
+  USELSQ = TRUE
+  DISABLELSQUPDATECHECK = TRUE //prevents nav from failing underwater since LSQ will not update
+
+  // Use the Extended Kalman Filter
+  USEEKF = TRUE
+  MAXEKFPOSITIONUNCERTAINTY = 100  // Max uncertainty in vehicle position before nav fails (m)
+
+  // Mobile vehicle with little sensor lag
+  EKF_VEHICLE_TYPE = MOBILE
+  EKF_LAG = 0.05
+
+  // Parameters defining the mobility characteristics of the vehicle
+  EKF_XY_ACCEL =   4.0  // maximum xy acceleration (m/s^2)
+  EKF_Z_ACCEL =    1.0  // maximum z acceleration (m/s^2)
+  EKF_H_ACCEL =    3.0  // maximum heading acceleration (rad/s^2)
+  EKF_LINEAR_VEL = 8.0  // maximum linear velocity (m/s)
+  EKF_H_VEL =      3.0  // maximum heading veolcity (rad/s)
+
+  // scale factors for the above mobility parameters (scale of 0-10 => 0-100%)
+  //EKF_XY_DYNAMICS = 10
+  //EKF_Z_DYNAMICS = 10
+  //EKF_YAW_DYNAMICS = 10
+
+  // max velocities in (m/s) and angular rates in (rad/s)
+  // exceeding these causes the Kalman filter to be reset
+  EKF_MAX_X_VEL = 5.0
+  EKF_MAX_Y_VEL = 5.0
+  EKF_MAX_Z_VEL = 2.0
+  EKF_MAX_YAW_VEL = 3.0
+
+  // Standard Deviations associated with various observations
+  OBS_YAW_STD = 0.2         // yaw observation std (rad)
+  OBS_DEPTH_STD = 0.1       // depth observation std (m)
+  OBS_XY_STD = 1.0          // XY position observation std (m)
+  OBS_BODY_VEL_STD = 0.02   // Body velocity observation std (m/s)
+  OBS_THRUST_STD_SCALE_FACTOR = 100  // scale factor to apply to OBS_BODY_VEL_STD for thrust-to-velocity
+
+
+  // Kalman filter initialization
+  EKF_X = 0 
+  EKF_Y = 0
+  EKF_Z = 0
+  EKF_H = 0
+  EKF_TIDE = 0
+  EKF_SIGMA_XX = 30 
+  EKF_SIGMA_YY = 30
+  EKF_SIGMA_ZZ = 500
+  EKF_SIGMA_HH = 3.0
+
+  // Set up logging for navigation data
+  NAV_LOG = TRUE
+  NAV_LOG_PATH = "/media/store/data/"
+  NAV_LOG_TIMESTAMP = TRUE
+}
+
+
+
+//------------------------------------------
+// pMarinePID config block
+
+ProcessConfig = pMarinePID
+{
+  AppTick    = 20
+  CommsTick  = 20
+
+  verbose       = true
+  depth_control = true
+
+  // SIM_INSTABILITY = 20
+  TARDY_HELM_THRESHOLD = 5
+
+  // comment out the following to stop loggin PID data
+  PID_LOG_PATH = "/media/store/data/pid/"
+
+  // Yaw PID controller
+//UUUV//  yaw_pid_kp		 = 0.4     //5.0 //1.2
+   yaw_pid_kp		 = 0.3     //5.0 //1.2
+  yaw_pid_kd		 = 0.0     //7.0 //0.0
+  yaw_pid_ki		 = 0.15    //0.1 //0.3
+  yaw_pid_integral_limit = 0.0175  //15.0 //0.07
+
+  // Speed PID controller
+  speed_pid_kp		 = 1.0
+  speed_pid_kd		 = 0.0
+  speed_pid_ki		 = 0.0
+  speed_pid_integral_limit = 0.07
+
+  //Pitch PID controller
+//UUUV//  pitch_pid_kp                   = 0.7    //1.5
+   pitch_pid_kp                   = 0.9    //1.5
+  pitch_pid_kd                   = -0.05  // 0.038 // 0.38 // 0.4 //1.0
+  pitch_pid_ki                   = 0
+  pitch_pid_integral_limit       = 0.1    //0
+
+  //ZPID controller
+//UUUV//  z_to_pitch_pid_kp              = 0.15   //0.12
+   z_to_pitch_pid_kp              = 0.7   //0.12
+  z_to_pitch_pid_kd              = 0
+  z_to_pitch_pid_ki              = 0.02   //0.004
+//UUUV//  z_to_pitch_pid_integral_limit  = 0.1    //0.05
+   z_to_pitch_pid_integral_limit  = 0.25    //0.05
+
+  //MAXIMUMS
+  maxrudder    = 15
+  maxthrust    = 100  // (maxthrust/speed_factor)=max vehicle speed (m/s)
+  maxpitch     = 20
+  maxelevator  = 18
+
+  // A non-zero SPEED_FACTOR overrides use of SPEED_PID
+  // Will set DESIRED_THRUST = DESIRED_SPEED * SPEED_FACTOR
+  speed_factor = 10
+}
+
+
+
+//------------------------------------------
+// pLogger config block
+
+ProcessConfig = pLogger
+{
+  AppTick = 20
+  CommsTick = 20
+
+  SyncLog = true @ 0.1
+  AsyncLog = true
+  WildCardLogging = true
+
+  // control variables
+  Log = DESIRED_ELEVATOR @ 0
+  Log = DESIRED_RUDDER @ 0
+  Log = DESIRED_THRUST @ 0
+  Log = DESIRED_DEPTH @ 0
+  Log = DESIRED_HEADING @ 0
+  Log = DESIRED_SPEED @ 0
+  Log = RT_DORSAL_FIN @ 0
+  Log = RT_STARBOARD_FIN @ 0
+  Log = RT_PORT_FIN @ 0
+  Log = RT_THRUST_SPEED @ 0
+
+  // navigation variables
+  Log = NAV_X @ 0
+  Log = NAV_Y @ 0
+  Log = NAV_DEPTH @ 0
+  Log = NAV_ROLL @ 0
+  Log = NAV_PITCH @ 0
+  Log = NAV_YAW @ 0
+  Log = NAV_ALTITUDE @ 0
+
+  // origin
+  Log = ORIGIN_LATITUDE @ 0
+  Log = ORIGIN_LONGITUDE @ 0
+
+  // pressure sensor
+  Log = PS_STATUS @ 0
+  Log = PS_PRESSURE @ 0
+  Log = PS_TEMP @ 0
+  Log = PS_DEPTH @ 0
+  Log = PS_FILTERED_DEPTH @ 0
+  Log = PS_BAD_PRESSURE @ 0
+  Log = PS_BAD_TEMP @ 0
+
+  // IMU 
+  Log = IMU_STATUS @ 0
+  Log = IMU_SELF_TEST @ 0
+  Log = IMU_MODE @ 0
+  Log = IMU_ERROR @ 0
+  Log = IMU_HW_STATUS @ 0
+  Log = IMU_HEADING @ 0
+  Log = IMU_ROLL @ 0
+  Log = IMU_PITCH @ 0
+  Log = IMU_YAW @ 0
+  Log = IMU_CALIB_ACCEL @ 0
+  Log = IMU_CALIB_GYRO @ 0
+  Log = IMU_CALIB_MAG @ 0
+  Log = IMU_CALIB_SYS @ 0
+
+  // GPS
+  Log = GPS_STATUS @ 0
+  Log = GPS_LATITUDE @ 0
+  Log = GPS_LONGITUDE @ 0
+  Log = GPS_X @ 0
+  Log = GPS_Y @ 0
+  Log = GPS_QUALITY @ 0
+  Log = GPS_FIX @ 0
+  Log = GPS_SAT @ 0
+  Log = GPS_SPEED @ 0
+  Log = GPS_LAST_COMMS @ 0
+  Log = GPS_PARSE_ERRORS @ 0
+
+  // Altimeter
+  LOG = ALT_STATUS @ 0
+  LOG = ALT_ALTITUDE @ 0
+  LOG = ALT_LAST_COMMS @ 0
+  LOG = ALT_LAST_DATA @ 0
+  LOG = ALT_TRIGGER @ 0
+  LOG = ALT_PING_RATE @ 0
+  LOG = ALT_RANGE @ 0
+  LOG = ALT_SOUND_SPEED @ 0
+
+  // Waypoint Mission Variables.
+  LOG = WPT_INDEX @ 0
+
+}
+
+
+ProcessConfig = pAcommsHandler
+{
+    common {
+        log: false
+        verbosity: DEBUG3
+        show_gui: false
+        initializer { type: INI_DOUBLE moos_var: "STATUS_DESTINATION" dval: 2 }
+        initializer { type: INI_STRING moos_var: "STATUS_REPORT_OUT"
+            sval: "x=150,y=200,speed=1.4,heading=125"
+        }
+        initializer { type: INI_STRING moos_var: "DEPTH" sval: "depth:=23" }
+    }
+    modem_id: 1
+    driver_type: DRIVER_WHOI_MICROMODEM
+    driver_cfg {
+         connection_type: CONNECTION_SERIAL
+	 line_delimiter: "\r\n"
+	 serial_port: "/dev/ttyS1"
+	 serial_baud: 19200
+	 reconnect_interval: 10
+	 raw_log: "/tmp/modem_log_%1%.raw"
+        [micromodem.protobuf.Config.reset_nvram]: true
+    }
+    mac_cfg {
+        type: MAC_FIXED_DECENTRALIZED
+        slot { src: 1 type: DATA slot_seconds: 10 }
+        slot { src: 2 type: DATA slot_seconds: 10 }
+    }
+    queue_cfg {
+        message_entry {
+            protobuf_name: "goby.example.SimpleStatus"
+            ack: false
+            blackout_time: 10
+            ttl: 300
+            value_base: 1.5
+            role { type: SOURCE_ID field: "src" }
+            role { type: DESTINATION_ID field: "dest" }
+            role { type: TIMESTAMP field: "timestamp" }
+        }
+    }
+    translator_entry {
+        protobuf_name: "goby.example.SimpleStatus"
+        trigger { type: TRIGGER_TIME period: 5 }
+        create {
+            technique: TECHNIQUE_FORMAT
+            moos_var: "DB_TIME"
+            format: "%1%"
+        }
+        create {
+            technique: TECHNIQUE_FORMAT
+            moos_var: "MODEM_ID"
+            format: "%2%"
+        }
+        create {
+            technique: TECHNIQUE_FORMAT
+            moos_var: "STATUS_DESTINATION"
+            format: "%3%"
+        }
+        create {
+            technique: TECHNIQUE_COMMA_SEPARATED_KEY_EQUALS_VALUE_PAIRS
+            moos_var: "STATUS_REPORT_OUT"
+        }
+        create {
+            technique: TECHNIQUE_FORMAT
+            moos_var: "DEPTH"
+            format: "depth:=%14%"
+        }
+        publish {
+            technique: TECHNIQUE_COMMA_SEPARATED_KEY_EQUALS_VALUE_PAIRS
+            moos_var: "STATUS_REPORT_IN"
+        }
+        publish {
+            technique: TECHNIQUE_PREFIXED_PROTOBUF_TEXT_FORMAT
+            moos_var: "STATUS_REPORT_IN_PB"
+        }
+    }
+    load_shared_library: "libgobyexample_protobuf.so"
+}
+
+ProcessConfig = uRiptideOLEDDisplay
+{
+   AppTick = 1
+   CommsTick = 1
+}
+
+ProcessConfig = iRiptideSpartonIMU
+{
+   AppTick = 10
+   CommsTick = 10
+
+   SERIAL_PORT = "/dev/ttyS5"
+   BAUD_RATE = 115200
+}
+ProcessConfig = pRiptideMOOSMonitor
+{
+  AppTick  	= 1
+  CommsTick	= 1
+  VariableMonitorInterval = 1.0
+}
+
