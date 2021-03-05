@@ -1,0 +1,8 @@
+1344.871        WPT_EFF_SUMM_ALL     pHelmIvP        vname=uuuv, bhv_name=waypt_survey, linear_dist=19.3, odo_dist=22.3, efficiency_dist=0.87, linear_time=19.3, odo_time=4.5, efficiency_time=4.287 
+1630.622        WPT_EFF_SUMM_ALL     pHelmIvP        vname=uuuv, bhv_name=waypt_survey, linear_dist=465.8, odo_dist=479.6, efficiency_dist=0.971, linear_time=465.8, odo_time=290.3, efficiency_time=1.605 
+1661.199        WPT_EFF_SUMM_ALL     pHelmIvP        vname=uuuv, bhv_name=waypt_survey, linear_dist=512.8, odo_dist=528.2, efficiency_dist=0.971, linear_time=512.8, odo_time=320.8, efficiency_time=1.598 
+1665.961        WPT_EFF_SUMM_ALL     pHelmIvP        vname=uuuv, bhv_name=waypt_survey, linear_dist=530.4, odo_dist=546.3, efficiency_dist=0.971, linear_time=530.4, odo_time=325.6, efficiency_time=1.629 
+1684.260        WPT_EFF_SUMM_ALL     pHelmIvP        vname=uuuv, bhv_name=waypt_survey, linear_dist=553.4, odo_dist=579.1, efficiency_dist=0.956, linear_time=553.4, odo_time=343.9, efficiency_time=1.609 
+1970.516        WPT_EFF_SUMM_ALL     pHelmIvP        vname=uuuv, bhv_name=waypt_survey, linear_dist=999.6, odo_dist=1034.4, efficiency_dist=0.966, linear_time=999.6, odo_time=630.2, efficiency_time=1.586 
+1995.331        WPT_EFF_SUMM_ALL     pHelmIvP        vname=uuuv, bhv_name=waypt_survey, linear_dist=1038.7, odo_dist=1073.6, efficiency_dist=0.968, linear_time=1038.7, odo_time=655, efficiency_time=1.586 
+2013.878        WPT_EFF_SUMM_ALL     pHelmIvP        vname=uuuv, bhv_name=waypt_survey, linear_dist=1058, odo_dist=1093.3, efficiency_dist=0.968, linear_time=1058, odo_time=673.5, efficiency_time=1.571 

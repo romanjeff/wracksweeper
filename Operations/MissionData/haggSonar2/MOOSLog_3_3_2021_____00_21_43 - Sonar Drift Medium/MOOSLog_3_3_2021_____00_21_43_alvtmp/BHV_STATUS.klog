@@ -1,0 +1,190 @@
+2211.998        BHV_STATUS           pHelmIvP        name=waypt_survey,state=running,updates=0/0 
+2212.257        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2212.257        BHV_STATUS           pHelmIvP        name=bhv_const_depth_0,pc=WPT_INDEX = 0,state=idle,updates=n/a 
+2212.259        BHV_STATUS           pHelmIvP        name=bhv_const_depth_1,pc=WPT_INDEX = 1,state=idle,updates=n/a 
+2212.260        BHV_STATUS           pHelmIvP        name=bhv_const_depth_2,pc=WPT_INDEX = 2,state=idle,updates=n/a 
+2212.260        BHV_STATUS           pHelmIvP        name=bhv_const_depth_3,pc=WPT_INDEX = 3,state=idle,updates=n/a 
+2212.260        BHV_STATUS           pHelmIvP        name=bhv_const_depth_4,pc=WPT_INDEX = 4,state=idle,updates=n/a 
+2212.260        BHV_STATUS           pHelmIvP        name=bhv_const_depth_5,pc=WPT_INDEX = 5,state=idle,updates=n/a 
+2212.260        BHV_STATUS           pHelmIvP        name=bhv_const_depth_6,pc=WPT_INDEX = 6,state=idle,updates=n/a 
+2212.261        BHV_STATUS           pHelmIvP        name=bhv_const_depth_7,pc=WPT_INDEX = 7,state=idle,updates=n/a 
+2212.262        BHV_STATUS           pHelmIvP        name=bhv_const_depth_8,pwt=100.00000,pcs=3,state=active,updates=n/a 
+2212.262        BHV_STATUS           pHelmIvP        name=bhv_const_speed_0,pc=WPT_INDEX = 0,state=idle,updates=n/a 
+2212.263        BHV_STATUS           pHelmIvP        name=bhv_const_speed_1,pc=WPT_INDEX = 1,state=idle,updates=n/a 
+2212.263        BHV_STATUS           pHelmIvP        name=bhv_const_speed_2,pc=WPT_INDEX = 2,state=idle,updates=n/a 
+2212.263        BHV_STATUS           pHelmIvP        name=bhv_const_speed_3,pc=WPT_INDEX = 3,state=idle,updates=n/a 
+2212.265        BHV_STATUS           pHelmIvP        name=bhv_const_speed_4,pc=WPT_INDEX = 4,state=idle,updates=n/a 
+2212.265        BHV_STATUS           pHelmIvP        name=bhv_const_speed_5,pc=WPT_INDEX = 5,state=idle,updates=n/a 
+2212.265        BHV_STATUS           pHelmIvP        name=bhv_const_speed_6,pc=WPT_INDEX = 6,state=idle,updates=n/a 
+2212.265        BHV_STATUS           pHelmIvP        name=bhv_const_speed_7,pc=WPT_INDEX = 7,state=idle,updates=n/a 
+2212.266        BHV_STATUS           pHelmIvP        name=bhv_const_speed_8,pwt=100.00000,pcs=3,state=active,updates=n/a 
+2212.506        BHV_STATUS           pHelmIvP        name=bhv_const_depth_0,pwt=100.00000,pcs=4,state=active,updates=n/a 
+2212.507        BHV_STATUS           pHelmIvP        name=bhv_const_depth_8,pc=WPT_INDEX = 8,state=idle,updates=n/a 
+2212.509        BHV_STATUS           pHelmIvP        name=bhv_const_speed_0,pwt=100.00000,pcs=3,state=active,updates=n/a 
+2212.510        BHV_STATUS           pHelmIvP        name=bhv_const_speed_8,pc=WPT_INDEX = 8,state=idle,updates=n/a 
+2214.764        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=24,state=active,updates=0/0 
+2215.015        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2219.775        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2220.029        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2230.053        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=24,state=active,updates=0/0 
+2230.553        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2245.597        BHV_STATUS           pHelmIvP        name=bhv_const_depth_0,pc=WPT_INDEX = 0,state=idle,updates=n/a 
+2245.597        BHV_STATUS           pHelmIvP        name=bhv_const_depth_1,pwt=100.00000,pcs=4,state=active,updates=n/a 
+2245.597        BHV_STATUS           pHelmIvP        name=bhv_const_speed_0,pc=WPT_INDEX = 0,state=idle,updates=n/a 
+2245.599        BHV_STATUS           pHelmIvP        name=bhv_const_speed_1,pwt=100.00000,pcs=3,state=active,updates=n/a 
+2255.873        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=24,state=active,updates=0/0 
+2256.129        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2273.175        BHV_STATUS           pHelmIvP        name=bhv_const_depth_1,pc=WPT_INDEX = 1,state=idle,updates=n/a 
+2273.175        BHV_STATUS           pHelmIvP        name=bhv_const_depth_2,pwt=100.00000,pcs=4,state=active,updates=n/a 
+2273.175        BHV_STATUS           pHelmIvP        name=bhv_const_speed_1,pc=WPT_INDEX = 1,state=idle,updates=n/a 
+2273.178        BHV_STATUS           pHelmIvP        name=bhv_const_speed_2,pwt=100.00000,pcs=3,state=active,updates=n/a 
+2278.187        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=24,state=active,updates=0/0 
+2278.437        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2282.198        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=24,state=active,updates=0/0 
+2282.446        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2283.449        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=24,state=active,updates=0/0 
+2283.698        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2286.951        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=24,state=active,updates=0/0 
+2287.210        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2289.463        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2289.714        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2327.308        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2327.566        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2327.817        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2329.819        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2346.613        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2347.371        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2350.874        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2351.622        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2352.886        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2353.130        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2353.635        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2353.880        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2354.379        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2354.883        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2355.133        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2355.385        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2356.134        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2356.382        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2356.886        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2357.134        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2358.393        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2358.644        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2358.893        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2359.902        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2361.395        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2361.647        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2363.144        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2363.651        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2368.919        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2369.414        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2370.675        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2370.925        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2372.930        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2373.181        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2375.691        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2376.184        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2379.198        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2379.448        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2380.197        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2380.455        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2382.460        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2382.708        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2383.711        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2384.206        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2387.220        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2387.469        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2393.736        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2394.233        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2395.985        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2396.491        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2398.995        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2399.495        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2437.344        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2437.594        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2444.865        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2445.364        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2454.895        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2455.146        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2474.190        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2474.695        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2481.208        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2481.461        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2486.722        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2486.975        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2489.478        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2489.726        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2490.234        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2490.982        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2491.484        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2491.738        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2493.992        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2494.495        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2495.243        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2495.746        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2496.997        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2497.252        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2499.757        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2500.261        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2516.795        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2517.047        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2519.559        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2519.812        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2520.814        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2521.065        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2542.367        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2542.870        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2544.877        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=24,state=active,updates=0/0 
+2545.374        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2545.627        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2546.627        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=24,state=active,updates=0/0 
+2546.879        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2547.629        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2547.878        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=24,state=active,updates=0/0 
+2548.382        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2548.632        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2549.135        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=24,state=active,updates=0/0 
+2549.635        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2551.132        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2551.889        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2560.163        BHV_STATUS           pHelmIvP        name=bhv_const_depth_2,pc=WPT_INDEX = 2,state=idle,updates=n/a 
+2560.166        BHV_STATUS           pHelmIvP        name=bhv_const_depth_3,pwt=100.00000,pcs=3,state=active,updates=n/a 
+2560.166        BHV_STATUS           pHelmIvP        name=bhv_const_speed_2,pc=WPT_INDEX = 2,state=idle,updates=n/a 
+2560.167        BHV_STATUS           pHelmIvP        name=bhv_const_speed_3,pwt=100.00000,pcs=3,state=active,updates=n/a 
+2561.419        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=24,state=active,updates=0/0 
+2561.917        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2575.205        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2575.457        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2576.950        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2577.208        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2578.710        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=20,state=active,updates=0/0 
+2579.213        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2589.993        BHV_STATUS           pHelmIvP        name=bhv_const_depth_3,pc=WPT_INDEX = 3,state=idle,updates=n/a 
+2589.994        BHV_STATUS           pHelmIvP        name=bhv_const_depth_4,pwt=100.00000,pcs=4,state=active,updates=n/a 
+2589.996        BHV_STATUS           pHelmIvP        name=bhv_const_speed_3,pc=WPT_INDEX = 3,state=idle,updates=n/a 
+2589.998        BHV_STATUS           pHelmIvP        name=bhv_const_speed_4,pwt=100.00000,pcs=3,state=active,updates=n/a 
+2593.503        BHV_STATUS           pHelmIvP        name=bhv_const_depth_4,pc=WPT_INDEX = 4,state=idle,updates=n/a 
+2593.503        BHV_STATUS           pHelmIvP        name=bhv_const_depth_5,pwt=100.00000,pcs=4,state=active,updates=n/a 
+2593.504        BHV_STATUS           pHelmIvP        name=bhv_const_speed_4,pc=WPT_INDEX = 4,state=idle,updates=n/a 
+2593.507        BHV_STATUS           pHelmIvP        name=bhv_const_speed_5,pwt=100.00000,pcs=3,state=active,updates=n/a 
+2607.538        BHV_STATUS           pHelmIvP        name=bhv_const_depth_5,pc=WPT_INDEX = 5,state=idle,updates=n/a 
+2607.541        BHV_STATUS           pHelmIvP        name=bhv_const_depth_6,pwt=100.00000,pcs=4,state=active,updates=n/a 
+2607.541        BHV_STATUS           pHelmIvP        name=bhv_const_speed_5,pc=WPT_INDEX = 5,state=idle,updates=n/a 
+2607.542        BHV_STATUS           pHelmIvP        name=bhv_const_speed_6,pwt=100.00000,pcs=3,state=active,updates=n/a 
+2609.545        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=24,state=active,updates=0/0 
+2609.795        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2610.294        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=24,state=active,updates=0/0 
+2610.547        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2896.560        BHV_STATUS           pHelmIvP        name=bhv_const_depth_6,pc=WPT_INDEX = 6,state=idle,updates=n/a 
+2896.562        BHV_STATUS           pHelmIvP        name=bhv_const_depth_7,pwt=100.00000,pcs=3,state=active,updates=n/a 
+2896.562        BHV_STATUS           pHelmIvP        name=bhv_const_speed_6,pc=WPT_INDEX = 6,state=idle,updates=n/a 
+2896.563        BHV_STATUS           pHelmIvP        name=bhv_const_speed_7,pwt=100.00000,pcs=3,state=active,updates=n/a 
+2920.873        BHV_STATUS           pHelmIvP        name=bhv_const_depth_7,pc=WPT_INDEX = 7,state=idle,updates=n/a 
+2920.876        BHV_STATUS           pHelmIvP        name=bhv_const_depth_8,pwt=100.00000,pcs=3,state=active,updates=n/a 
+2920.876        BHV_STATUS           pHelmIvP        name=bhv_const_speed_7,pc=WPT_INDEX = 7,state=idle,updates=n/a 
+2920.877        BHV_STATUS           pHelmIvP        name=bhv_const_speed_8,pwt=100.00000,pcs=3,state=active,updates=n/a 
+2922.879        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=24,state=active,updates=0/0 
+2923.384        BHV_STATUS           pHelmIvP        name=waypt_survey,pwt=100.00000,pcs=28,state=active,updates=0/0 
+2932.147        BHV_STATUS           pHelmIvP        name=waypt_survey,pc=completed-byduration,state=completed,updates=0/0 
+2932.391        BHV_STATUS           pHelmIvP        name=bhv_const_depth_8,pc=RETURN = false,state=idle,updates=n/a 
+2932.392        BHV_STATUS           pHelmIvP        name=bhv_const_speed_8,pc=RETURN = false,state=idle,updates=n/a 

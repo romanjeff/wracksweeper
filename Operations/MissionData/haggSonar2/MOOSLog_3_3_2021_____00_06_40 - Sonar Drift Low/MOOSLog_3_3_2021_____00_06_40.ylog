@@ -1,0 +1,558 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       ./MOOSLog_3_3_2021_____00_06_40/MOOSLog_3_3_2021_____00_06_40.ylog
+%% FILE OPENED ON  Thu Jan  1 00:00:00 1970
+%% LOGSTART        47.584524921        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+1304.059   MOOS_DEBUG           pLogger              Closing : MOOSLog_3_3_2021_____00_01_29 
+1304.427   MOOS_DEBUG           pNav                 LSQ now has sufficient observations for a solution 
+1304.556   MOOS_DEBUG           pLogger              Now Logging to : MOOSLog_3_3_2021_____00_06_40 
+1304.852   MOOS_DEBUG           pNav                 EKF Completes iteration 12500 
+1304.852   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1287] 
+1304.852   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [199] 
+1304.852   MOOS_DEBUG           pNav                 EKF Rejecting 1 percent of GPS[Y] [174] 
+1304.852   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [6808] 
+1304.852   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [13832] 
+1305.472   MOOS_DEBUG           pNav                 No LSQ solution with only 3 out of 5 observations 
+1305.986   MOOS_DEBUG           pNav                 LSQ now has sufficient observations for a solution 
+1305.995   MOOS_DEBUG           pNav                 LSQ Completes iteration 880 
+1307.023   MOOS_DEBUG           pNav                 No LSQ solution with only 3 out of 5 observations 
+1307.543   MOOS_DEBUG           pNav                 LSQ now has sufficient observations for a solution 
+1308.562   MOOS_DEBUG           pNav                 No LSQ solution with only 3 out of 5 observations 
+1309.111   MOOS_DEBUG           pNav                 LSQ now has sufficient observations for a solution 
+1309.499   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: ManualOverride 
+1310.029   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: BehaviorError 
+1310.331   MOOS_DEBUG           pMarinePID           pMarinePID Control Is On 
+1310.548   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
+1315.489   MOOS_DEBUG           pNav                 EKF Completes iteration 12600 
+1315.489   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1287] 
+1315.489   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [199] 
+1315.489   MOOS_DEBUG           pNav                 EKF Rejecting 1 percent of GPS[Y] [174] 
+1315.489   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [6808] 
+1315.489   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [13832] 
+1322.466   MOOS_DEBUG           pNav                 Forcing EKF to LSQ Pose disageed for 7 iterations deviation = 47.972548 ( >20.000000 ) 
+1322.468   MOOS_DEBUG           pNav                 Forcing EKF to [482428.2,5037351.0,0.0,0.3] 
+1325.923   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [13848] 
+1325.918   MOOS_DEBUG           pNav                 EKF Completes iteration 12700 
+1325.918   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1287] 
+1325.918   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [199] 
+1325.923   MOOS_DEBUG           pNav                 EKF Rejecting 1 percent of GPS[Y] [174] 
+1325.923   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [6808] 
+1327.51    MOOS_DEBUG           pNav                 LSQ Completes iteration 900 
+1332.597   MOOS_DEBUG           pNav                 No LSQ solution with only 3 out of 5 observations 
+1333.107   MOOS_DEBUG           pNav                 LSQ now has sufficient observations for a solution 
+1334.131   MOOS_DEBUG           pNav                 No LSQ solution with only 3 out of 5 observations 
+1336.334   MOOS_DEBUG           pNav                 EKF Completes iteration 12800 
+1336.334   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1287] 
+1336.335   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1336.335   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1336.335   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [6826] 
+1336.335   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [13898] 
+1346.654   MOOS_DEBUG           pNav                 EKF Completes iteration 12900 
+1346.654   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1296] 
+1346.654   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1346.654   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1346.654   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [6842] 
+1346.654   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14002] 
+1357.159   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [6886] 
+1357.159   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14110] 
+1357.159   MOOS_DEBUG           pNav                 EKF Completes iteration 13000 
+1357.159   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1299] 
+1357.159   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1357.159   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1367.341   MOOS_DEBUG           pNav                 EKF Completes iteration 13100 
+1367.341   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1302] 
+1367.341   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1367.341   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1367.341   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [6930] 
+1367.341   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14120] 
+1377.656   MOOS_DEBUG           pNav                 EKF Completes iteration 13200 
+1377.656   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1309] 
+1377.656   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1377.656   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1377.656   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [6948] 
+1377.656   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14186] 
+1387.982   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [6968] 
+1387.982   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14260] 
+1387.982   MOOS_DEBUG           pNav                 EKF Completes iteration 13300 
+1387.982   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1310] 
+1387.982   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1387.982   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1398.237   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [6998] 
+1398.237   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14344] 
+1398.236   MOOS_DEBUG           pNav                 EKF Completes iteration 13400 
+1398.237   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1315] 
+1398.237   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1398.237   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1408.49    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7016] 
+1408.49    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14362] 
+1408.49    MOOS_DEBUG           pNav                 EKF Completes iteration 13500 
+1408.49    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1322] 
+1408.49    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1408.49    MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1418.79    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14420] 
+1418.79    MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1418.79    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7036] 
+1418.79    MOOS_DEBUG           pNav                 EKF Completes iteration 13600 
+1418.79    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1325] 
+1418.79    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1429.289   MOOS_DEBUG           pNav                 EKF Completes iteration 13700 
+1429.289   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1325] 
+1429.289   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1429.289   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1429.289   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7068] 
+1429.289   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14494] 
+1439.629   MOOS_DEBUG           pNav                 EKF Completes iteration 13800 
+1439.629   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1336] 
+1439.629   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1439.629   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1439.629   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7086] 
+1439.629   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14562] 
+1449.866   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7118] 
+1449.866   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14618] 
+1449.866   MOOS_DEBUG           pNav                 EKF Completes iteration 13900 
+1449.866   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1346] 
+1449.866   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1449.866   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1460.185   MOOS_DEBUG           pNav                 EKF Completes iteration 14000 
+1460.185   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1346] 
+1460.185   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1460.185   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1460.185   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7156] 
+1460.185   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14666] 
+1470.607   MOOS_DEBUG           pNav                 EKF Completes iteration 14100 
+1470.607   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1350] 
+1470.607   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1470.607   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1470.607   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7188] 
+1470.607   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14722] 
+1481.135   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1481.135   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7230] 
+1481.135   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14786] 
+1481.135   MOOS_DEBUG           pNav                 EKF Completes iteration 14200 
+1481.135   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1358] 
+1481.135   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1491.337   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14858] 
+1491.337   MOOS_DEBUG           pNav                 EKF Completes iteration 14300 
+1491.337   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1361] 
+1491.337   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1491.337   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1491.337   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7264] 
+1501.936   MOOS_DEBUG           pNav                 EKF Completes iteration 14400 
+1501.936   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1364] 
+1501.936   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1501.936   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1501.936   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7288] 
+1501.936   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14888] 
+1512.411   MOOS_DEBUG           pNav                 EKF Completes iteration 14500 
+1512.411   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1370] 
+1512.411   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1512.411   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1512.411   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7308] 
+1512.411   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [14914] 
+1522.899   MOOS_DEBUG           pNav                 EKF Completes iteration 14600 
+1522.899   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1371] 
+1522.899   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1522.899   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1522.899   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7338] 
+1522.899   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15016] 
+1533.087   MOOS_DEBUG           pNav                 EKF Completes iteration 14700 
+1533.087   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1372] 
+1533.087   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1533.087   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1533.087   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7364] 
+1533.087   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15070] 
+1543.416   MOOS_DEBUG           pNav                 EKF Completes iteration 14800 
+1543.416   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1382] 
+1543.416   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1543.416   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1543.417   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7394] 
+1543.417   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15078] 
+1553.87    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7452] 
+1553.87    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15166] 
+1553.87    MOOS_DEBUG           pNav                 EKF Completes iteration 14900 
+1553.87    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1389] 
+1553.87    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1553.87    MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1564.371   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15236] 
+1564.371   MOOS_DEBUG           pNav                 EKF Completes iteration 15000 
+1564.371   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1390] 
+1564.371   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1564.371   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1564.371   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7468] 
+1574.585   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15286] 
+1574.585   MOOS_DEBUG           pNav                 EKF Completes iteration 15100 
+1574.585   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1401] 
+1574.585   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1574.585   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1574.585   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7482] 
+1584.912   MOOS_DEBUG           pNav                 EKF Completes iteration 15200 
+1584.921   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1419] 
+1584.921   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1584.921   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1584.921   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7514] 
+1584.921   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15410] 
+1595.197   MOOS_DEBUG           pNav                 EKF Completes iteration 15300 
+1595.197   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1419] 
+1595.197   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1595.197   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1595.197   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7548] 
+1595.197   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15464] 
+1605.521   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7576] 
+1605.521   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15494] 
+1605.52    MOOS_DEBUG           pNav                 EKF Completes iteration 15400 
+1605.52    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1424] 
+1605.52    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1605.521   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1615.782   MOOS_DEBUG           pNav                 EKF Completes iteration 15500 
+1615.782   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1432] 
+1615.782   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1615.782   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1615.782   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7602] 
+1615.782   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15532] 
+1626.118   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15578] 
+1626.118   MOOS_DEBUG           pNav                 EKF Completes iteration 15600 
+1626.118   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1436] 
+1626.118   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1626.118   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1626.118   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7616] 
+1636.387   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15612] 
+1636.387   MOOS_DEBUG           pNav                 EKF Completes iteration 15700 
+1636.387   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1436] 
+1636.387   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1636.387   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1636.387   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7656] 
+1646.721   MOOS_DEBUG           pNav                 EKF Completes iteration 15800 
+1646.721   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1447] 
+1646.721   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1646.721   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1646.721   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7674] 
+1646.721   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15678] 
+1657.287   MOOS_DEBUG           pNav                 EKF Completes iteration 15900 
+1657.287   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1460] 
+1657.287   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1657.287   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1657.287   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7738] 
+1657.287   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15730] 
+1667.566   MOOS_DEBUG           pNav                 EKF Completes iteration 16000 
+1667.566   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1470] 
+1667.566   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1667.566   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1667.566   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7786] 
+1667.566   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15824] 
+1677.77    MOOS_DEBUG           pNav                 EKF Completes iteration 16100 
+1677.77    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1473] 
+1677.77    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1677.77    MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1677.77    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7814] 
+1677.77    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15850] 
+1688.048   MOOS_DEBUG           pNav                 EKF Completes iteration 16200 
+1688.048   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1473] 
+1688.048   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1688.049   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1688.049   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7832] 
+1688.049   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15886] 
+1698.281   MOOS_DEBUG           pNav                 EKF Completes iteration 16300 
+1698.281   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1474] 
+1698.281   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1698.281   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1698.281   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7852] 
+1698.281   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [15974] 
+1708.703   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16046] 
+1708.703   MOOS_DEBUG           pNav                 EKF Completes iteration 16400 
+1708.703   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1478] 
+1708.703   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1708.703   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1708.703   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7882] 
+1719.029   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7888] 
+1719.029   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16144] 
+1719.029   MOOS_DEBUG           pNav                 EKF Completes iteration 16500 
+1719.029   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1479] 
+1719.029   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1719.029   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1729.395   MOOS_DEBUG           pNav                 EKF Completes iteration 16600 
+1729.395   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1484] 
+1729.395   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1729.395   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1729.395   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7910] 
+1729.395   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16232] 
+1739.587   MOOS_DEBUG           pNav                 EKF Completes iteration 16700 
+1739.587   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1487] 
+1739.587   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1739.587   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1739.587   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7944] 
+1739.587   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16270] 
+1750.027   MOOS_DEBUG           pNav                 EKF Completes iteration 16800 
+1750.027   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1500] 
+1750.027   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1750.027   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1750.027   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [7990] 
+1750.027   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16330] 
+1760.491   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16396] 
+1760.491   MOOS_DEBUG           pNav                 EKF Completes iteration 16900 
+1760.491   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1516] 
+1760.491   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1760.491   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1760.491   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8028] 
+1770.948   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8042] 
+1770.948   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16438] 
+1770.948   MOOS_DEBUG           pNav                 EKF Completes iteration 17000 
+1770.948   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1523] 
+1770.948   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1770.948   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1781.283   MOOS_DEBUG           pNav                 EKF Completes iteration 17100 
+1781.283   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1524] 
+1781.283   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1781.283   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1781.283   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8084] 
+1781.283   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16474] 
+1791.581   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8110] 
+1791.581   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16550] 
+1791.581   MOOS_DEBUG           pNav                 EKF Completes iteration 17200 
+1791.581   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1530] 
+1791.581   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1791.581   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1801.878   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8150] 
+1801.878   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16582] 
+1801.878   MOOS_DEBUG           pNav                 EKF Completes iteration 17300 
+1801.878   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1535] 
+1801.878   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1801.878   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1812.537   MOOS_DEBUG           pNav                 EKF Completes iteration 17400 
+1812.537   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1543] 
+1812.538   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1812.538   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1812.538   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8172] 
+1812.538   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16620] 
+1822.885   MOOS_DEBUG           pNav                 EKF Completes iteration 17500 
+1822.886   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1543] 
+1822.886   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1822.886   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1822.886   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8178] 
+1822.886   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16628] 
+1833.209   MOOS_DEBUG           pNav                 EKF Completes iteration 17600 
+1833.209   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1546] 
+1833.209   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1833.209   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1833.209   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8214] 
+1833.209   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16658] 
+1843.921   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16686] 
+1843.921   MOOS_DEBUG           pNav                 EKF Completes iteration 17700 
+1843.921   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1548] 
+1843.921   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1843.921   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1843.921   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8224] 
+1854.397   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1854.397   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8258] 
+1854.397   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16778] 
+1854.396   MOOS_DEBUG           pNav                 EKF Completes iteration 17800 
+1854.396   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1551] 
+1854.396   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1864.584   MOOS_DEBUG           pNav                 EKF Completes iteration 17900 
+1864.584   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1551] 
+1864.584   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1864.584   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1864.584   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8296] 
+1864.584   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16860] 
+1874.781   MOOS_DEBUG           pNav                 EKF Completes iteration 18000 
+1874.781   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1561] 
+1874.781   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1874.781   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1874.781   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8332] 
+1874.781   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [16964] 
+1884.984   MOOS_DEBUG           pNav                 EKF Completes iteration 18100 
+1884.984   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1567] 
+1884.984   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1884.984   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1884.984   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8352] 
+1884.984   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [17026] 
+1895.553   MOOS_DEBUG           pNav                 EKF Completes iteration 18200 
+1895.553   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1569] 
+1895.553   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1895.553   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1895.553   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8388] 
+1895.553   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [17068] 
+1905.815   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [17126] 
+1905.813   MOOS_DEBUG           pNav                 EKF Completes iteration 18300 
+1905.815   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1579] 
+1905.815   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1905.815   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1905.815   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8392] 
+1916.271   MOOS_DEBUG           pNav                 EKF Completes iteration 18400 
+1916.271   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1579] 
+1916.271   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1916.271   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1916.271   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8420] 
+1916.271   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [17160] 
+1926.506   MOOS_DEBUG           pNav                 EKF Completes iteration 18500 
+1926.506   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1582] 
+1926.506   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1926.506   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1926.506   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8434] 
+1926.506   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [17232] 
+1936.719   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [17280] 
+1936.719   MOOS_DEBUG           pNav                 EKF Completes iteration 18600 
+1936.719   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1587] 
+1936.719   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1936.719   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1936.719   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8464] 
+1947.038   MOOS_DEBUG           pNav                 EKF Completes iteration 18700 
+1947.038   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1588] 
+1947.038   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1947.038   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1947.038   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8480] 
+1947.038   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [17302] 
+1957.345   MOOS_DEBUG           pNav                 EKF Completes iteration 18800 
+1957.345   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1602] 
+1957.345   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1957.345   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1957.345   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8494] 
+1957.345   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [17372] 
+1967.681   MOOS_DEBUG           pNav                 EKF Completes iteration 18900 
+1967.681   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1608] 
+1967.681   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1967.681   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1967.681   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8556] 
+1967.681   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [17486] 
+1978.147   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8580] 
+1978.147   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [17546] 
+1978.147   MOOS_DEBUG           pNav                 EKF Completes iteration 19000 
+1978.147   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1615] 
+1978.147   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1978.147   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1988.489   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1988.489   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1988.489   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8630] 
+1988.489   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [17648] 
+1988.489   MOOS_DEBUG           pNav                 EKF Completes iteration 19100 
+1988.489   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1620] 
+1998.714   MOOS_DEBUG           pNav                 EKF Completes iteration 19200 
+1998.714   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1628] 
+1998.714   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+1998.714   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+1998.714   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8642] 
+1998.714   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [17714] 
+2009.035   MOOS_DEBUG           pNav                 EKF Completes iteration 19300 
+2009.035   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1628] 
+2009.035   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+2009.035   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+2009.035   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8682] 
+2009.035   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [17768] 
+2013.89    MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: MissingDecVars:course 
+2014.132   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: NothingToDo 
+2019.298   MOOS_DEBUG           pMarinePID           Paused Due To Tardy HELM Input: THRUST=0 
+2019.422   MOOS_DEBUG           pNav                 EKF Completes iteration 19400 
+2019.422   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1631] 
+2019.422   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+2019.422   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+2019.422   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8696] 
+2019.422   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [17922] 
+2029.645   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [18064] 
+2029.645   MOOS_DEBUG           pNav                 EKF Completes iteration 19500 
+2029.645   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1632] 
+2029.645   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+2029.645   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+2029.645   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8768] 
+2033.42    MOOS_DEBUG           pNav                 LSQ now has sufficient observations for a solution 
+2040.089   MOOS_DEBUG           pNav                 EKF Completes iteration 19600 
+2040.089   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1637] 
+2040.089   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [202] 
+2040.089   MOOS_DEBUG           pNav                 EKF Rejecting 15 percent of GPS[Y] [177] 
+2040.089   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8810] 
+2040.089   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [18168] 
+2047.802   MOOS_DEBUG           pNav                 LSQ Completes iteration 920 
+2050.393   MOOS_DEBUG           pNav                 EKF Completes iteration 19700 
+2050.393   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1643] 
+2050.393   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [203] 
+2050.393   MOOS_DEBUG           pNav                 EKF Rejecting 14 percent of GPS[Y] [178] 
+2050.393   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8854] 
+2050.393   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [18286] 
+2057.999   MOOS_DEBUG           pNav                 No LSQ solution with only 3 out of 5 observations 
+2058.507   MOOS_DEBUG           pNav                 LSQ now has sufficient observations for a solution 
+2060.803   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [18354] 
+2060.803   MOOS_DEBUG           pNav                 EKF Completes iteration 19800 
+2060.803   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1650] 
+2060.803   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [203] 
+2060.803   MOOS_DEBUG           pNav                 EKF Rejecting 14 percent of GPS[Y] [178] 
+2060.803   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8876] 
+2068.694   MOOS_DEBUG           pNav                 LSQ Completes iteration 940 
+2071.387   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [8952] 
+2071.387   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [18450] 
+2071.387   MOOS_DEBUG           pNav                 EKF Completes iteration 19900 
+2071.387   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1661] 
+2071.387   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [210] 
+2071.387   MOOS_DEBUG           pNav                 EKF Rejecting 10 percent of GPS[Y] [185] 
+2072.755   MOOS_DEBUG           pNav                 No LSQ solution with only 3 out of 5 observations 
+2073.263   MOOS_DEBUG           pNav                 LSQ now has sufficient observations for a solution 
+2081.567   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [9024] 
+2081.567   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [18640] 
+2081.567   MOOS_DEBUG           pNav                 EKF Completes iteration 20000 
+2081.567   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1669] 
+2081.567   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [215] 
+2081.567   MOOS_DEBUG           pNav                 EKF Rejecting 8 percent of GPS[Y] [189] 
+2089.549   MOOS_DEBUG           pNav                 LSQ Completes iteration 960 
+2091.723   MOOS_DEBUG           pNav                 EKF Completes iteration 20100 
+2091.723   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1696] 
+2091.723   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [215] 
+2091.723   MOOS_DEBUG           pNav                 EKF Rejecting 8 percent of GPS[Y] [189] 
+2091.723   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [9110] 
+2091.723   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [18722] 
+2101.897   MOOS_DEBUG           pNav                 EKF Completes iteration 20200 
+2101.897   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1696] 
+2101.897   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [215] 
+2101.897   MOOS_DEBUG           pNav                 EKF Rejecting 8 percent of GPS[Y] [189] 
+2101.897   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [9172] 
+2101.897   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [18860] 
+2109.887   MOOS_DEBUG           pNav                 No LSQ solution with only 3 out of 5 observations 
+2110.391   MOOS_DEBUG           pNav                 LSQ now has sufficient observations for a solution 
+2110.411   MOOS_DEBUG           pNav                 LSQ Completes iteration 980 
+2112.309   MOOS_DEBUG           pNav                 EKF Completes iteration 20300 
+2112.309   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1697] 
+2112.309   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [215] 
+2112.31    MOOS_DEBUG           pNav                 EKF Rejecting 8 percent of GPS[Y] [189] 
+2112.31    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [9176] 
+2112.31    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [18956] 
+2122.699   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [9238] 
+2122.699   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [19068] 
+2122.699   MOOS_DEBUG           pNav                 EKF Completes iteration 20400 
+2122.699   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1699] 
+2122.699   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [220] 
+2122.699   MOOS_DEBUG           pNav                 EKF Rejecting 6 percent of GPS[Y] [194] 
+2128.767   MOOS_DEBUG           pNav                 No LSQ solution with only 3 out of 5 observations 
+2129.279   MOOS_DEBUG           pNav                 LSQ now has sufficient observations for a solution 
+2131.314   MOOS_DEBUG           pNav                 LSQ Completes iteration 1000 
+2133.2     MOOS_DEBUG           pNav                 EKF Completes iteration 20500 
+2133.2     MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1706] 
+2133.201   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [222] 
+2133.201   MOOS_DEBUG           pNav                 EKF Rejecting 5 percent of GPS[Y] [196] 
+2133.201   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [9290] 
+2133.201   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [19262] 
+2143.707   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [19340] 
+2143.706   MOOS_DEBUG           pNav                 EKF Completes iteration 20600 
+2143.707   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1716] 
+2143.707   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [225] 
+2143.707   MOOS_DEBUG           pNav                 EKF Rejecting 4 percent of GPS[Y] [199] 
+2143.707   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [9300] 
+2151.677   MOOS_DEBUG           pNav                 No LSQ solution with only 3 out of 5 observations 
+2152.185   MOOS_DEBUG           pNav                 LSQ now has sufficient observations for a solution 
+2152.205   MOOS_DEBUG           pNav                 LSQ Completes iteration 1020 
+2153.216   MOOS_DEBUG           pNav                 No LSQ solution with only 3 out of 5 observations 
+2153.878   MOOS_DEBUG           pNav                 EKF Completes iteration 20700 
+2153.878   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1717] 
+2153.878   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [228] 
+2153.878   MOOS_DEBUG           pNav                 EKF Rejecting 4 percent of GPS[Y] [202] 
+2153.878   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [9358] 
+2153.878   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [19412] 
+2154.237   MOOS_DEBUG           pNav                 LSQ now has sufficient observations for a solution 
+2164.05    MOOS_DEBUG           pNav                 EKF Completes iteration 20800 
+2164.05    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1743] 
+2164.05    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [228] 
+2164.05    MOOS_DEBUG           pNav                 EKF Rejecting 4 percent of GPS[Y] [202] 
+2164.05    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [9422] 
+2164.05    MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [19540] 
+2173.573   MOOS_DEBUG           pNav                 LSQ Completes iteration 1040 
+2174.223   MOOS_DEBUG           pNav                 EKF Completes iteration 20900 
+2174.223   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of DEPTH [1786] 
+2174.223   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of GPS[X] [237] 
+2174.223   MOOS_DEBUG           pNav                 EKF Rejecting 2 percent of GPS[Y] [211] 
+2174.223   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of IMU [9486] 
+2174.223   MOOS_DEBUG           pNav                 EKF Rejecting 0 percent of THRUST_DERIVED_BODY_VEL [19654] 

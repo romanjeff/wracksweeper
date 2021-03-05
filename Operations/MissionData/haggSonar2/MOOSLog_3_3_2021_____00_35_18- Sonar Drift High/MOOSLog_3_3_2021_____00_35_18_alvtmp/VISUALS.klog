@@ -1,0 +1,22 @@
+3026.856        VIEW_POINT           pHelmIvP        x=0,y=0,active=false,label=uuuv's next waypoint,label_color=gray70,vertex_color=yellow,vertex_size=8 
+3027.116        VIEW_SEGLIST         pHelmIvP        pts={482458.9,5037407.6:482448.5,5037421.4:482167.8,5037769.3:482137.8,5037805.8:482124.5,5037809.6:482114.7,5037786.8:482400.9,5037438.1:482424.7,5037407.2:482444.3,5037403.7},label=uuuv_waypt_survey,edge_color=white,vertex_color=dodger_blue,vertex_size=5,edge_size=1 
+3027.116        VIEW_POINT           pHelmIvP        x=482458.86,y=5037407.63,active=true,label=uuuv's next waypoint,label_color=gray70,vertex_color=yellow,vertex_size=8 
+3027.116        VIEW_POINT           pHelmIvP        x=482458.86,y=5037407.63,active=false,label=uuuv's track-point,label_color=yellow,vertex_color=yellow,vertex_size=4 
+3058.699        VIEW_POINT           pHelmIvP        x=482448.47,y=5037421.36,active=true,label=uuuv's next waypoint,label_color=gray70,vertex_color=yellow,vertex_size=8 
+3058.699        VIEW_POINT           pHelmIvP        x=482448.47,y=5037421.36,active=false,label=uuuv's track-point,label_color=yellow,vertex_color=yellow,vertex_size=4 
+3085.024        VIEW_POINT           pHelmIvP        x=482167.84,y=5037769.35,active=true,label=uuuv's next waypoint,label_color=gray70,vertex_color=yellow,vertex_size=8 
+3085.024        VIEW_POINT           pHelmIvP        x=482167.84,y=5037769.35,active=false,label=uuuv's track-point,label_color=yellow,vertex_color=yellow,vertex_size=4 
+3380.065        VIEW_POINT           pHelmIvP        x=482137.78,y=5037805.76,active=true,label=uuuv's next waypoint,label_color=gray70,vertex_color=yellow,vertex_size=8 
+3380.067        VIEW_POINT           pHelmIvP        x=482137.78,y=5037805.76,active=false,label=uuuv's track-point,label_color=yellow,vertex_color=yellow,vertex_size=4 
+3410.142        VIEW_POINT           pHelmIvP        x=482124.51,y=5037809.63,active=true,label=uuuv's next waypoint,label_color=gray70,vertex_color=yellow,vertex_size=8 
+3410.142        VIEW_POINT           pHelmIvP        x=482124.51,y=5037809.63,active=false,label=uuuv's track-point,label_color=yellow,vertex_color=yellow,vertex_size=4 
+3414.655        VIEW_POINT           pHelmIvP        x=482114.68,y=5037786.83,active=true,label=uuuv's next waypoint,label_color=gray70,vertex_color=yellow,vertex_size=8 
+3414.656        VIEW_POINT           pHelmIvP        x=482114.68,y=5037786.83,active=false,label=uuuv's track-point,label_color=yellow,vertex_color=yellow,vertex_size=4 
+3433.704        VIEW_POINT           pHelmIvP        x=482400.93,y=5037438.06,active=true,label=uuuv's next waypoint,label_color=gray70,vertex_color=yellow,vertex_size=8 
+3433.704        VIEW_POINT           pHelmIvP        x=482400.93,y=5037438.06,active=false,label=uuuv's track-point,label_color=yellow,vertex_color=yellow,vertex_size=4 
+3720.945        VIEW_POINT           pHelmIvP        x=482424.68,y=5037407.22,active=true,label=uuuv's next waypoint,label_color=gray70,vertex_color=yellow,vertex_size=8 
+3720.945        VIEW_POINT           pHelmIvP        x=482424.68,y=5037407.22,active=false,label=uuuv's track-point,label_color=yellow,vertex_color=yellow,vertex_size=4 
+3745.763        VIEW_POINT           pHelmIvP        x=482444.29,y=5037403.73,active=true,label=uuuv's next waypoint,label_color=gray70,vertex_color=yellow,vertex_size=8 
+3745.763        VIEW_POINT           pHelmIvP        x=482444.29,y=5037403.73,active=false,label=uuuv's track-point,label_color=yellow,vertex_color=yellow,vertex_size=4 
+3747.007        VIEW_POINT           pHelmIvP        x=482444.29,y=5037403.73,active=false,label=uuuv's next waypoint,label_color=gray70,vertex_color=yellow,vertex_size=8 
+3747.007        VIEW_SEGLIST         pHelmIvP        pts={482458.9,5037407.6:482448.5,5037421.4:482167.8,5037769.3:482137.8,5037805.8:482124.5,5037809.6:482114.7,5037786.8:482400.9,5037438.1:482424.7,5037407.2:482444.3,5037403.7},active=false,label=uuuv_waypt_survey 
